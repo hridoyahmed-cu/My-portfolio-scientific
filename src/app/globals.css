@@ -1,0 +1,545 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   DESIGN SYSTEM — Oxford academic + Nature/Cell scientific
+   ============================================================ */
+@layer base {
+  :root {
+    /* Self-hosted font families (loaded via @fontsource in layout.tsx) */
+    --font-playfair: "Playfair Display", Georgia, serif;
+    --font-cormorant: "Cormorant Garamond", Georgia, serif;
+    --font-inter: "Inter", system-ui, sans-serif;
+    --font-source: "Source Sans 3", system-ui, -apple-system, sans-serif;
+    --font-plex: "IBM Plex Sans", system-ui, sans-serif;
+
+    --background: 40 33% 97%;
+    --foreground: 214 46% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 214 46% 12%;
+    --muted: 214 28% 93%;
+    --muted-foreground: 214 16% 40%;
+    --border: 214 24% 87%;
+    --ring: 211 70% 30%;
+
+    --navy: 213 71% 13%;
+    --blue: 211 68% 30%;
+    --cyan: 190 78% 41%;
+    --emerald: 162 76% 33%;
+    --gold: 42 58% 46%;
+
+    /* Professional accent palette for the hover system (light theme). */
+    --teal: 178 64% 34%;
+    --indigo: 235 52% 50%;
+    --purple: 268 46% 52%;
+
+    /* Reusable colourful gradient — picks up theme tokens, so it adapts
+       automatically between light and dark. Used by every hover utility.
+       Tuned to the academic cyan → teal → indigo → purple accent range. */
+    --rainbow: linear-gradient(
+      90deg,
+      hsl(var(--cyan)),
+      hsl(var(--teal)),
+      hsl(var(--blue)),
+      hsl(var(--indigo)),
+      hsl(var(--purple)),
+      hsl(var(--cyan))
+    );
+  }
+
+  .dark {
+    --background: 215 50% 6%;
+    --foreground: 210 30% 92%;
+    --card: 214 42% 9%;
+    --card-foreground: 210 30% 92%;
+    --muted: 214 32% 15%;
+    --muted-foreground: 213 20% 66%;
+    --border: 214 28% 18%;
+    --ring: 190 78% 50%;
+
+    --navy: 213 60% 16%;
+    --blue: 207 74% 62%;
+    --cyan: 188 82% 55%;
+    --emerald: 160 70% 48%;
+    --gold: 42 70% 60%;
+
+    /* Professional accent palette for the hover system (dark theme). */
+    --teal: 174 62% 48%;
+    --indigo: 232 70% 70%;
+    --purple: 268 64% 72%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-source), system-ui, sans-serif;
+    font-feature-settings: "kern", "liga", "calt";
+  }
+
+  ::selection {
+    background: hsl(var(--cyan) / 0.25);
+    color: hsl(var(--foreground));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.35);
+    border-radius: 9999px;
+    border: 3px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.55);
+  }
+}
+
+@layer components {
+  .container-tight {
+    @apply container max-w-5xl;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan;
+  }
+
+  .heading-display {
+    @apply font-display font-semibold tracking-tight text-foreground;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-border bg-card shadow-soft;
+  }
+
+  /* ============================================================
+     ELEGANT SCIENTIFIC COMPUTING — interaction system
+     Hover micro-interactions use GPU-accelerated transform / opacity
+     only (no layout properties) → 60fps and zero CLS. Colour comes
+     from the cyan / teal / indigo / purple tokens, so every effect
+     adapts to light & dark automatically. The prefers-reduced-motion
+     block above neutralises all of this for users who ask for it.
+     ============================================================ */
+
+  /* GENERIC CARDS — soft lift + animated accent border ring.
+     Used across the site (education, research, metrics, etc.). */
+  .surface-hover {
+    @apply relative transition-all duration-300 ease-out;
+  }
+  .surface-hover::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 z-10 rounded-[inherit] opacity-0 transition-opacity duration-300;
+    padding: 1px;
+    background: var(--rainbow);
+    background-size: 200% 100%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  .surface-hover:hover {
+    @apply -translate-y-1 shadow-lift;
+  }
+  .surface-hover:hover::before {
+    @apply opacity-100;
+    animation: rainbow-pan 3s linear infinite;
+  }
+
+  /* 1 · NAV LINKS — gradient underline grows from the centre out
+     (cyan → indigo) with a soft text brighten. Active page stays lit. */
+  .nav-link {
+    @apply relative transition-colors duration-300;
+  }
+  .nav-link::after {
+    content: "";
+    @apply pointer-events-none absolute bottom-1 left-3 right-3 h-[2px] origin-center scale-x-0 rounded-full transition-transform duration-300 ease-out;
+    background: linear-gradient(90deg, hsl(var(--cyan)), hsl(var(--indigo)));
+  }
+  .nav-link:hover {
+    color: hsl(var(--foreground));
+  }
+  .nav-link:hover::after,
+  .nav-link[data-active="true"]::after {
+    @apply scale-x-100;
+  }
+  .nav-link[data-active="true"]::after {
+    box-shadow: 0 0 10px hsl(var(--cyan) / 0.5);
+  }
+
+  /* 2 & 8 · BUTTONS — premium gradient shift (teal → blue → indigo),
+     gentle lift, deeper shadow, brighter text. Pair with bg-navy. */
+  .btn-shift {
+    @apply transition-all duration-300 ease-out;
+    background-image: linear-gradient(120deg, hsl(var(--navy)), hsl(var(--navy)));
+    background-size: 100% 100%;
+  }
+  .btn-shift:hover {
+    @apply -translate-y-0.5 shadow-lift;
+    background-image: linear-gradient(
+      120deg,
+      hsl(var(--teal)),
+      hsl(var(--blue)),
+      hsl(var(--indigo))
+    );
+  }
+  .btn-shift:active {
+    @apply translate-y-0;
+  }
+
+  /* 3 · PROJECT CARDS — "DNA gradient" hover: lift 6px, animated
+     cyan → blue → purple border ring, subtle brighten. The faint
+     data-stream layer is rendered inside the card (.data-stream). */
+  .card-dna {
+    @apply relative transition-all duration-300 ease-out;
+  }
+  .card-dna::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 z-10 rounded-[inherit] opacity-0 transition-opacity duration-300;
+    padding: 1px;
+    background: linear-gradient(
+      120deg,
+      hsl(var(--cyan)),
+      hsl(var(--blue)),
+      hsl(var(--purple))
+    );
+    background-size: 200% 100%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  .card-dna:hover {
+    @apply shadow-lift;
+    transform: translateY(-6px);
+    filter: brightness(1.02);
+  }
+  .card-dna:hover::before {
+    @apply opacity-100;
+    animation: rainbow-pan 4s linear infinite;
+  }
+
+  /* Faint scrolling DNA / data-stream text behind a project card. */
+  .data-stream {
+    @apply pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit] opacity-0 transition-opacity duration-500;
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 25%, #000 75%, transparent);
+    mask-image: linear-gradient(180deg, transparent, #000 25%, #000 75%, transparent);
+  }
+  .card-dna:hover .data-stream {
+    opacity: 0.045;
+  }
+  .data-stream-track {
+    @apply absolute left-0 top-0 flex w-full flex-col gap-1 whitespace-nowrap font-plex text-[11px] font-medium uppercase leading-relaxed tracking-[0.3em] text-cyan;
+    animation: data-stream-scroll 22s linear infinite;
+  }
+
+  /* 4 · PUBLICATION CARDS — sequencing "scan" sweep + title brighten
+     + lift, like a genome scanner indexing the record. */
+  .card-scan {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+  }
+  .card-scan:hover {
+    @apply -translate-y-1 shadow-lift;
+    border-color: hsl(var(--cyan) / 0.45);
+  }
+  .card-scan::after {
+    content: "";
+    @apply pointer-events-none absolute inset-y-0 left-0 z-[5] w-1/3 opacity-0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--cyan) / 0.16),
+      transparent
+    );
+    transform: translateX(-130%);
+  }
+  .card-scan:hover::after {
+    animation: scan-sweep 1.2s ease-in-out;
+  }
+  .scan-title {
+    @apply transition-colors duration-300;
+  }
+  .card-scan:hover .scan-title {
+    color: hsl(var(--cyan));
+  }
+
+  /* 5 · RESOURCE CARDS — floating glassmorphism lift with accent
+     border glow (the visit arrow animates in the component). */
+  .card-glass {
+    @apply relative overflow-hidden transition-all duration-500 ease-out;
+  }
+  .card-glass:hover {
+    @apply -translate-y-1 border-transparent;
+    background: hsl(var(--card) / 0.55);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    box-shadow:
+      0 0 0 1px hsl(var(--cyan) / 0.2),
+      0 16px 44px hsl(var(--indigo) / 0.18),
+      inset 0 1px 0 hsl(0 0% 100% / 0.18);
+  }
+  .card-glass::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: radial-gradient(
+      120% 80% at 0% 0%,
+      hsl(var(--cyan) / 0.16),
+      transparent 60%
+    );
+  }
+  .card-glass:hover::after {
+    @apply opacity-100;
+  }
+
+  /* 7 · CONTACT CARDS — academic glow: lift 4px, cyan border glow,
+     subtle brighten (icon scales via group-hover in the component). */
+  .contact-card {
+    @apply transition-all duration-300 ease-out;
+  }
+  .contact-card:hover {
+    @apply -translate-y-1;
+    border-color: hsl(var(--cyan) / 0.5);
+    box-shadow:
+      0 0 0 1px hsl(var(--cyan) / 0.22),
+      0 14px 36px hsl(var(--cyan) / 0.14);
+  }
+
+  /* 9 · ABOUT KEYWORDS — research tag: gradient underline, soft glow,
+     slight lift, accent border. */
+  .research-tag {
+    @apply relative transition-all duration-300 ease-out;
+  }
+  .research-tag::after {
+    content: "";
+    @apply pointer-events-none absolute -bottom-px left-3 right-3 h-px origin-center scale-x-0 rounded-full transition-transform duration-300;
+    background: linear-gradient(90deg, hsl(var(--cyan)), hsl(var(--indigo)));
+  }
+  .research-tag:hover {
+    @apply -translate-y-0.5;
+    border-color: hsl(var(--cyan) / 0.45);
+    box-shadow: 0 6px 18px hsl(var(--indigo) / 0.12);
+  }
+  .research-tag:hover::after {
+    @apply scale-x-100;
+  }
+
+  /* 10 · TIMELINE NODES — pulse + glow ring when the row is hovered.
+     The inner dot scales via group-hover in the component (the node
+     itself is translated on md, so we don't transform it here). */
+  .timeline-node {
+    @apply relative transition-transform duration-300 ease-out;
+  }
+  .timeline-node::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0 rounded-full opacity-0;
+  }
+  .group:hover .timeline-node::after {
+    @apply opacity-100;
+    animation: node-pulse 1.6s ease-out infinite;
+  }
+
+  /* 11 · SOCIAL ICONS — lift, accent gradient fill, micro-rotation, glow. */
+  .social-pop {
+    @apply transition-all duration-300 ease-out;
+  }
+  .social-pop:hover {
+    @apply border-transparent text-white;
+    transform: translateY(-2px) rotate(-3deg) scale(1.06);
+    background: linear-gradient(135deg, hsl(var(--cyan)), hsl(var(--indigo)));
+    box-shadow: 0 10px 24px hsl(var(--indigo) / 0.32);
+  }
+
+  /* General-purpose hover utilities retained for use across the site. */
+  .hover-rainbow {
+    @apply relative transition-all duration-300;
+    border: 1px solid transparent;
+    background:
+      linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+      var(--rainbow) border-box;
+    background-size: 100% 100%, 200% 100%;
+  }
+  .hover-rainbow:hover {
+    @apply -translate-y-0.5 shadow-lift;
+    animation: rainbow-pan 3s linear infinite;
+  }
+  .hover-gradient-text {
+    @apply bg-clip-text transition-colors duration-300;
+    background-image: none;
+  }
+  .hover-gradient-text:hover {
+    @apply text-transparent;
+    background-image: var(--rainbow);
+    background-size: 200% auto;
+    animation: rainbow-pan 3s linear infinite;
+  }
+  .link-underline {
+    @apply relative inline-block;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-0.5 left-0 h-px w-0 transition-all duration-300;
+    background: var(--rainbow);
+    background-size: 200% 100%;
+  }
+  .link-underline:hover::after {
+    @apply w-full;
+    animation: rainbow-pan 3s linear infinite;
+  }
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  .hover-glow:hover {
+    filter: drop-shadow(0 0 6px hsl(var(--cyan) / 0.6))
+      drop-shadow(0 0 12px hsl(var(--teal) / 0.35));
+    transform: translateY(-1px);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue via-cyan to-emerald bg-clip-text text-transparent;
+  }
+
+  .bg-science-grid {
+    background-image: var(--tw-bg-grid, none);
+    background-size: 44px 44px;
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 78%);
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 78%);
+  }
+
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .prose-academic {
+    @apply text-[1.02rem] leading-relaxed text-foreground/85;
+  }
+  .prose-academic h2 {
+    @apply heading-display mt-10 mb-3 text-2xl;
+  }
+  .prose-academic h3 {
+    @apply heading-display mt-7 mb-2 text-xl;
+  }
+  .prose-academic p {
+    @apply mb-4;
+  }
+  .prose-academic a {
+    @apply text-blue underline decoration-cyan/40 underline-offset-2 hover:decoration-cyan;
+  }
+  .prose-academic ul {
+    @apply mb-4 ml-5 list-disc space-y-1.5 marker:text-cyan;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    --tw-bg-grid: linear-gradient(
+        to right,
+        hsl(var(--border) / 0.6) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, hsl(var(--border) / 0.6) 1px, transparent 1px);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* ---- Keyframes for the interaction system ---- */
+
+/* Slides a gradient so the accent colours appear to flow. */
+@keyframes rainbow-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Scrolls the faint DNA / data-stream text up behind project cards.
+   The track holds two copies of the text, so -50% loops seamlessly. */
+@keyframes data-stream-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* One-shot sequencing scan line that sweeps across a publication card. */
+@keyframes scan-sweep {
+  0% {
+    transform: translateX(-130%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(330%);
+    opacity: 0;
+  }
+}
+
+/* Expanding accent ring that pulses out of a timeline node. */
+@keyframes node-pulse {
+  0% {
+    box-shadow: 0 0 0 0 hsl(var(--cyan) / 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 12px hsl(var(--cyan) / 0);
+  }
+}
+
+/* Print styles — used when saving the CV page as a PDF */
+@media print {
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .surface {
+    box-shadow: none !important;
+    border-color: #ddd !important;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+}

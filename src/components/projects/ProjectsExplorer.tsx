@@ -1,0 +1,53 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { projects, projectDomains, type ProjectDomain } from "@/data/projects";
+import { ProjectCard } from "./ProjectCard";
+import { Reveal } from "@/components/ui/Reveal";
+import { cn } from "@/lib/utils";
+
+type Filter = ProjectDomain | "All";
+
+const filters: Filter[] = ["All", ...projectDomains];
+
+export function ProjectsExplorer() {
+  const [filter, setFilter] = useState<Filter>("All");
+
+  const filtered = useMemo(
+    () =>
+      filter === "All"
+        ? projects
+        : projects.filter((p) => p.domain === filter),
+    [filter],
+  );
+
+  return (
+    <div>
+      <div className="flex flex-wrap gap-2">
+        {filters.map((f) => (
+          <button
+            key={f}
+            type="button"
+            onClick={() => setFilter(f)}
+            className={cn(
+              "focus-ring rounded-full border px-4 py-1.5 text-xs font-medium transition-colors",
+              filter === f
+                ? "border-navy bg-navy text-white"
+                : "border-border bg-card text-muted-foreground hover:border-cyan/50 hover:text-foreground",
+            )}
+          >
+            {f}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((project, i) => (
+          <Reveal key={project.id} delay={(i % 3) * 0.05}>
+            <ProjectCard project={project} />
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  );
+}

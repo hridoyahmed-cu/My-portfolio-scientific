@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "biopc-services",
+      "runtimeExecutable": "C:/Users/WALTON/AppData/Local/Temp/claude/D--DESKTOP-ALL-My-portfolio-scientific/62468d29-8293-4b63-86ca-ad7a93ed0341/scratchpad/run-biopc.cmd",
+      "runtimeArgs": [],
+      "port": 3200
+    }
+  ]
+}
