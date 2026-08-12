@@ -30,7 +30,7 @@ export const siteConfig = {
     researchgate: "https://www.researchgate.net/profile/Md-Hridoy-Ahmed/research",
     linkedin: "https://www.linkedin.com/in/hridoy-ahmed-msc/",
     googleScholar: "https://scholar.google.com/citations?user=UavZgJMAAAAJ&hl=en",
-    github: "https://github.com/",
+    github: "https://github.com/hridoyahmed-cu",
     blog: "https://lifehackerblog.home.blog/",
   },
 } as const;
