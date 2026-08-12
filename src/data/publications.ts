@@ -26,6 +26,33 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
+    id: "breast-cancer-risk-variants-2026",
+    title:
+      "From Association to Mechanism: Regulatory Annotation and Pathway Mapping of Genes Surrounding Breast Cancer Risk Variants",
+    authors:
+      "Sultana Jannat, Trina Mitra, Nafisa Nawar Fariha, Tasmia Tabassum, Kulsuma Bahar Bethi, Synchita Majumder Kaya, Md. Arif Hossen, Md. Saad Hossain, Jobaier Ibne Deen, Mohammed Emon, Laila Khaleda, Md. Hridoy Ahmed",
+    authorHighlight: "Md. Hridoy Ahmed",
+    journal: "Computational and Systems Oncology",
+    year: 2026,
+    volume: "6",
+    pages: "e70024",
+    publisher: "Wiley",
+    type: "Research Article",
+    domain: "Cancer Genomics & Regulatory Annotation",
+    tier: "Q3",
+    status: "Published",
+    doi: "10.1002/cso2.70024",
+    url: "https://onlinelibrary.wiley.com/doi/10.1002/cso2.70024",
+    pdf: "/Breast-Cancer-Risk-Variants-2026.pdf",
+    researchgate: "https://www.researchgate.net/profile/Md-Hridoy-Ahmed/research",
+    highlights: [
+      "Corresponding-author study published open access in Computational and Systems Oncology (Wiley), 2026.",
+      "Examined 175 breast cancer risk variants confirmed by genome-wide association studies and the genes flanking each locus.",
+      "Mapped the risk genes onto androgen receptor, Wnt/β-catenin, and Hedgehog signaling pathways central to mammary biology.",
+      "Annotated correlated variants with HaploReg, finding a 4.8-fold excess of DNase I hypersensitivity and a 15.7-fold excess of enhancer motifs.",
+    ],
+  },
+  {
     id: "molecular-pharming-2026",
     title:
       "Molecular Pharming: Advances, Applications, and Future Prospects in Biotechnology and Medicine",

@@ -14,8 +14,8 @@ export function PublicationHighlights() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
             eyebrow="Publication Highlights"
-            title="Peer-reviewed, first-author research"
-            description="Three first-author articles, including two in Q1 journals and a Wiley review, each validated across rigorous methods."
+            title="Peer-reviewed research"
+            description="Four peer-reviewed articles, three as first author and one as corresponding author. The set spans two Q1 journals and two Wiley titles, each validated across rigorous computational methods."
           />
           <Reveal>
             <Link

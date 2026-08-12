@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Publications",
   alternates: { canonical: "/publications/" },
   description:
-    "Peer-reviewed, first-author publications by Md. Hridoy Ahmed in Q1 journals, with DOIs, PDFs, and citation details.",
+    "Peer-reviewed publications by Md. Hridoy Ahmed as first and corresponding author, with DOIs, PDFs, and citation details.",
 };
 
 export default function PublicationsPage() {
