@@ -39,7 +39,7 @@ export const publications: Publication[] = [
     publisher: "Wiley",
     type: "Research Article",
     domain: "Cancer Genomics & Regulatory Annotation",
-    tier: "Q3",
+    tier: "Q2",
     status: "Published",
     doi: "10.1002/cso2.70024",
     url: "https://onlinelibrary.wiley.com/doi/10.1002/cso2.70024",
