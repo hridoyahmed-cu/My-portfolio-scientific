@@ -146,10 +146,10 @@ export function Hero() {
                 {/* Headshot lives at /public/portrait.jpg — swap it in place and bump ASSET_VERSION. */}
                 <img
                   src={withAssetVersion("/portrait.jpg")}
-                  alt="Md. Hridoy Ahmed outside the Department of Genetic Engineering and Biotechnology, University of Chittagong"
+                  alt="Portrait of Md. Hridoy Ahmed, researcher in molecular genetics and computational biology"
                   className="aspect-[4/5] w-full object-cover"
-                  width={1080}
-                  height={1350}
+                  width={1122}
+                  height={1402}
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/85 to-transparent p-5">
                   <p className="font-display text-lg font-semibold text-white">
