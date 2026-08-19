@@ -4,6 +4,7 @@ import { Counter } from "@/components/ui/Counter";
 import { Icon } from "@/components/ui/icon";
 import { metrics } from "@/data/metrics";
 import { siteConfig } from "@/lib/site";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 export function Metrics() {
   const profiles = [
@@ -69,6 +70,12 @@ export function Metrics() {
             </a>
           ))}
         </Reveal>
+        <SectionCta
+          href="/publications"
+          label="View the full publication record"
+          onDark
+        />
+
       </div>
     </section>
   );

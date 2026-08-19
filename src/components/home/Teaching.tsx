@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Counter } from "@/components/ui/Counter";
 import { biopc, teachingAreas } from "@/data/teaching";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 /** Split a display value like "3,000+" or "~5" into prefix / number / suffix. */
 function parseStat(value: string) {
@@ -39,15 +39,6 @@ export function Teaching() {
             ))}
           </ul>
 
-          <Reveal delay={0.1}>
-            <Link
-              href="/teaching"
-              className="link-underline mt-8 inline-flex items-center gap-1.5 font-medium text-blue"
-            >
-              See teaching & community work
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Reveal>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -78,6 +69,13 @@ export function Teaching() {
             );
           })}
         </div>
+        <SectionCta
+          href="/teaching"
+          label="See teaching & community work"
+          secondaryHref="/media"
+          secondaryLabel="Media & outreach"
+        />
+
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/icon";
 import { researchInterests } from "@/data/research";
 import { cn } from "@/lib/utils";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 const accentMap: Record<string, string> = {
   blue: "text-blue bg-blue/10 group-hover:bg-blue/15",
@@ -47,6 +48,8 @@ export function ResearchInterests() {
             </Reveal>
           ))}
         </div>
+        <SectionCta href="/research" label="Explore all research areas" />
+
       </div>
     </section>
   );

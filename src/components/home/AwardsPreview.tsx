@@ -1,10 +1,9 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/icon";
 import { majorHonors } from "@/data/awards";
 import { cn } from "@/lib/utils";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 const accentMap: Record<string, string> = {
   blue: "text-blue bg-blue/10",
@@ -22,15 +21,6 @@ export function AwardsPreview() {
           title="Recognition for research and leadership"
           description="National fellowships, conference honours, and academic distinctions earned across the journey."
         />
-        <Reveal>
-          <Link
-            href="/awards"
-            className="link-underline inline-flex items-center gap-1.5 font-medium text-blue"
-          >
-            All awards & competitions
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </Reveal>
       </div>
 
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -62,6 +52,13 @@ export function AwardsPreview() {
           </Reveal>
         ))}
       </div>
+      <SectionCta
+        href="/awards"
+        label="All awards & honours"
+        secondaryHref="/conferences"
+        secondaryLabel="Conference presentations"
+      />
+
     </section>
   );
 }

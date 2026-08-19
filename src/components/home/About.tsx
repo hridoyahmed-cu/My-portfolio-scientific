@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   ArrowRight,
   Atom,
@@ -13,6 +12,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Counter } from "@/components/ui/Counter";
 import { education, researchExperience } from "@/data/profile";
 import { metrics } from "@/data/metrics";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 /** Concise, scannable positioning — full story lives on the /about page. */
 const shortBio: string[] = [
@@ -70,15 +70,6 @@ export function About() {
             ))}
           </div>
 
-          <Reveal delay={0.1}>
-            <Link
-              href="/about"
-              className="link-underline mt-8 inline-flex items-center gap-1.5 font-medium text-blue"
-            >
-              Read the full biography
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Reveal>
 
           {/* Quick stats — count up on scroll, staggered into view */}
           <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-border pt-8">
@@ -148,6 +139,8 @@ export function About() {
           </Reveal>
         </div>
       </div>
+      <SectionCta href="/about" label="Read the full biography" />
+
     </section>
   );
 }

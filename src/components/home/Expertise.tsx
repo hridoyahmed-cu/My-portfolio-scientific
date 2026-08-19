@@ -2,6 +2,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { RadialSkill } from "@/components/ui/RadialSkill";
 import { expertiseAreas } from "@/data/research";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 export function Expertise() {
   return (
@@ -25,6 +26,8 @@ export function Expertise() {
           </Reveal>
         ))}
       </div>
+      <SectionCta href="/research" label="See the full skill profile" />
+
     </section>
   );
 }

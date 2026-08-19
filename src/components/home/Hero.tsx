@@ -29,10 +29,10 @@ export function Hero() {
       {/* 3D backdrop */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
-        <div className="absolute inset-0 opacity-70 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]">
+        <div className="absolute inset-0 opacity-100 [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_88%)]">
           <DNAHero />
         </div>
-        <div className="absolute inset-0 bg-grid bg-science-grid opacity-30" aria-hidden />
+        <div className="absolute inset-0 bg-grid bg-science-grid opacity-20" aria-hidden />
         <div className="absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-blue/10 blur-3xl" aria-hidden />
         <div className="absolute -right-24 top-10 h-72 w-72 rounded-full bg-emerald/10 blur-3xl" aria-hidden />
       </div>

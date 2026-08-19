@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight, Images } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { galleryItems } from "@/data/gallery";
 import { withBasePath } from "@/lib/utils";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 /** Featured subset shown in the homepage slideshow. */
 const slides = galleryItems.slice(0, 20);
@@ -63,16 +63,6 @@ export function GalleryHighlights() {
             title="A glimpse of the journey"
             description="Conferences, award ceremonies, BioPC workshops, and life in the laboratory and on campus."
           />
-          <Reveal>
-            <Link
-              href="/gallery"
-              className="btn-shift focus-ring group inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white"
-            >
-              <Images className="h-4 w-4" />
-              View Full Gallery
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Reveal>
         </div>
 
         <Reveal className="mt-10">
@@ -171,6 +161,8 @@ export function GalleryHighlights() {
         <p className="sr-only" aria-live="polite">
           Slide {index + 1} of {count}
         </p>
+        <SectionCta href="/gallery" label="View the full gallery" />
+
       </div>
     </section>
   );

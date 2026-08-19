@@ -75,9 +75,18 @@
   }
 
   html {
+    /* Base type scale. Everything else is rem-based, so raising this lifts
+       body copy, headings, and spacing together. */
+    font-size: 17px;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px;
+    }
   }
 
   body {

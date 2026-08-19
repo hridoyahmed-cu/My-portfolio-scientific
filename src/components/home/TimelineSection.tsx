@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Timeline } from "@/components/Timeline";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 export function TimelineSection() {
   return (
@@ -15,6 +16,8 @@ export function TimelineSection() {
           align="center"
         />
         <Timeline />
+        <SectionCta href="/about" label="Read the full academic profile" />
+
       </div>
     </section>
   );

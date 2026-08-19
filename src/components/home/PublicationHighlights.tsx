@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { PublicationsExplorer } from "@/components/publications/PublicationsExplorer";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 export function PublicationHighlights() {
   return (
@@ -17,20 +16,13 @@ export function PublicationHighlights() {
             title="Peer-reviewed research"
             description="Four peer-reviewed articles, three as first author and one as corresponding author. Two appeared in Q1 journals (Elsevier and Taylor & Francis) and two in Wiley titles, each validated across rigorous computational methods."
           />
-          <Reveal>
-            <Link
-              href="/publications"
-              className="link-underline inline-flex items-center gap-1.5 font-medium text-blue"
-            >
-              All publications
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Reveal>
         </div>
 
         <Reveal className="mt-10" delay={0.05}>
           <PublicationsExplorer />
         </Reveal>
+        <SectionCta href="/publications" label="View all publications" />
+
       </div>
     </section>
   );

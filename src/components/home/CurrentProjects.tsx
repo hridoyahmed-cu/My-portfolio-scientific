@@ -1,9 +1,8 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { projects, projectSummary } from "@/data/projects";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 const featuredIds = [
   "chikv-drug-design",
@@ -27,15 +26,6 @@ export function CurrentProjects() {
           title="Research in motion"
           description={projectSummary.statement}
         />
-        <Reveal>
-          <Link
-            href="/projects"
-            className="link-underline inline-flex items-center gap-1.5 font-medium text-blue"
-          >
-            Explore all projects
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </Reveal>
       </div>
 
       <div className="mt-8 flex flex-wrap gap-3">
@@ -58,6 +48,8 @@ export function CurrentProjects() {
           </Reveal>
         ))}
       </div>
+      <SectionCta href="/projects" label="Explore all projects" />
+
     </section>
   );
 }

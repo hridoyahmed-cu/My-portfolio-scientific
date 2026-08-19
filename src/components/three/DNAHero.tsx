@@ -28,7 +28,7 @@ export function DNAHero() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
-    camera.position.set(0, 0, 22);
+    camera.position.set(0, 0, 17);
 
     const setSize = () => {
       const w = mount.clientWidth;
@@ -67,7 +67,7 @@ export function DNAHero() {
     group.add(helix);
 
     const steps = 44;
-    const radius = 4.2;
+    const radius = 5.2;
     const verticalSpan = 26;
     const turns = 3;
     const sphereGeo = new THREE.SphereGeometry(0.32, 16, 16);
@@ -110,7 +110,7 @@ export function DNAHero() {
     const rungMat = new THREE.LineBasicMaterial({
       color: blue,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.75,
     });
     const rungs = new THREE.LineSegments(rungGeo, rungMat);
     helix.add(rungs);
@@ -133,9 +133,9 @@ export function DNAHero() {
     const pGeo = new THREE.BufferGeometry().setFromPoints(points);
     const pMat = new THREE.PointsMaterial({
       color: cyan,
-      size: 0.16,
+      size: 0.26,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.95,
     });
     net.add(new THREE.Points(pGeo, pMat));
 
@@ -162,7 +162,7 @@ export function DNAHero() {
     const linkMat = new THREE.LineBasicMaterial({
       color: blue,
       transparent: true,
-      opacity: 0.18,
+      opacity: 0.32,
     });
     net.add(new THREE.LineSegments(linkGeo, linkMat));
 
@@ -180,11 +180,11 @@ export function DNAHero() {
 
     const render = () => {
       const elapsed = clock.getElapsedTime();
-      helix.rotation.y = elapsed * 0.28;
+      helix.rotation.y = elapsed * 0.36;
       net.rotation.y = elapsed * 0.05;
       net.rotation.x = elapsed * 0.02;
-      group.rotation.x += (pointer.y * 0.18 - group.rotation.x) * 0.05;
-      group.rotation.z += (pointer.x * 0.12 - group.rotation.z) * 0.05;
+      group.rotation.x += (pointer.y * 0.3 - group.rotation.x) * 0.05;
+      group.rotation.z += (pointer.x * 0.2 - group.rotation.z) * 0.05;
       renderer.render(scene, camera);
     };
 

@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/icon";
 import { writingThemes } from "@/data/blog";
+import { SectionCta } from "@/components/ui/SectionCta";
 
 export function FeaturedArticles() {
   return (
@@ -14,15 +14,6 @@ export function FeaturedArticles() {
           title="Writing & science communication"
           description="Beyond the journals, I write to make bioinformatics approachable and to guide students into research."
         />
-        <Reveal>
-          <Link
-            href="/blog"
-            className="link-underline inline-flex items-center gap-1.5 font-medium text-blue"
-          >
-            Visit the blog
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </Reveal>
       </div>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -53,6 +44,13 @@ export function FeaturedArticles() {
           </Reveal>
         ))}
       </div>
+      <SectionCta
+        href="/blog"
+        label="Visit the blog"
+        secondaryHref="/resources"
+        secondaryLabel="Browse resources"
+      />
+
     </section>
   );
 }
