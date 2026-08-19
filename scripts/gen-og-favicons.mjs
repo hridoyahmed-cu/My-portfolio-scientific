@@ -7,7 +7,7 @@ const pub = (p) => path.join(root, "public", p);
 // Masters live outside public/ so they are never shipped to visitors.
 const asset = (p) => path.join(root, "assets", p);
 
-const SRC = asset("avatar.original.png"); // 1024x1024 master
+const SRC = asset("avatar.original.png"); // square head-and-shoulders master, cropped from portrait.original.jpg
 
 // ---- Brand palette (matches globals.css dark theme) ----
 const C = {
@@ -87,7 +87,20 @@ async function buildOg() {
   console.log("wrote public/og.png (1200x630)");
 }
 
-// ---------- 2) Favicons (circular, from avatar) ----------
+// ---------- 2) Site avatar (navbar, footer, contact card) ----------
+// Square, not circular: the components round it with CSS, so a transparent
+// mask baked in here would show through their borders.
+async function buildAvatar() {
+  // Palette-quantised: it ships on every page, and at 256px the 256-colour
+  // reduction is invisible while cutting the file to roughly a third.
+  await sharp(SRC)
+    .resize(256, 256, { fit: "cover" })
+    .png({ compressionLevel: 9, palette: true, quality: 90 })
+    .toFile(pub("avatar.png"));
+  console.log("wrote public/avatar.png (256x256)");
+}
+
+// ---------- 3) Favicons (circular, from avatar) ----------
 async function buildFavicon(size, name) {
   const mask = Buffer.from(
     `<svg width="${size}" height="${size}"><circle cx="${size / 2}" cy="${size / 2}" r="${size / 2}" fill="#fff"/></svg>`,
@@ -101,6 +114,7 @@ async function buildFavicon(size, name) {
 }
 
 await buildOg();
+await buildAvatar();
 await buildFavicon(32, "favicon-32.png");
 await buildFavicon(192, "favicon-192.png");
 // apple-touch-icon is shown on a rounded tile already — keep it square (no transparent corners)
