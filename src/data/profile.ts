@@ -28,7 +28,7 @@ export const intro = {
 export const biography: string[] = [
   "I completed both my B.Sc. and M.Sc. in Genetic Engineering and Biotechnology at the University of Chittagong, finishing among the top ranks of my cohort. Those years gave me a firm grounding in molecular biology, functional genomics, and bioinformatics, and they shaped a lasting interest in translational genomics.",
   "My research moves across several connected areas. I have profiled matrix metalloproteinase gene variants in periodontitis and diabetes, pursued antiviral drug discovery against the Chikungunya virus RdRp, and designed immunoinformatics-based vaccine candidates for the Mpox virus. To date I have published three first-author articles, two of them in Q1 journals and a Wiley review on molecular pharming, each carefully validated rather than rushed.",
-  "Beyond my own projects, I founded BioPC, a research and training community that has supported more than a thousand learners across several countries. Through it I have mentored students, led collaborative research, and run hands-on bioinformatics workshops and national olympiads.",
+  "Beyond my own projects, I founded BioPC, a research and training community that has supported more than three thousand learners across several countries. Through it I have mentored students, led collaborative research, and run hands-on bioinformatics workshops and national olympiads.",
 ];
 
 export const mission = {
@@ -46,8 +46,8 @@ export const education: EducationEntry[] = [
     field: "Genetic Engineering & Biotechnology",
     institution: "University of Chittagong",
     period: "2023 – 2025",
-    result: "First Class, · CGPA 3.94 / 4.00",
-    highlight: "First Class, CGPA 3.94 / 4.00",
+    result: "First Class, 2nd Position · CGPA 3.94 / 4.00",
+    highlight: "First Class, 2nd Position · CGPA 3.94 / 4.00",
     details: [
       "Thesis: Molecular Mechanisms of Apical Periodontitis Influenced by Diabetes via MMP-1, MMP-3 and MMP-9 Variant Analysis.",
       "Techniques: DNA extraction and quantification, PCR/qPCR, Sanger sequencing, whole-exome sequencing QC, and variant annotation.",
@@ -58,8 +58,8 @@ export const education: EducationEntry[] = [
     field: "Genetic Engineering & Biotechnology",
     institution: "University of Chittagong",
     period: "2019 – 2023",
-    result: "First Class, · CGPA 3.89 / 4.00",
-    highlight: "First Class, CGPA 3.89 / 4.00",
+    result: "First Class, 4th Position · CGPA 3.89 / 4.00",
+    highlight: "First Class, 4th Position · CGPA 3.89 / 4.00",
     details: [
       "Maintained first class standing across every academic year.",
       "Key coursework: Molecular Biology, Genetics, Genomics, Microbiology, Immunology, Recombinant DNA Technology, Cell Signalling, Bioinformatics, and Clinical Biotechnology.",

@@ -34,7 +34,7 @@ export function Metrics() {
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-white/70">
             Figures drawn from peer-reviewed work, research projects, and a
-            community of more than a thousand trained learners.
+            community of more than three thousand trained learners.
           </p>
         </Reveal>
 

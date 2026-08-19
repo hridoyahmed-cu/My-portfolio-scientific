@@ -29,7 +29,7 @@ export default function MediaPage() {
         <div className="grid gap-4 sm:grid-cols-3">
           {[
             { icon: Mic, value: `${talks.length}`, label: "Invited & contributed talks" },
-            { icon: Users, value: "1,000+", label: "Learners reached through BioPC" },
+            { icon: Users, value: "3,000+", label: "Learners reached through BioPC" },
             { icon: Radio, value: "2", label: "National olympiads organised" },
           ].map((s, i) => (
             <Reveal key={s.label} delay={i * 0.06}>

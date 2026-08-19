@@ -11,7 +11,9 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next build",
-    "serve": "npx serve@latest out"
+    "serve": "npx serve@latest out",
+    "optimize:gallery": "node scripts/optimize-gallery.mjs",
+    "gen:icons": "node scripts/gen-og-favicons.mjs"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^5.2.8",

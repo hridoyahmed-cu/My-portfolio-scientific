@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Teaching & Mentorship",
   alternates: { canonical: "/teaching/" },
   description:
-    "BioPC — a national bioinformatics training community founded by Md. Hridoy Ahmed, with 1,000+ learners across 15 programmes.",
+    "BioPC — a national bioinformatics training community founded by Md. Hridoy Ahmed, with 3,000+ learners across 25 programmes.",
 };
 
 export default function TeachingPage() {

@@ -4,8 +4,10 @@ import path from "node:path";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const pub = (p) => path.join(root, "public", p);
+// Masters live outside public/ so they are never shipped to visitors.
+const asset = (p) => path.join(root, "assets", p);
 
-const SRC = pub("avatar.original.png"); // 1024x1024 master
+const SRC = asset("avatar.original.png"); // 1024x1024 master
 
 // ---- Brand palette (matches globals.css dark theme) ----
 const C = {

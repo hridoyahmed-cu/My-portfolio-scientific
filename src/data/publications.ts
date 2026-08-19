@@ -18,7 +18,8 @@ export type Publication = {
   tier: string;
   status?: string;
   doi?: string;
-  url: string;
+  /** Omitted while a paper is in press and has no article page yet. */
+  url?: string;
   pdf?: string;
   researchgate?: string;
   highlights: string[];
@@ -65,12 +66,11 @@ export const publications: Publication[] = [
     type: "Review Article",
     domain: "Plant Biotechnology & Molecular Pharming",
     tier: "Q2",
-    status: "Accepted",
-    url: "https://onlinelibrary.wiley.com/journal/16182863",
+    status: "In press",
     pdf: "/Molecular-Pharming-Review.pdf",
     researchgate: "https://www.researchgate.net/profile/Md-Hridoy-Ahmed/research",
     highlights: [
-      "First-author, corresponding-author review accepted in Engineering in Life Sciences (Wiley), February 2026.",
+      "First-author, corresponding-author review accepted in Engineering in Life Sciences (Wiley), February 2026; article page and DOI to follow on final publication.",
       "Traces the evolution of molecular pharming and plant-based production of recombinant proteins, vaccines, and industrial enzymes.",
       "Surveys host organisms, genetic-engineering methods (including CRISPR/Cas9), and protein extraction and purification strategies.",
       "Weighs advantages against challenges of public perception, regulation, and economic sustainability, and maps future directions.",

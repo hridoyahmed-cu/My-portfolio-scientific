@@ -12,7 +12,7 @@ export const biopc = {
     { value: "3", label: "Q1 articles from the community" },
   ],
   highlights: [
-    "Instructed 15 training programmes as chief trainer for more than 1,000 students.",
+    "Instructed 25 training programmes as chief trainer for more than 3,000 students.",
     "Organised two nationwide virtual bioinformatics olympiads and roughly five workshops.",
     "Led six research projects involving 40 trainees.",
     "Mentored contributors toward two Q1 journal publications.",

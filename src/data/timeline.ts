@@ -28,7 +28,17 @@ export const timeline: TimelineEntry[] = [
     icon: "BookOpen",
   },
   {
-    period: "2024 – Present",
+    period: "2025 – Present",
+    sortYear: 2025,
+    title: "Research Associate",
+    place: "Functional Genomics & Proteomics Laboratory, University of Chittagong",
+    description:
+      "Continuing disease-associated variant research at FGPL, extending the MMP variant work into wider NGS and precision-genomics pipelines.",
+    kind: "Research",
+    icon: "Microscope",
+  },
+  {
+    period: "2024 – 2025",
     sortYear: 2024,
     title: "Thesis Researcher",
     place: "Functional Genomics & Proteomics Laboratory, University of Chittagong",
@@ -93,7 +103,7 @@ export const timeline: TimelineEntry[] = [
     title: "Founder & Chief Trainer, BioPC",
     place: "Bioinformatics Lab of Research and Training",
     description:
-      "Built one of Bangladesh's largest bioinformatics communities, training 1,000+ learners across 15 programmes and two national olympiads.",
+      "Built one of Bangladesh's largest bioinformatics communities, training 3,000+ learners across 25 programmes and two national olympiads.",
     kind: "Leadership",
     icon: "Users",
   },

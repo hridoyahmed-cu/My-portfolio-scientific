@@ -143,33 +143,14 @@ export function Hero() {
           <div className="animate-float-slow">
             <div className="relative rounded-[1.9rem] bg-gradient-to-br from-cyan/60 via-indigo/50 to-purple/60 p-[2px] shadow-lift">
               <div className="relative overflow-hidden rounded-[1.8rem] border border-border bg-card">
-                {/* Replace /portrait.jpg in /public with your headshot (same name) */}
-                {reduce ? (
-  // Respect "reduce motion" OS setting — show the still instead.
-  <img
-    src={withAssetVersion("/portrait.jpg")}
-    alt="Portrait of Md. Hridoy Ahmed"
-    className="aspect-[4/5] w-full object-cover"
-    width={480}
-    height={600}
-  />
-) : (
-  <video
-    poster={withAssetVersion("/portrait.jpg")}
-    autoPlay
-    loop
-    muted
-    playsInline
-    aria-label="Portrait of Md. Hridoy Ahmed"
-    className="aspect-[4/5] w-full object-cover"
-    width={480}
-    height={600}
-  >
-    {/* webm (VP9, smaller) preferred; mp4 is the fallback for browsers without VP9 */}
-    <source src={withAssetVersion("/portrait.webm")} type="video/webm" />
-    <source src={withAssetVersion("/portrait.mp4")} type="video/mp4" />
-  </video>
-)}
+                {/* Headshot lives at /public/portrait.jpg — swap it in place and bump ASSET_VERSION. */}
+                <img
+                  src={withAssetVersion("/portrait.jpg")}
+                  alt="Md. Hridoy Ahmed outside the Department of Genetic Engineering and Biotechnology, University of Chittagong"
+                  className="aspect-[4/5] w-full object-cover"
+                  width={1080}
+                  height={1350}
+                />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/85 to-transparent p-5">
                   <p className="font-display text-lg font-semibold text-white">
                     Md. Hridoy Ahmed
@@ -183,8 +164,8 @@ export function Hero() {
           </div>
 
           <div className="absolute -left-6 top-8 hidden rounded-xl border border-border bg-card/90 px-4 py-2.5 shadow-soft backdrop-blur sm:block">
-            <p className="font-display text-xl font-bold text-foreground">Q1</p>
-            <p className="text-[11px] text-muted-foreground">Publications</p>
+            <p className="font-display text-xl font-bold text-foreground">2 Q1</p>
+            <p className="text-[11px] text-muted-foreground">of 4 publications</p>
           </div>
           <div className="absolute -right-5 bottom-24 hidden rounded-xl border border-border bg-card/90 px-4 py-2.5 shadow-soft backdrop-blur sm:block">
             <p className="font-display text-xl font-bold text-foreground">3,000+</p>

@@ -35,7 +35,7 @@ export const writingThemes: WritingTheme[] = [
   {
     title: "Notes from the Lab and the Terminal",
     description:
-      "Reflections on training a thousand learners through BioPC, and on the everyday craft of careful science.",
+      "Reflections on training three thousand learners through BioPC, and on the everyday craft of careful science.",
     tag: "Reflections",
     icon: "NotebookPen",
     url: blogUrl,

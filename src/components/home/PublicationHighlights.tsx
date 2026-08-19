@@ -15,7 +15,7 @@ export function PublicationHighlights() {
           <SectionHeading
             eyebrow="Publication Highlights"
             title="Peer-reviewed research"
-            description="Four peer-reviewed articles, three as first author and one as corresponding author. The set spans two Q1 journals and two Wiley titles, each validated across rigorous computational methods."
+            description="Four peer-reviewed articles, three as first author and one as corresponding author. Two appeared in Q1 journals (Elsevier and Taylor & Francis) and two in Wiley titles, each validated across rigorous computational methods."
           />
           <Reveal>
             <Link

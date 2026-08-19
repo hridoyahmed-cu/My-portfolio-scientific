@@ -21,7 +21,6 @@ export default function HomePage() {
       <ResearchInterests />
       <Expertise />
       <PublicationHighlights />
-      <GalleryHighlights />
       <Metrics />
       <CurrentProjects />
       <TimelineSection />
@@ -29,6 +28,7 @@ export default function HomePage() {
       <Teaching />
       <FeaturedArticles />
       <Testimonials />
+      <GalleryHighlights />
       <Contact />
     </>
   );

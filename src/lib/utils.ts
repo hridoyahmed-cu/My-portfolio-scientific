@@ -24,7 +24,7 @@ export function withBasePath(path: string): string {
  * fetch the new file. Bump it (→ "3", "4", …) every time you replace one of
  * those assets, then rebuild + redeploy.
  */
-export const ASSET_VERSION = "2";
+export const ASSET_VERSION = "3";
 
 /**
  * Like withBasePath, but appends ?v=<ASSET_VERSION> so an in-place asset swap

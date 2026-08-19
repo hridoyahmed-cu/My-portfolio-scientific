@@ -20,6 +20,7 @@ export function PublicationCard({ pub }: { pub: Publication }) {
       <div className="flex flex-wrap items-center gap-2">
         <Badge accent="gold">{pub.tier} Journal</Badge>
         <Badge accent="cyan">{pub.type}</Badge>
+        {pub.status ? <Badge accent="gold">{pub.status}</Badge> : null}
         <span className="ml-auto font-plex text-sm text-muted-foreground">
           {pub.year}
         </span>
@@ -49,14 +50,16 @@ export function PublicationCard({ pub }: { pub: Publication }) {
       </ul>
 
       <div className="mt-5 flex flex-wrap items-center gap-2 pt-1">
-        <a
-          href={pub.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="focus-ring inline-flex items-center gap-1.5 rounded-full bg-navy px-3.5 py-1.5 text-xs font-semibold text-white transition-transform hover:-translate-y-0.5"
-        >
-          <Quote className="h-3.5 w-3.5" /> View article
-        </a>
+        {pub.url ? (
+          <a
+            href={pub.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-ring inline-flex items-center gap-1.5 rounded-full bg-navy px-3.5 py-1.5 text-xs font-semibold text-white transition-transform hover:-translate-y-0.5"
+          >
+            <Quote className="h-3.5 w-3.5" /> View article
+          </a>
+        ) : null}
         {pub.doi ? (
           <a
             href={`https://doi.org/${pub.doi}`}

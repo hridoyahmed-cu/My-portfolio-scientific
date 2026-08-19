@@ -19,22 +19,24 @@ export type Project = {
 
 export type ProjectDomain =
   | "Genomics & Variant Analysis"
+  | "Microbial Genomics & AMR"
   | "Computational Drug Discovery"
   | "Immunoinformatics & Vaccine Design"
   | "Wet-Lab Research & Internships";
 
 export const projectSummary = {
   statement:
-    "My research spans four connected domains: genomics, computational drug discovery, immunoinformatics, and wet-lab experimental biology. I pair molecular techniques with computational workflows to investigate disease-associated variants, design therapeutic candidates, and build immunoinformatics-driven vaccines.",
+    "My research spans five connected domains: human genomics, microbial genomics and antimicrobial resistance, computational drug discovery, immunoinformatics, and wet-lab experimental biology. I pair molecular techniques with computational workflows to investigate disease-associated variants, track resistance across clones and plasmids, design therapeutic candidates, and build immunoinformatics-driven vaccines.",
   stats: [
-    { value: "12+", label: "Research projects" },
-    { value: "5+", label: "Major disease targets" },
-    { value: "4", label: "Interdisciplinary domains" },
+    { value: "15+", label: "Research projects" },
+    { value: "8+", label: "Major disease targets" },
+    { value: "5", label: "Interdisciplinary domains" },
   ],
 };
 
 export const projectDomains: ProjectDomain[] = [
   "Genomics & Variant Analysis",
+  "Microbial Genomics & AMR",
   "Computational Drug Discovery",
   "Immunoinformatics & Vaccine Design",
   "Wet-Lab Research & Internships",
@@ -242,5 +244,57 @@ export const projects: Project[] = [
       "Foundational work that led to the first-author CHIKV publication.",
     accent: "blue",
     icon: "Atom",
+  },
+  // Collaborative clinical-genomics and microbial-genomics studies (manuscripts in preparation)
+  {
+    id: "adpkd-panel-bangladesh",
+    title: "Targeted Panel Sequencing of Cystic Kidney Disease Genes in ADPKD",
+    domain: "Genomics & Variant Analysis",
+    status: "In preparation",
+    objective:
+      "Describe the first ADPKD variant spectrum reported from a Bangladeshi cohort across a nine-gene cystic kidney disease panel.",
+    methods: [
+      "Targeted sequencing of PKD1, PKD2, PKHD1 and six further cystic kidney genes in 37 patients and nine controls",
+      "Variant calling with GATK HaplotypeCaller, annotated against ClinVar and gnomAD v4",
+      "Call-set quality control by transition/transversion ratio, mapping quality, and reference-allele verification",
+    ],
+    result:
+      "Fourteen pathogenic or likely pathogenic variants across PKD1, PKD2 and PKHD1, with a candidate variant in 41% of patients; one ClinVar-listed variant shown to be a mapping artefact.",
+    accent: "blue",
+    icon: "Dna",
+  },
+  {
+    id: "pcos-common-rare-variants",
+    title: "Common and Rare Coding Variants in PCOS",
+    domain: "Genomics & Variant Analysis",
+    status: "In preparation",
+    objective:
+      "Test whether common polymorphisms and rare coding variants implicate the same reproductive and metabolic pathways in Bangladeshi women with PCOS.",
+    methods: [
+      "PCR and Sanger genotyping of five FSHR, INSR and SHBG polymorphisms in 300 patients and 300 matched controls",
+      "Whole-exome sequencing with GRCh38 alignment and GATK Best Practices variant calling",
+      "Rare-variant prioritisation, protein stability prediction, and pathway enrichment analysis",
+    ],
+    result:
+      "All five polymorphisms associated with PCOS, and rare damaging variants converged on gonadotropin, insulin, and androgen signalling.",
+    accent: "cyan",
+    icon: "HeartPulse",
+  },
+  {
+    id: "esbl-ecoli-genomic-epidemiology",
+    title: "Clone- and Plasmid-Structured Resistance in ESBL-Producing E. coli",
+    domain: "Microbial Genomics & AMR",
+    status: "In preparation",
+    objective:
+      "Determine whether antimicrobial resistance in Bangladeshi ESBL E. coli is structured by geography or by clone and plasmid.",
+    methods: [
+      "Whole-genome analysis of 38 ESBL-producing isolates from Barishal, Chattogram and Dhaka",
+      "In silico MLST with a Prokka-Panaroo-IQ-TREE core-genome phylogeny and pan-genome modelling",
+      "MOB-suite plasmid reconstruction, mobile-element profiling, and Mash comparison against global genomes",
+    ],
+    result:
+      "Seventeen sequence types resolved: a homogeneous CTX-M-15/ST131 background countrywide, with a focal, Dhaka-centred carbapenemase signal on international high-risk clones.",
+    accent: "emerald",
+    icon: "ShieldCheck",
   },
 ];
