@@ -19,7 +19,7 @@ export function RadialSkill({ label, value, icon, note }: RadialSkillProps) {
   const [progress, setProgress] = useState(0);
 
   const size = 132;
-  const stroke = 9;
+  const stroke = 12;
   const radius = (size - stroke) / 2;
   const circumference = 2 * Math.PI * radius;
 

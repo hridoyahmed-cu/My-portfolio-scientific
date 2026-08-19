@@ -5,6 +5,7 @@ import { Icon } from "@/components/ui/icon";
 import { majorHonors } from "@/data/awards";
 import { presentations } from "@/data/presentations";
 import { cn } from "@/lib/utils";
+import { accentCard, accentGlow, asAccent } from "@/lib/accents";
 
 export const metadata: Metadata = {
   title: "Awards & Honours",
@@ -38,11 +39,17 @@ export default function AwardsPage() {
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {majorHonors.map((award, i) => (
             <Reveal key={award.title} delay={(i % 3) * 0.06}>
-              <div className="surface surface-hover flex h-full gap-4 p-6">
+              <div
+                className={cn(
+                  "surface surface-hover flex h-full gap-4 p-6 transition-all duration-300",
+                  accentCard[asAccent(award.accent)],
+                )}
+              >
                 <span
                   className={cn(
                     "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl",
                     accentMap[award.accent],
+                    accentGlow[asAccent(award.accent)],
                   )}
                 >
                   <Icon name={award.icon} className="h-5 w-5" aria-hidden />

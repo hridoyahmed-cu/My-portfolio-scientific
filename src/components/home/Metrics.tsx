@@ -27,7 +27,7 @@ export function Metrics() {
       <div className="container relative">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="eyebrow text-cyan">
-            <span className="h-px w-6 bg-cyan" aria-hidden />
+            <span className="h-0.5 w-8 rounded-full bg-cyan" aria-hidden />
             Research Metrics
           </span>
           <h2 className="heading-display mt-3 text-3xl text-white sm:text-4xl">

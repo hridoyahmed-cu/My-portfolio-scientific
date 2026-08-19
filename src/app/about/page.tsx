@@ -143,7 +143,7 @@ export default function AboutPage() {
           <CvSection id="education" title="Education">
             <ul className="space-y-6">
               {education.map((edu) => (
-                <li key={edu.degree} className="border-l-2 border-cyan/40 pl-4">
+                <li key={edu.degree} className="border-l-[3px] border-cyan/60 pl-4">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <p className="font-semibold text-foreground">
                       {edu.degree} — {edu.field}
@@ -167,7 +167,7 @@ export default function AboutPage() {
           <CvSection id="experience" title="Research Experience">
             <ul className="space-y-6">
               {researchExperience.map((exp, i) => (
-                <li key={`${exp.organisation}-${i}`} className="border-l-2 border-emerald/40 pl-4">
+                <li key={`${exp.organisation}-${i}`} className="border-l-[3px] border-emerald/60 pl-4">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <p className="font-semibold text-foreground">{exp.role}, {exp.organisation}</p>
                     <span className="font-plex text-sm text-muted-foreground">{exp.period}</span>
@@ -223,7 +223,7 @@ export default function AboutPage() {
           <CvSection id="certifications" title="Certifications & Training">
             <ul className="space-y-4">
               {certifications.map((c) => (
-                <li key={c.title} className="border-l-2 border-blue/40 pl-4">
+                <li key={c.title} className="border-l-[3px] border-blue/60 pl-4">
                   <p className="font-semibold text-foreground">{c.title}</p>
                   <p className="text-sm text-muted-foreground">{c.provider}</p>
                   <p className="mt-1 text-sm text-foreground/80">{c.points.join(" · ")}</p>

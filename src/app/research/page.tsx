@@ -6,6 +6,7 @@ import { Icon } from "@/components/ui/icon";
 import { researchInterests, expertiseAreas } from "@/data/research";
 import { researchExperience } from "@/data/profile";
 import { cn } from "@/lib/utils";
+import { accentCard, accentGlow, asAccent } from "@/lib/accents";
 
 export const metadata: Metadata = {
   title: "Research",
@@ -36,11 +37,17 @@ export default function ResearchPage() {
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {researchInterests.map((interest, i) => (
             <Reveal key={interest.title} delay={(i % 4) * 0.05}>
-              <div className="surface surface-hover h-full p-6">
+              <div
+                className={cn(
+                  "surface surface-hover h-full p-6 transition-all duration-300",
+                  accentCard[asAccent(interest.accent)],
+                )}
+              >
                 <span
                   className={cn(
                     "inline-flex h-12 w-12 items-center justify-center rounded-xl",
                     accentMap[interest.accent],
+                    accentGlow[asAccent(interest.accent)],
                   )}
                 >
                   <Icon name={interest.icon} className="h-6 w-6" aria-hidden />

@@ -4,6 +4,7 @@ import { Icon } from "@/components/ui/icon";
 import { researchInterests } from "@/data/research";
 import { cn } from "@/lib/utils";
 import { SectionCta } from "@/components/ui/SectionCta";
+import { accentCard, accentGlow, asAccent } from "@/lib/accents";
 
 const accentMap: Record<string, string> = {
   blue: "text-blue bg-blue/10 group-hover:bg-blue/15",
@@ -29,11 +30,17 @@ export function ResearchInterests() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {researchInterests.map((interest, i) => (
             <Reveal key={interest.title} delay={(i % 4) * 0.06}>
-              <div className="surface surface-hover group h-full p-6">
+              <div
+                className={cn(
+                  "surface surface-hover group h-full p-6 transition-all duration-300",
+                  accentCard[asAccent(interest.accent)],
+                )}
+              >
                 <span
                   className={cn(
                     "inline-flex h-12 w-12 items-center justify-center rounded-xl transition-colors",
                     accentMap[interest.accent],
+                    accentGlow[asAccent(interest.accent)],
                   )}
                 >
                   <Icon name={interest.icon} className="h-6 w-6" aria-hidden />

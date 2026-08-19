@@ -95,7 +95,7 @@ export function About() {
                 {education.map((edu) => (
                   <li
                     key={edu.degree}
-                    className="border-l-2 border-cyan/40 pl-4"
+                    className="border-l-[3px] border-cyan/60 pl-4"
                   >
                     <p className="font-plex text-xs font-medium text-cyan">
                       {edu.period}

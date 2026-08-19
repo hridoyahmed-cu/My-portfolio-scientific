@@ -144,8 +144,12 @@
     @apply font-display font-semibold tracking-tight text-foreground;
   }
 
+  /* Baseline card. The faint cyan ring gives every card on the site a defined
+     edge; accented cards (projects, awards, research, timeline) override it
+     with their own hue via src/lib/accents.ts. Ring and shadow compose rather
+     than conflict, because Tailwind builds both from the same box-shadow. */
   .surface {
-    @apply rounded-2xl border border-border bg-card shadow-soft;
+    @apply rounded-2xl border border-border bg-card shadow-soft ring-1 ring-cyan/10;
   }
 
   /* ============================================================

@@ -4,6 +4,7 @@ import { Icon } from "@/components/ui/icon";
 import { majorHonors } from "@/data/awards";
 import { cn } from "@/lib/utils";
 import { SectionCta } from "@/components/ui/SectionCta";
+import { accentCard, accentGlow, asAccent } from "@/lib/accents";
 
 const accentMap: Record<string, string> = {
   blue: "text-blue bg-blue/10",
@@ -26,11 +27,17 @@ export function AwardsPreview() {
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {majorHonors.map((award, i) => (
           <Reveal key={award.title} delay={(i % 3) * 0.06}>
-            <div className="surface surface-hover flex h-full gap-4 p-5">
+            <div
+              className={cn(
+                "surface surface-hover flex h-full gap-4 p-5 transition-all duration-300",
+                accentCard[asAccent(award.accent)],
+              )}
+            >
               <span
                 className={cn(
                   "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl",
                   accentMap[award.accent],
+                  accentGlow[asAccent(award.accent)],
                 )}
               >
                 <Icon name={award.icon} className="h-5 w-5" aria-hidden />

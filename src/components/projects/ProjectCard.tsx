@@ -2,6 +2,7 @@ import type { Project, ProjectStatus } from "@/data/projects";
 import { Badge } from "@/components/ui/Badge";
 import { Icon } from "@/components/ui/icon";
 import { cn } from "@/lib/utils";
+import { accentCard, accentGlow, asAccent } from "@/lib/accents";
 
 const accentRing: Record<Project["accent"], string> = {
   blue: "text-blue bg-blue/10",
@@ -31,7 +32,12 @@ const dataStream = [
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="surface card-dna group relative flex h-full flex-col overflow-hidden p-6">
+    <article
+      className={cn(
+        "surface card-dna group relative flex h-full flex-col overflow-hidden p-6 transition-all duration-300",
+        accentCard[asAccent(project.accent)],
+      )}
+    >
       {/* Decorative data stream (hover only, very faint) */}
       <div className="data-stream" aria-hidden>
         <div className="data-stream-track">
@@ -47,6 +53,7 @@ export function ProjectCard({ project }: { project: Project }) {
             className={cn(
               "inline-flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-105",
               accentRing[project.accent],
+              accentGlow[asAccent(project.accent)],
             )}
           >
             <Icon name={project.icon} className="h-5 w-5" aria-hidden />

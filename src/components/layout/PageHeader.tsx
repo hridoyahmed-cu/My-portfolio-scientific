@@ -21,7 +21,7 @@ export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
       <div className="container relative py-16 sm:py-20">
         <Reveal>
           <span className="eyebrow">
-            <span className="h-px w-6 bg-cyan" aria-hidden />
+            <span className="h-0.5 w-8 rounded-full bg-cyan" aria-hidden />
             {eyebrow}
           </span>
           <h1 className="heading-display mt-4 text-balance text-4xl sm:text-5xl">

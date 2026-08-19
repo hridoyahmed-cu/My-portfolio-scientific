@@ -41,7 +41,7 @@ export function PublicationCard({ pub }: { pub: Publication }) {
         {pub.publisher ? ` · ${pub.publisher}` : ""}
       </p>
 
-      <ul className="mt-4 space-y-1.5 border-l-2 border-cyan/30 pl-4">
+      <ul className="mt-4 space-y-1.5 border-l-[3px] border-cyan/50 pl-4">
         {pub.highlights.map((h) => (
           <li key={h} className="text-sm leading-relaxed text-muted-foreground">
             {h}
