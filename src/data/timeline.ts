@@ -28,6 +28,16 @@ export const timeline: TimelineEntry[] = [
     icon: "BookOpen",
   },
   {
+    period: "2026",
+    sortYear: 2026,
+    title: "Three collaborative genomics manuscripts in preparation",
+    place: "FGPL & Department of Genetic Engineering and Biotechnology, University of Chittagong",
+    description:
+      "Co-author on ADPKD panel sequencing, PCOS common and rare variant analysis, and genomic epidemiology of ESBL-producing E. coli.",
+    kind: "Research",
+    icon: "Microscope",
+  },
+  {
     period: "2025 – Present",
     sortYear: 2025,
     title: "Research Associate",

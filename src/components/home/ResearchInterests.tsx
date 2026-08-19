@@ -21,7 +21,7 @@ export function ResearchInterests() {
         <SectionHeading
           eyebrow="Research Interests"
           title="Where my curiosity concentrates"
-          description="Eight connected areas, from the wet bench to the simulation, that together shape how I read disease and design responses to it."
+          description="Nine connected areas, from the wet bench to the simulation, that together shape how I read disease and design responses to it."
           align="center"
         />
 

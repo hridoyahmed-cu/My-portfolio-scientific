@@ -69,6 +69,13 @@ export const researchInterests: ResearchInterest[] = [
       "Linking population-level genetic variation to individual disease risk and therapy.",
     accent: "gold",
   },
+  {
+    title: "Antimicrobial Resistance & Genomic Epidemiology",
+    icon: "ShieldCheck",
+    description:
+      "Bacterial whole-genome surveillance, tracking resistance across clones, plasmids, and regions.",
+    accent: "emerald",
+  },
 ];
 
 /** Used by the radial expertise charts on the homepage. */

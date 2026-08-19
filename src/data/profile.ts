@@ -28,6 +28,7 @@ export const intro = {
 export const biography: string[] = [
   "I completed both my B.Sc. and M.Sc. in Genetic Engineering and Biotechnology at the University of Chittagong, finishing among the top ranks of my cohort. Those years gave me a firm grounding in molecular biology, functional genomics, and bioinformatics, and they shaped a lasting interest in translational genomics.",
   "My research moves across several connected areas. I have profiled matrix metalloproteinase gene variants in periodontitis and diabetes, pursued antiviral drug discovery against the Chikungunya virus RdRp, and designed immunoinformatics-based vaccine candidates for the Mpox virus. To date I have published three first-author articles, two of them in Q1 journals and a Wiley review on molecular pharming, each carefully validated rather than rushed.",
+  "Alongside my own first-author work I collaborate on clinical and microbial genomics studies at the University of Chittagong. Three manuscripts are in preparation: the first ADPKD variant spectrum reported from a Bangladeshi cohort, a combined Sanger and whole-exome study of polycystic ovary syndrome, and a genomic-epidemiology survey of ESBL-producing Escherichia coli across three regions of the country.",
   "Beyond my own projects, I founded BioPC, a research and training community that has supported more than three thousand learners across several countries. Through it I have mentored students, led collaborative research, and run hands-on bioinformatics workshops and national olympiads.",
 ];
 
@@ -77,6 +78,8 @@ export const researchExperience: ExperienceEntry[] = [
       "Variant analysis across diabetes, cardiovascular disease, chronic kidney disease, PCOS, and periodontitis.",
     points: [
       "Disease-associated variant discovery and interpretation.",
+      "Targeted panel and whole-exome sequencing for inherited kidney disease and PCOS cohorts.",
+      "Bacterial whole-genome surveillance: MLST, core-genome phylogenomics, and plasmid mobility typing.",
       "PCR and qPCR, Sanger sequencing, and gel electrophoresis.",
       "NGS data analysis with GATK, Hisat2, BWA, VCFtools, and SAMtools.",
     ],

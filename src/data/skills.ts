@@ -70,10 +70,21 @@ export const skillGroups: SkillGroup[] = [
       {
         heading: "NGS & Variant Analysis",
         items: [
-          "GATK, Hisat2, BWA",
+          "GATK (Best Practices, HaplotypeCaller), Hisat2, BWA",
           "SAMtools, VCFtools, SnpEff",
           "FastQC, Trimmomatic",
+          "ClinVar & gnomAD annotation, rare-variant prioritisation",
           "Whole-genome assembly, genome annotation, RNA-seq, GWAS",
+        ],
+      },
+      {
+        heading: "Microbial & Population Genomics",
+        items: [
+          "SPAdes assembly with QUAST quality assessment",
+          "Prokka annotation, Panaroo pan-genome, IQ-TREE phylogenomics",
+          "In silico MLST and Mash genome-distance comparison",
+          "ABRicate with ResFinder & CARD, PlasmidFinder, MOB-suite mobility typing",
+          "Snippy SNP calling and IntegronFinder mobile-element profiling",
         ],
       },
     ],
