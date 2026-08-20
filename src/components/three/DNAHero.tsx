@@ -71,8 +71,16 @@ export function DNAHero() {
     const verticalSpan = 26;
     const turns = 3;
     const sphereGeo = new THREE.SphereGeometry(0.32, 16, 16);
-    const matA = new THREE.MeshBasicMaterial({ color: cyan });
-    const matB = new THREE.MeshBasicMaterial({ color: emerald });
+    const matA = new THREE.MeshBasicMaterial({
+      color: cyan,
+      transparent: true,
+      opacity: 0.7,
+    });
+    const matB = new THREE.MeshBasicMaterial({
+      color: emerald,
+      transparent: true,
+      opacity: 0.7,
+    });
 
     const strandA = new THREE.InstancedMesh(sphereGeo, matA, steps);
     const strandB = new THREE.InstancedMesh(sphereGeo, matB, steps);
@@ -135,7 +143,7 @@ export function DNAHero() {
       color: cyan,
       size: 0.26,
       transparent: true,
-      opacity: 0.95,
+      opacity: 0.8,
     });
     net.add(new THREE.Points(pGeo, pMat));
 

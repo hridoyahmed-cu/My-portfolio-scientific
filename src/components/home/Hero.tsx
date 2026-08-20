@@ -29,7 +29,7 @@ export function Hero() {
       {/* 3D backdrop */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
-        <div className="absolute inset-0 opacity-100 [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_88%)]">
+        <div className="absolute inset-0 opacity-[0.22] dark:opacity-[0.28] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_82%)]">
           <DNAHero />
         </div>
         <div className="absolute inset-0 bg-grid bg-science-grid opacity-20" aria-hidden />

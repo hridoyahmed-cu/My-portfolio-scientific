@@ -81,17 +81,17 @@ export function Navbar() {
                 {group.children ? (
                   <div
                     className={cn(
-                      "invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200",
+                      "invisible absolute left-0 top-full z-50 w-60 pt-2 opacity-0 transition-all duration-200",
                       "group-hover/nav:visible group-hover/nav:opacity-100",
                       "group-focus-within/nav:visible group-focus-within/nav:opacity-100",
                     )}
                   >
-                    <ul className="overflow-hidden rounded-xl border border-border bg-background/97 p-1.5 shadow-lift backdrop-blur-md">
+                    <ul className="overflow-hidden rounded-xl border border-border bg-background p-1.5 shadow-lift">
                       {group.children.map((child) => (
                         <li key={child.href}>
                           <Link
                             href={child.href}
-                            className="focus-ring block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                            className="focus-ring block rounded-lg px-3 py-2 text-sm text-foreground/75 transition-colors hover:bg-muted hover:text-foreground"
                           >
                             {child.label}
                           </Link>
