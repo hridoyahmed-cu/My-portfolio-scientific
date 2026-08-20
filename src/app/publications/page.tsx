@@ -7,6 +7,7 @@ import { Icon } from "@/components/ui/icon";
 import { manuscriptsInPreparation } from "@/data/publications";
 import { researchMetrics } from "@/data/metrics";
 import { siteConfig } from "@/lib/site";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Publications",
@@ -25,7 +26,7 @@ export default function PublicationsPage() {
       />
 
       {/* Research record - kept apart from outreach figures, which live on /teaching. */}
-      <section className="border-b border-border bg-card/30 py-10">
+      <section className="bg-card/30 py-10">
         <div className="container grid grid-cols-2 gap-6 sm:grid-cols-4">
           {researchMetrics.map((m) => (
             <div key={m.label}>
@@ -41,6 +42,8 @@ export default function PublicationsPage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       <section className="container py-16">
         <h2 className="heading-display text-2xl">Published</h2>
         <div className="mt-8">
@@ -48,10 +51,12 @@ export default function PublicationsPage() {
         </div>
       </section>
 
+      <SectionDivider flip />
+
       {/* Manuscripts in preparation - where the bench work is documented. */}
       <section
         id="in-preparation"
-        className="scroll-mt-24 border-y border-border bg-card/30 py-16"
+        className="scroll-mt-24 bg-card/30 py-16"
       >
         <div className="container">
           <div className="flex flex-wrap items-center gap-3">
@@ -118,6 +123,8 @@ export default function PublicationsPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       <section className="container py-16">
 

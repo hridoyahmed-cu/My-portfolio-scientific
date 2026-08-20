@@ -7,6 +7,7 @@ import { Techniques } from "@/components/home/Techniques";
 import { TimelineSection } from "@/components/home/TimelineSection";
 import { Teaching } from "@/components/home/Teaching";
 import { Contact } from "@/components/home/Contact";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 /**
  * Homepage order follows one rule: the closer something is to the research
@@ -28,13 +29,21 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <SectionDivider />
       <About />
+      <SectionDivider flip />
       <ResearchProgramme />
+      <SectionDivider />
       <BenchWork />
+      <SectionDivider flip />
       <PublicationHighlights />
+      <SectionDivider />
       <Techniques />
+      <SectionDivider flip />
       <TimelineSection />
+      <SectionDivider />
       <Teaching />
+      <SectionDivider flip />
       <Contact />
     </>
   );

@@ -27,7 +27,7 @@ export function ResearchProgramme() {
   return (
     <section
       id="research"
-      className="relative scroll-mt-24 border-y border-border bg-card/30 py-24"
+      className="relative scroll-mt-24 bg-card/30 py-24"
     >
       <div className="container">
         <SectionHeading

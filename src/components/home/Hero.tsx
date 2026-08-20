@@ -5,16 +5,8 @@ import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { SocialLinks } from "@/components/layout/SocialLinks";
-import { TypedHeadline, type HeadlineSegment } from "./TypedHeadline";
+import { TypedText } from "./TypedText";
 import { withAssetVersion } from "@/lib/utils";
-
-/* Title Case throughout, with the two accent words carrying the gradient. */
-const headline: HeadlineSegment[] = [
-  { text: "Reading Disease In The " },
-  { text: "Genome", gradient: true },
-  { text: ", Starting At The " },
-  { text: "Bench", gradient: true },
-];
 
 // Three.js renders only on the client.
 const DNAHero = dynamic(() => import("@/components/three/DNAHero"), {
@@ -59,20 +51,25 @@ export function Hero() {
             Open to PhD positions & research collaborations
           </motion.span>
 
-          <motion.div variants={item}>
-            <TypedHeadline
-              segments={headline}
-              className="heading-display mt-6 text-justify text-4xl leading-[1.05] sm:text-5xl lg:text-6xl"
-            />
-          </motion.div>
+          <motion.h1
+            variants={item}
+            className="heading-display mt-6 text-justify text-4xl leading-[1.05] sm:text-5xl lg:text-6xl"
+          >
+            Reading Disease In The{" "}
+            <span className="text-gradient">Genome</span>, Starting At The{" "}
+            <span className="text-gradient">Bench</span>
+          </motion.h1>
 
           <motion.p
             variants={item}
             className="mt-6 max-w-xl text-justify text-lg leading-relaxed text-muted-foreground"
           >
             I am{" "}
-            <strong className="text-gradient font-display text-2xl font-bold tracking-tight sm:text-[1.7rem]">
-              Md. Hridoy Ahmed
+            <strong className="font-normal">
+              <TypedText
+                text="Md. Hridoy Ahmed"
+                className="text-gradient font-display text-2xl font-bold tracking-tight sm:text-[1.7rem]"
+              />
             </strong>
             , a molecular geneticist working on the genetic basis of complex
             disease. I generate my own data - extraction, PCR, Sanger

@@ -10,6 +10,7 @@ import { certifications } from "@/data/skills";
 import { benchProjects } from "@/data/projects";
 import { labGalleryItems } from "@/data/gallery";
 import { withBasePath } from "@/lib/utils";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Laboratory Techniques",
@@ -50,8 +51,10 @@ export default function TechniquesPage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Bench techniques */}
-      <section className="border-t border-border bg-card/30 py-16">
+      <section className="bg-card/30 py-16">
         <div className="container">
           <div className="flex flex-wrap items-center gap-3">
             <h2 className="heading-display text-2xl">Wet-lab techniques</h2>
@@ -72,8 +75,10 @@ export default function TechniquesPage() {
         </div>
       </section>
 
+      <SectionDivider flip />
+
       {/* Where the techniques were applied */}
-      <section className="border-y border-border py-16">
+      <section className="py-16">
         <div className="container">
           <h2 className="heading-display text-2xl">Where these were applied</h2>
           <p className="mt-2 max-w-3xl text-muted-foreground">
@@ -107,6 +112,8 @@ export default function TechniquesPage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Analysis stack */}
       <section className="container py-16">
         <h2 className="heading-display text-2xl">Sequencing analysis & computation</h2>
@@ -118,8 +125,10 @@ export default function TechniquesPage() {
         </div>
       </section>
 
+      <SectionDivider flip />
+
       {/* Training & certification */}
-      <section className="border-t border-border bg-card/30 py-16">
+      <section className="bg-card/30 py-16">
         <div className="container">
           <h2 className="heading-display text-2xl">Training & certification</h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -147,6 +156,8 @@ export default function TechniquesPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* Laboratory photographs - populated by tagging gallery items "Lab & Bench" */}
       {labGalleryItems.length > 0 ? (

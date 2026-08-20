@@ -6,6 +6,7 @@ import { majorHonors } from "@/data/awards";
 import { presentations } from "@/data/presentations";
 import { cn } from "@/lib/utils";
 import { accentCard, accentGlow, asAccent } from "@/lib/accents";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Awards & Honours",
@@ -73,7 +74,9 @@ export default function AwardsPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-card/30 py-16">
+      <SectionDivider />
+
+      <section className="bg-card/30 py-16">
         <div className="container">
           <h2 className="heading-display text-2xl">
             Poster presentations & competitions

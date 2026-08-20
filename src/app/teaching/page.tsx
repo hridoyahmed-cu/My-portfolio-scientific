@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { biopc, programmes, teachingAreas } from "@/data/teaching";
 import { outreachMetrics } from "@/data/metrics";
 import { Icon } from "@/components/ui/icon";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Teaching & Mentorship",
@@ -24,7 +25,7 @@ export default function TeachingPage() {
 
       {/* Outreach record - kept here rather than mixed into the research
           figures on /publications, where the community numbers dwarfed them. */}
-      <section className="border-b border-border bg-card/30 py-10">
+      <section className="bg-card/30 py-10">
         <div className="container grid grid-cols-3 gap-6">
           {outreachMetrics.map((m) => (
             <div key={m.label} className="flex items-start gap-3">
@@ -42,6 +43,8 @@ export default function TeachingPage() {
           ))}
         </div>
       </section>
+
+      <SectionDivider />
 
       <section className="container py-16">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">

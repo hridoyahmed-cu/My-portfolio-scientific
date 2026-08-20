@@ -10,6 +10,7 @@ import { researchExperience } from "@/data/profile";
 import { researchField } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { accentCard, accentGlow, asAccent } from "@/lib/accents";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export const metadata: Metadata = {
   title: "Research Programme",
@@ -148,8 +149,10 @@ export default function ResearchPage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Methods - supporting capability, not a parallel programme */}
-      <section className="border-y border-border bg-card/30 py-16">
+      <section className="bg-card/30 py-16">
         <div className="container">
           <h2 className="heading-display text-2xl">Methods</h2>
           <p className="mt-2 max-w-3xl text-muted-foreground">
@@ -191,6 +194,8 @@ export default function ResearchPage() {
           </Reveal>
         </div>
       </section>
+
+      <SectionDivider flip />
 
       {/* Experience */}
       <section className="container py-16">

@@ -7,7 +7,7 @@ export function PublicationHighlights() {
   return (
     <section
       id="publications"
-      className="relative scroll-mt-24 border-y border-border bg-card/30 py-24"
+      className="relative scroll-mt-24 bg-card/30 py-24"
     >
       <div className="container">
         <div className="flex flex-wrap items-end justify-between gap-6">
