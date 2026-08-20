@@ -1,17 +1,16 @@
 import Link from "next/link";
-import { footerNav, navItems } from "@/data/nav";
+import { footerGroups } from "@/data/nav";
 import { siteConfig } from "@/lib/site";
 import { withAssetVersion } from "@/lib/utils";
 import { SocialLinks } from "./SocialLinks";
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const links = [...navItems, ...footerNav];
 
   return (
     <footer className="border-t border-border bg-card/40">
       <div className="container py-14">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.1fr_1.9fr]">
           <div className="max-w-md">
             <Link href="/" className="flex items-center gap-2.5">
               <span className="inline-flex h-9 w-9 overflow-hidden rounded-full border border-border">
@@ -29,22 +28,29 @@ export function Footer() {
             <SocialLinks className="mt-6" />
           </div>
 
+          {/* Grouped to mirror the header, so the two never drift apart. */}
           <nav aria-label="Footer">
-            <h2 className="font-plex text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-              Explore
-            </h2>
-            <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5">
-              {links.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-cyan"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {footerGroups.map((group) => (
+                <div key={group.title}>
+                  <h2 className="font-plex text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    {group.title}
+                  </h2>
+                  <ul className="mt-4 space-y-2.5">
+                    {group.items.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className="text-sm text-muted-foreground transition-colors hover:text-cyan"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </nav>
         </div>
 

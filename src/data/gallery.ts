@@ -1,4 +1,32 @@
-export type GalleryItem = { src: string; alt: string };
+export type GalleryCategory =
+  | "Lab & Bench"
+  | "Conferences & Talks"
+  | "Teaching & BioPC"
+  | "Campus & Personal";
+
+export type GalleryItem = {
+  src: string;
+  alt: string;
+  /**
+   * Untagged items fall through to "Campus & Personal" and sort last.
+   *
+   * Tagging is manual on purpose — only you can tell which of these frames show
+   * bench work. Add `category: "Lab & Bench"` to the laboratory photographs
+   * first; those are the ones that carry evidence, and they will move to the
+   * front of the grid automatically. Replace the generated alt text with a real
+   * caption at the same time ("Agarose gel, MMP3 amplicons, thesis cohort"
+   * rather than "academic, research, and community moments (37)").
+   */
+  category?: GalleryCategory;
+};
+
+/** Display order: bench work first, personal photographs last. */
+export const galleryCategories: GalleryCategory[] = [
+  "Lab & Bench",
+  "Conferences & Talks",
+  "Teaching & BioPC",
+  "Campus & Personal",
+];
 
 /* 178 photographs imported from the personal collection and optimised for
    the web (HEIC converted to JPG, auto-rotated via EXIF, resized to a
@@ -185,3 +213,24 @@ export const galleryItems: GalleryItem[] = [
   { src: "/gallery/g176.webp", alt: "Md. Hridoy Ahmed — academic, research, and community moments (176)" },
   { src: "/gallery/g177.webp", alt: "Md. Hridoy Ahmed — academic, research, and community moments (177)" },
 ];
+
+const categoryRank = (item: GalleryItem) => {
+  const idx = galleryCategories.indexOf(item.category ?? "Campus & Personal");
+  return idx === -1 ? galleryCategories.length : idx;
+};
+
+/**
+ * The gallery in display order — laboratory frames first.
+ *
+ * Until items are tagged this is a stable no-op over the existing order, so
+ * nothing changes visually. Tag one photograph "Lab & Bench" and it moves to
+ * the front on the next build.
+ */
+export const orderedGalleryItems: GalleryItem[] = [...galleryItems].sort(
+  (a, b) => categoryRank(a) - categoryRank(b),
+);
+
+/** Laboratory photographs, for the techniques page. */
+export const labGalleryItems: GalleryItem[] = galleryItems.filter(
+  (i) => i.category === "Lab & Bench",
+);

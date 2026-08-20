@@ -4,9 +4,17 @@ export type ResourceLink = {
   description: string;
 };
 
+export type ResourceTier = "research" | "students";
+
 export type ResourceCategory = {
   title: string;
   icon: string;
+  /**
+   * "research" categories are field tools and stay on the research spine.
+   * "students" categories are the mentorship material — genuinely useful, but
+   * off-field, so they sit below the research tools rather than beside them.
+   */
+  tier: ResourceTier;
   links: ResourceLink[];
 };
 
@@ -17,6 +25,7 @@ export type ResourceCategory = {
 export const resourceCategories: ResourceCategory[] = [
   {
     title: "Molecular Biology Tools",
+    tier: "research",
     icon: "Microscope",
     links: [
       { name: "Primer-BLAST", url: "https://www.ncbi.nlm.nih.gov/tools/primer-blast", description: "Designs PCR primers while checking specificity, combining Primer3 with NCBI BLAST." },
@@ -29,6 +38,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     title: "IELTS Resources",
+    tier: "students",
     icon: "BookOpen",
     links: [
       { name: "IELTS Official", url: "https://www.ielts.org", description: "Official source for IELTS information, sample tests, and registration details." },
@@ -39,6 +49,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     title: "Free Courses",
+    tier: "students",
     icon: "GraduationCap",
     links: [
       { name: "Coursera", url: "https://www.coursera.org", description: "University-level courses from top institutions worldwide; many can be audited free." },
@@ -49,6 +60,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     title: "PhD Scholarships, SOP & CV",
+    tier: "students",
     icon: "Award",
     links: [
       { name: "FindAPhD", url: "https://www.findaphd.com", description: "Largest database of PhD opportunities worldwide, including funded positions and scholarships." },
@@ -60,6 +72,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     title: "AI Tools for Research & Education",
+    tier: "students",
     icon: "Cpu",
     links: [
       { name: "ChatGPT", url: "https://chatgpt.com", description: "AI assistant for writing, coding, brainstorming, and research support." },
@@ -73,6 +86,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     title: "Explore at Least Once in a Lifetime",
+    tier: "students",
     icon: "Compass",
     links: [
       { name: "NASA Eyes", url: "https://eyes.nasa.gov", description: "Interactive visualisation of the solar system and space missions in real time." },
@@ -85,6 +99,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     title: "Basic Bioinformatics",
+    tier: "research",
     icon: "Dna",
     links: [
       { name: "NCBI BLAST", url: "https://blast.ncbi.nlm.nih.gov", description: "Sequence similarity search for identifying homologous DNA, RNA, and protein sequences. Essential for comparative genomics." },
@@ -99,6 +114,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     title: "Drug Design",
+    tier: "research",
     icon: "Pill",
     links: [
       { name: "AlphaFold Database", url: "https://alphafold.ebi.ac.uk", description: "AI-predicted protein structures for millions of proteins, transforming structural biology and target ID." },
@@ -113,6 +129,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     title: "Vaccine Design",
+    tier: "research",
     icon: "Syringe",
     links: [
       { name: "IEDB", url: "https://www.iedb.org", description: "Comprehensive immune epitope database and analysis resource, central to immunoinformatics." },
@@ -125,6 +142,7 @@ export const resourceCategories: ResourceCategory[] = [
   },
   {
     title: "High Throughput Data Analysis",
+    tier: "research",
     icon: "BarChart3",
     links: [
       { name: "Galaxy", url: "https://usegalaxy.org", description: "Web platform for reproducible analyses supporting NGS, RNA-seq, proteomics, and workflow automation." },
@@ -140,15 +158,55 @@ export const resourceCategories: ResourceCategory[] = [
 export const RESOURCE_FILTER_ALL = "All";
 
 /**
- * Derived list that powers the filter bar at the top of the Resources page.
- * It is generated from `resourceCategories` above (with an "All" option added
- * first), so reordering or editing the categories automatically updates the
- * filters — there is nothing else to keep in sync.
+ * Research tools first, student material second.
+ *
+ * Both stay on this page in full. The ordering is what changed: a visitor
+ * scanning for field tools no longer has to read past IELTS preparation to
+ * reach the sequence-analysis links.
  */
-export const resourceFilters: { title: string; icon: string }[] = [
+export const researchResources = resourceCategories.filter(
+  (c) => c.tier === "research",
+);
+
+export const studentResources = resourceCategories.filter(
+  (c) => c.tier === "students",
+);
+
+/** Canonical render order for the page. */
+export const orderedResourceCategories: ResourceCategory[] = [
+  ...researchResources,
+  ...studentResources,
+];
+
+export const resourceTierMeta: Record<
+  ResourceTier,
+  { id: string; title: string; description: string }
+> = {
+  research: {
+    id: "research-tools",
+    title: "Research toolbox",
+    description:
+      "The tools I actually use — bench planning, sequence analysis, structural work, and high-throughput data.",
+  },
+  students: {
+    id: "for-students",
+    title: "For students",
+    description:
+      "Material I point mentees toward: language testing, funded study, application writing, and general study resources.",
+  },
+};
+
+/**
+ * Derived list that powers the filter bar at the top of the Resources page.
+ * It is generated from `orderedResourceCategories` above (with an "All" option
+ * added first), so reordering or editing the categories automatically updates
+ * the filters — there is nothing else to keep in sync.
+ */
+export const resourceFilters: { title: string; icon: string; tier?: ResourceTier }[] = [
   { title: RESOURCE_FILTER_ALL, icon: "BookMarked" },
-  ...resourceCategories.map((category) => ({
+  ...orderedResourceCategories.map((category) => ({
     title: category.title,
     icon: category.icon,
+    tier: category.tier,
   })),
 ];

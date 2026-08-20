@@ -18,6 +18,7 @@ export function PublicationCard({ pub }: { pub: Publication }) {
   return (
     <article className="surface card-scan group flex h-full flex-col p-6">
       <div className="flex flex-wrap items-center gap-2">
+        <Badge accent="emerald">{pub.authorRole}</Badge>
         <Badge accent="gold">{pub.tier} Journal</Badge>
         <Badge accent="cyan">{pub.type}</Badge>
         {pub.status ? <Badge accent="gold">{pub.status}</Badge> : null}
@@ -40,6 +41,13 @@ export function PublicationCard({ pub }: { pub: Publication }) {
         {pub.pages ? `, ${pub.pages}` : ""}
         {pub.publisher ? ` · ${pub.publisher}` : ""}
       </p>
+
+      {pub.connection ? (
+        <p className="mt-4 rounded-lg border border-emerald/25 bg-emerald/5 px-3.5 py-2.5 text-sm leading-relaxed text-foreground/85">
+          <span className="font-semibold text-emerald">How this connects. </span>
+          {pub.connection}
+        </p>
+      ) : null}
 
       <ul className="mt-4 space-y-1.5 border-l-[3px] border-cyan/50 pl-4">
         {pub.highlights.map((h) => (

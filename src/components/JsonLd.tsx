@@ -13,7 +13,7 @@ export function JsonLd() {
     alternateName: "Hridoy Ahmed",
     url: siteConfig.url,
     email: `mailto:${siteConfig.email}`,
-    jobTitle: "Molecular Genetics & Computational Biology Researcher",
+    jobTitle: "Molecular Geneticist",
     description: siteConfig.tagline,
     identifier: {
       "@type": "PropertyValue",
@@ -28,14 +28,20 @@ export function JsonLd() {
       "@type": "CollegeOrUniversity",
       name: "University of Chittagong",
     },
+    /* Ordered field-first: the genetics terms lead, the method terms follow.
+       Search engines and scholarly indexes weight the earlier entries. */
     knowsAbout: [
+      "Human Molecular Genetics",
+      "Disease Variant Genomics",
+      "Clinical Variant Interpretation",
       "Molecular Biology",
+      "Sanger Sequencing",
+      "Whole-Exome Sequencing",
+      "Genomic Epidemiology",
+      "Antimicrobial Resistance",
       "Bioinformatics",
       "Computational Drug Discovery",
       "Immunoinformatics",
-      "Genomics",
-      "Variant Analysis",
-      "Vaccine Design",
     ],
     sameAs,
   };

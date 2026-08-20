@@ -34,8 +34,10 @@ import {
   Star,
   Syringe,
   Terminal,
+  TestTube,
   Trophy,
   Users,
+  Waves,
   type LucideProps,
 } from "lucide-react";
 
@@ -74,8 +76,10 @@ const registry = {
   Star,
   Syringe,
   Terminal,
+  TestTube,
   Trophy,
   Users,
+  Waves,
 } as const;
 
 export type IconName = keyof typeof registry;

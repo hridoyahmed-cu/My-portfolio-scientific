@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-import { navItems } from "@/data/nav";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { navGroups } from "@/data/nav";
 import { siteConfig } from "@/lib/site";
 import { cn, withAssetVersion } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
@@ -25,8 +25,11 @@ export function Navbar() {
     setOpen(false);
   }, [pathname]);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  /** A group is active when the current route is any of the routes it owns. */
+  const isGroupActive = (match: string[]) =>
+    match.some((href) =>
+      href === "/" ? pathname === "/" : pathname.startsWith(href),
+    );
 
   return (
     <header
@@ -52,24 +55,54 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — six groups, each opening on hover and focus. */}
         <ul className="hidden items-center gap-0.5 lg:flex">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                data-active={isActive(item.href)}
-                className={cn(
-                  "nav-link focus-ring rounded-md px-3 py-2 text-sm font-medium",
-                  isActive(item.href)
-                    ? "text-cyan"
-                    : "text-muted-foreground",
-                )}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          {navGroups.map((group) => {
+            const active = isGroupActive(group.match);
+            return (
+              <li key={group.href} className="group/nav relative">
+                <Link
+                  href={group.href}
+                  data-active={active}
+                  className={cn(
+                    "nav-link focus-ring inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium",
+                    active ? "text-cyan" : "text-muted-foreground",
+                  )}
+                >
+                  {group.label}
+                  {group.children ? (
+                    <ChevronDown
+                      className="h-3.5 w-3.5 transition-transform duration-200 group-hover/nav:rotate-180"
+                      aria-hidden
+                    />
+                  ) : null}
+                </Link>
+
+                {group.children ? (
+                  <div
+                    className={cn(
+                      "invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200",
+                      "group-hover/nav:visible group-hover/nav:opacity-100",
+                      "group-focus-within/nav:visible group-focus-within/nav:opacity-100",
+                    )}
+                  >
+                    <ul className="overflow-hidden rounded-xl border border-border bg-background/97 p-1.5 shadow-lift backdrop-blur-md">
+                      {group.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            className="focus-ring block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+              </li>
+            );
+          })}
         </ul>
 
         <div className="flex items-center gap-2">
@@ -86,29 +119,46 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — groups as headings, children indented beneath. */}
       <div
         className={cn(
-          "overflow-hidden border-t border-border bg-background/95 backdrop-blur-md transition-[max-height] duration-300 lg:hidden",
-          open ? "max-h-[28rem]" : "max-h-0 border-t-transparent",
+          "overflow-y-auto border-t border-border bg-background/95 backdrop-blur-md transition-[max-height] duration-300 lg:hidden",
+          open ? "max-h-[80vh]" : "max-h-0 border-t-transparent",
         )}
       >
-        <ul className="container grid grid-cols-2 gap-1 py-4">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={cn(
-                  "focus-ring block rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
-                  isActive(item.href)
-                    ? "bg-cyan/10 text-cyan"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
-                )}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
+        <ul className="container space-y-1 py-4">
+          {navGroups.map((group) => {
+            const active = isGroupActive(group.match);
+            return (
+              <li key={group.href}>
+                <Link
+                  href={group.href}
+                  className={cn(
+                    "focus-ring block rounded-md px-3 py-2.5 text-sm font-semibold transition-colors",
+                    active
+                      ? "bg-cyan/10 text-cyan"
+                      : "text-foreground hover:bg-muted",
+                  )}
+                >
+                  {group.label}
+                </Link>
+                {group.children ? (
+                  <ul className="mb-1 ml-3 border-l border-border pl-3">
+                    {group.children.map((child) => (
+                      <li key={child.href}>
+                        <Link
+                          href={child.href}
+                          className="focus-ring block rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </header>

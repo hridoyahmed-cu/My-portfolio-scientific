@@ -8,6 +8,13 @@ export type Publication = {
   title: string;
   authors: string;
   authorHighlight: string;
+  /**
+   * Authorship position, stated explicitly. Reviewers look for this first, and
+   * leaving it implicit in a long author string invites the wrong assumption.
+   */
+  authorRole: "First author" | "First & corresponding author" | "Corresponding author" | "Co-author";
+  /** How this paper connects to the current bench-led research programme. */
+  connection?: string;
   journal: string;
   year: number;
   volume?: string;
@@ -33,6 +40,9 @@ export const publications: Publication[] = [
     authors:
       "Sultana Jannat, Trina Mitra, Nafisa Nawar Fariha, Tasmia Tabassum, Kulsuma Bahar Bethi, Synchita Majumder Kaya, Md. Arif Hossen, Md. Saad Hossain, Jobaier Ibne Deen, Mohammed Emon, Laila Khaleda, Md. Hridoy Ahmed",
     authorHighlight: "Md. Hridoy Ahmed",
+    authorRole: "Corresponding author",
+    connection:
+      "Regulatory annotation of risk variants — the same interpretive step applied to the ADPKD and PCOS cohorts, here on breast cancer loci.",
     journal: "Computational and Systems Oncology",
     year: 2026,
     volume: "6",
@@ -60,6 +70,9 @@ export const publications: Publication[] = [
     authors:
       "Md. Hridoy Ahmed, Md. Mustak Khan, Shishir Dutta, Md. Foyzur Rahman, Mohammad Shariful Islam, Md. Najmul Hosen, Md. Saad Hossain, Md. Aftabur Rahman, Md. Sadman Hasan Sahil, Tanjuma Tasnim Hira, Ifthesum Ashikur Rahaman, Md. Afser Rabbi, Laila Khaleda",
     authorHighlight: "Md. Hridoy Ahmed",
+    authorRole: "First & corresponding author",
+    connection:
+      "A review of recombinant protein production in plants, written out of the molecular biology and expression work behind the bench programme.",
     journal: "Engineering in Life Sciences",
     year: 2026,
     publisher: "Wiley",
@@ -83,6 +96,9 @@ export const publications: Publication[] = [
     authors:
       "Md. Hridoy Ahmed, Gagandeep Singh, Melvin Castrosanto, Alomgir Hossain, Md. Morshedul Islam Rifat, Sadia Hosna Rima, Vandana Gupta, Rajesh K. Kesharwani, Mariusz Jaremko, Abdul-Hamid Emwas, et al.",
     authorHighlight: "Md. Hridoy Ahmed",
+    authorRole: "First author",
+    connection:
+      "Where the structural modelling and molecular dynamics methods were built — now applied to asking what disease variants do to protein structure.",
     journal: "Chemical Physics Impact",
     year: 2024,
     volume: "8",
@@ -110,6 +126,9 @@ export const publications: Publication[] = [
     authors:
       "Md. Hridoy Ahmed, Gagandeep Singh, Melvin Castrosanto, Prawez Alam, Faizul Azam, et al.",
     authorHighlight: "Md. Hridoy Ahmed",
+    authorRole: "First author",
+    connection:
+      "Proteome-wide screening and epitope prediction — the computational annotation skills that variant interpretation draws on.",
     journal: "Journal of Biomolecular Structure and Dynamics",
     year: 2023,
     volume: "42(10)",
@@ -136,4 +155,91 @@ export const publicationFilters: (PublicationType | "All")[] = [
   "Research Article",
   "Review Article",
   "Conference Paper",
+];
+
+/* ------------------------------------------------------------------ *
+ * Manuscripts in preparation
+ *
+ * These are the bench-led cohort studies that define the current research
+ * programme. They were previously visible only as project cards, which left
+ * the publication page looking entirely computational and made the wet-lab
+ * claim elsewhere on the site look unsupported. Listing work in preparation is
+ * standard practice on an academic page, provided the status is explicit.
+ * ------------------------------------------------------------------ */
+
+export type Manuscript = {
+  id: string;
+  title: string;
+  authorRole: Publication["authorRole"];
+  /** Explicit, unambiguous status. Never presented as published. */
+  status: "In preparation" | "Under review" | "Submitted";
+  domain: string;
+  /** Sample or isolate count — the evidence that this is bench-generated data. */
+  cohort: string;
+  /** True when I generated the underlying data at the bench. */
+  bench: boolean;
+  methods: string[];
+  finding: string;
+  /** Matching project id in `@/data/projects`, for cross-linking. */
+  projectId: string;
+};
+
+export const manuscriptsInPreparation: Manuscript[] = [
+  {
+    id: "adpkd-manuscript",
+    title:
+      "Variant Spectrum of Autosomal Dominant Polycystic Kidney Disease in a Bangladeshi Cohort: A Nine-Gene Targeted Panel Study",
+    authorRole: "Co-author",
+    status: "In preparation",
+    domain: "Clinical Variant Discovery",
+    cohort: "37 patients · 9 controls · 9-gene panel",
+    bench: true,
+    methods: [
+      "DNA extraction and targeted panel library preparation",
+      "Targeted sequencing of PKD1, PKD2, PKHD1 and six further cystic kidney genes",
+      "GATK HaplotypeCaller with ClinVar and gnomAD v4 annotation",
+      "Call-set QC by Ti/Tv ratio, mapping quality, and reference-allele verification",
+    ],
+    finding:
+      "Fourteen pathogenic or likely pathogenic variants across PKD1, PKD2 and PKHD1; a candidate variant in 41% of patients. One ClinVar-listed variant was shown to be a mapping artefact. The first ADPKD variant spectrum reported from Bangladesh.",
+    projectId: "adpkd-panel-bangladesh",
+  },
+  {
+    id: "pcos-manuscript",
+    title:
+      "Common Polymorphisms and Rare Coding Variants Converge on Gonadotropin, Insulin and Androgen Signalling in Bangladeshi Women with PCOS",
+    authorRole: "Co-author",
+    status: "In preparation",
+    domain: "Human Disease Genetics",
+    cohort: "300 patients · 300 matched controls",
+    bench: true,
+    methods: [
+      "PCR and Sanger genotyping of five FSHR, INSR and SHBG polymorphisms",
+      "Whole-exome sequencing with GRCh38 alignment and GATK Best Practices",
+      "Rare-variant prioritisation and protein stability prediction",
+      "Pathway enrichment analysis",
+    ],
+    finding:
+      "All five polymorphisms associated with PCOS, and rare damaging variants converged on the same reproductive and metabolic pathways — common and rare variation implicating one mechanism.",
+    projectId: "pcos-common-rare-variants",
+  },
+  {
+    id: "esbl-manuscript",
+    title:
+      "Clone- and Plasmid-Structured Antimicrobial Resistance in ESBL-Producing Escherichia coli Across Three Regions of Bangladesh",
+    authorRole: "Co-author",
+    status: "In preparation",
+    domain: "Genomic Epidemiology & AMR",
+    cohort: "38 isolates · Barishal, Chattogram, Dhaka",
+    bench: true,
+    methods: [
+      "Isolate characterisation, DNA extraction, and sequencing library preparation",
+      "SPAdes assembly, Prokka annotation, Panaroo pan-genome, IQ-TREE phylogeny",
+      "In silico MLST and Mash comparison against global genomes",
+      "MOB-suite plasmid reconstruction and mobile-element profiling",
+    ],
+    finding:
+      "Seventeen sequence types resolved: a homogeneous CTX-M-15/ST131 background countrywide, with a focal, Dhaka-centred carbapenemase signal riding international high-risk clones. Resistance is structured by clone and plasmid, not by geography.",
+    projectId: "esbl-ecoli-genomic-epidemiology",
+  },
 ];

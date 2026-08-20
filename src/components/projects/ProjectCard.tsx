@@ -33,8 +33,9 @@ const dataStream = [
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article
+      id={project.id}
       className={cn(
-        "surface card-dna group relative flex h-full flex-col overflow-hidden p-6 transition-all duration-300",
+        "surface card-dna group relative flex h-full scroll-mt-24 flex-col overflow-hidden p-6 transition-all duration-300",
         accentCard[asAccent(project.accent)],
       )}
     >
@@ -58,12 +59,25 @@ export function ProjectCard({ project }: { project: Project }) {
           >
             <Icon name={project.icon} className="h-5 w-5" aria-hidden />
           </span>
-          <Badge accent={statusAccent[project.status]}>{project.status}</Badge>
+          <div className="flex flex-wrap items-center justify-end gap-2">
+            {project.bench ? (
+              <Badge accent="emerald">
+                <Icon name="FlaskConical" className="h-3 w-3" aria-hidden />
+                Bench
+              </Badge>
+            ) : null}
+            <Badge accent={statusAccent[project.status]}>{project.status}</Badge>
+          </div>
         </div>
 
         <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-foreground">
           {project.title}
         </h3>
+        {project.cohort ? (
+          <p className="mt-2 font-plex text-xs font-medium text-cyan">
+            {project.cohort}
+          </p>
+        ) : null}
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           {project.objective}
         </p>

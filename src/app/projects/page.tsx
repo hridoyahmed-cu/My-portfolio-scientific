@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Projects",
   alternates: { canonical: "/projects/" },
   description:
-    "Research projects across genomics, computational drug discovery, immunoinformatics, and wet-lab biology.",
+    "Bench-led cohort studies in human disease genetics and antimicrobial resistance, followed by the annotation, structural, and immunoinformatics work behind them.",
 };
 
 export default function ProjectsPage() {

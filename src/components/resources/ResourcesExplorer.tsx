@@ -4,9 +4,11 @@ import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Search, X } from "lucide-react";
 import {
-  resourceCategories,
+  orderedResourceCategories,
   resourceFilters,
+  resourceTierMeta,
   RESOURCE_FILTER_ALL,
+  type ResourceTier,
 } from "@/data/resources";
 import { Icon } from "@/components/ui/icon";
 import { cn } from "@/lib/utils";
@@ -19,7 +21,7 @@ export function ResourcesExplorer() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return resourceCategories
+    return orderedResourceCategories
       .filter((c) => active === RESOURCE_FILTER_ALL || c.title === active)
       .map((c) => ({
         ...c,
@@ -120,18 +122,37 @@ export function ResourcesExplorer() {
               </p>
             </motion.div>
           ) : (
-            filtered.map((c) => (
-              <motion.div
-                key={c.title}
-                layout
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <CategorySection category={c} />
-              </motion.div>
-            ))
+            filtered.map((c, i) => {
+              /* Research tools and student material are separated by a heading
+                 so the field tools are not read as part of the IELTS section. */
+              const isTierStart =
+                i === 0 || filtered[i - 1].tier !== c.tier;
+              const tier = resourceTierMeta[c.tier as ResourceTier];
+
+              return (
+                <motion.div
+                  key={c.title}
+                  layout
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {isTierStart ? (
+                    <div
+                      id={tier.id}
+                      className="mb-8 scroll-mt-32 border-b border-border pb-4"
+                    >
+                      <h2 className="heading-display text-2xl">{tier.title}</h2>
+                      <p className="mt-1.5 max-w-2xl text-sm text-muted-foreground">
+                        {tier.description}
+                      </p>
+                    </div>
+                  ) : null}
+                  <CategorySection category={c} />
+                </motion.div>
+              );
+            })
           )}
         </AnimatePresence>
       </div>

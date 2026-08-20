@@ -54,9 +54,9 @@ export function Hero() {
             variants={item}
             className="heading-display mt-6 text-balance text-4xl leading-[1.05] sm:text-5xl lg:text-6xl"
           >
-            Exploring the genome through{" "}
-            <span className="text-gradient">computational</span> and{" "}
-            <span className="text-gradient">translational</span> biology
+            Reading disease in the{" "}
+            <span className="text-gradient">genome</span>, starting at the{" "}
+            <span className="text-gradient">bench</span>
           </motion.h1>
 
           <motion.p
@@ -67,18 +67,25 @@ export function Hero() {
             <strong className="font-semibold text-foreground">
               Md. Hridoy Ahmed
             </strong>
-            , a molecular genetics and computational biology researcher working
-            where genomic variant interpretation, wet-lab molecular biology, and
-            computer-aided drug and vaccine discovery meet.
+            , a molecular geneticist working on the genetic basis of complex
+            disease. I generate my own data — extraction, PCR, Sanger
+            sequencing, targeted panels and exomes on patient cohorts — and
+            interpret it computationally.
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap gap-3">
             <Link
-              href="/publications"
+              href="/research"
               className="btn-shift focus-ring group inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white shadow-soft"
             >
-              View Publications
+              Research Programme
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link
+              href="/publications"
+              className="focus-ring inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:border-cyan/50"
+            >
+              Publications
             </Link>
             <Link
               href={withAssetVersion("/Md-Hridoy-Ahmed-CV.pdf")}
@@ -146,7 +153,7 @@ export function Hero() {
                 {/* Headshot lives at /public/portrait.jpg — swap it in place and bump ASSET_VERSION. */}
                 <img
                   src={withAssetVersion("/portrait.jpg")}
-                  alt="Portrait of Md. Hridoy Ahmed, researcher in molecular genetics and computational biology"
+                  alt="Portrait of Md. Hridoy Ahmed, molecular geneticist"
                   className="aspect-[4/5] w-full object-cover"
                   width={1122}
                   height={1402}
@@ -156,7 +163,7 @@ export function Hero() {
                     Md. Hridoy Ahmed
                   </p>
                   <p className="text-sm text-white/80">
-                    Researcher · Molecular &amp; Computational Biology
+                    Molecular Geneticist · Disease Variant Genomics
                   </p>
                 </div>
               </div>
@@ -164,12 +171,12 @@ export function Hero() {
           </div>
 
           <div className="absolute -left-6 top-8 hidden rounded-xl border border-border bg-card/90 px-4 py-2.5 shadow-soft backdrop-blur sm:block">
-            <p className="font-display text-xl font-bold text-foreground">2 Q1</p>
-            <p className="text-[11px] text-muted-foreground">of 4 publications</p>
+            <p className="font-display text-xl font-bold text-foreground">3</p>
+            <p className="text-[11px] text-muted-foreground">bench cohort studies</p>
           </div>
           <div className="absolute -right-5 bottom-24 hidden rounded-xl border border-border bg-card/90 px-4 py-2.5 shadow-soft backdrop-blur sm:block">
-            <p className="font-display text-xl font-bold text-foreground">3,000+</p>
-            <p className="text-[11px] text-muted-foreground">Learners mentored</p>
+            <p className="font-display text-xl font-bold text-foreground">2 Q1</p>
+            <p className="text-[11px] text-muted-foreground">of 4 publications</p>
           </div>
         </motion.div>
       </div>

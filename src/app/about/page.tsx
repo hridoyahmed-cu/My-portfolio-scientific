@@ -12,7 +12,7 @@ import {
 } from "@/data/profile";
 import { skillGroups, certifications } from "@/data/skills";
 import { majorHonors } from "@/data/awards";
-import { presentations } from "@/data/presentations";
+import { presentations, innovationPresentations } from "@/data/presentations";
 import { biopc } from "@/data/teaching";
 import { siteConfig } from "@/lib/site";
 import { withAssetVersion } from "@/lib/utils";
@@ -52,7 +52,7 @@ function CvSection({
 }
 
 export default function AboutPage() {
-  const talks = presentations.filter((p) => p.kind === "Oral");
+  const talks = presentations.filter((p) => p.track === "Scientific" && p.kind === "Oral");
 
   return (
     <>
@@ -251,6 +251,22 @@ export default function AboutPage() {
                 </p>
                 <ul className="mt-2 space-y-1.5">
                   {talks.map((t) => (
+                    <li key={t.id} className="text-sm text-foreground/85">
+                      <span className="font-medium text-foreground">“{t.title}”</span>{" "}
+                      — {t.venue}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Innovation competitions sit on the CV rather than beside the
+                  scientific conference record, where they read as unrelated. */}
+              <div>
+                <p className="font-plex text-xs font-semibold uppercase tracking-[0.16em] text-cyan">
+                  Leadership & innovation competitions
+                </p>
+                <ul className="mt-2 space-y-1.5">
+                  {innovationPresentations.map((t) => (
                     <li key={t.id} className="text-sm text-foreground/85">
                       <span className="font-medium text-foreground">“{t.title}”</span>{" "}
                       — {t.venue}

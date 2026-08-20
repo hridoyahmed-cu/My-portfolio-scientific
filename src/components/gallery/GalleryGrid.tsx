@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X, Expand } from "lucide-react";
-import { galleryItems } from "@/data/gallery";
+import { orderedGalleryItems as galleryItems } from "@/data/gallery";
 import { withBasePath } from "@/lib/utils";
 
 export function GalleryGrid() {

@@ -3,6 +3,8 @@ import { Check } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { biopc, programmes, teachingAreas } from "@/data/teaching";
+import { outreachMetrics } from "@/data/metrics";
+import { Icon } from "@/components/ui/icon";
 
 export const metadata: Metadata = {
   title: "Teaching & Mentorship",
@@ -19,6 +21,27 @@ export default function TeachingPage() {
         title={biopc.title}
         description={biopc.summary}
       />
+
+      {/* Outreach record — kept here rather than mixed into the research
+          figures on /publications, where the community numbers dwarfed them. */}
+      <section className="border-b border-border bg-card/30 py-10">
+        <div className="container grid grid-cols-3 gap-6">
+          {outreachMetrics.map((m) => (
+            <div key={m.label} className="flex items-start gap-3">
+              <Icon name={m.icon} className="mt-1 h-5 w-5 text-cyan" aria-hidden />
+              <div>
+                <p className="font-display text-2xl font-bold text-foreground">
+                  {m.value.toLocaleString()}
+                  {m.suffix ?? ""}
+                </p>
+                <p className="mt-0.5 text-sm leading-snug text-muted-foreground">
+                  {m.label}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="container py-16">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">

@@ -1,12 +1,4 @@
-import {
-  ArrowRight,
-  Atom,
-  Cpu,
-  Dna,
-  Microscope,
-  Network,
-  Pill,
-} from "lucide-react";
+import { Dna, FlaskConical, Microscope, Network, ShieldCheck, TestTube } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Counter } from "@/components/ui/Counter";
@@ -16,24 +8,26 @@ import { SectionCta } from "@/components/ui/SectionCta";
 
 /** Concise, scannable positioning — full story lives on the /about page. */
 const shortBio: string[] = [
-  "I am a Molecular and Computational Biology researcher with training in Genetic Engineering & Biotechnology from the University of Chittagong. My work integrates laboratory genetics, bioinformatics, structure-based drug discovery, immunoinformatics, and microbiome research to uncover the genetic drivers of complex diseases and accelerate therapeutic development. As a first-author researcher and founder of BioPC, I am committed to advancing both scientific discovery and accessible research education. My current focus is precision genomics, disease-associated variants, and computational approaches to molecular medicine",
+  "I am a molecular geneticist trained in Genetic Engineering & Biotechnology at the University of Chittagong, working on the genetic basis of complex disease. My M.Sc. thesis profiled MMP-1, MMP-3 and MMP-9 variants in apical periodontitis influenced by diabetes — a study I ran end to end, from DNA extraction and PCR through Sanger sequencing to variant interpretation.",
+  "At the Functional Genomics & Proteomics Laboratory I now work across three bench-led cohort studies: the first ADPKD variant spectrum reported from Bangladesh, a combined Sanger and exome study of PCOS in 600 women, and genomic surveillance of ESBL-producing E. coli. My published record — two Q1 first-author papers in structural and immunoinformatics work — is where I built the computational half of that toolkit.",
 ];
 
+/** Field terms only. Method terms live in the research section, not here. */
 const keywords = [
-  { label: "Bioinformatics", icon: Network },
-  { label: "Drug Discovery", icon: Pill },
-  { label: "Microbiome", icon: Microscope },
-  { label: "Computational Biology", icon: Cpu },
-  { label: "AI in Life Sciences", icon: Atom },
-  { label: "Research Communication", icon: Dna },
+  { label: "Human Disease Genetics", icon: Dna },
+  { label: "Variant Interpretation", icon: Microscope },
+  { label: "Molecular Biology", icon: FlaskConical },
+  { label: "Sanger & Exome Sequencing", icon: TestTube },
+  { label: "Genomic Epidemiology", icon: ShieldCheck },
+  { label: "NGS Pipelines", icon: Network },
 ];
 
 /** Four headline figures, pulled from the Metrics section's single source of truth. */
 const quickStats = [
-  "First-author publications",
+  "Peer-reviewed publications",
+  "Manuscripts in preparation",
   "Research projects",
   "Learners mentored",
-  "Training programmes led",
 ].flatMap((label) => {
   const m = metrics.find((x) => x.label === label);
   return m ? [m] : [];
@@ -44,7 +38,7 @@ export function About() {
     <section id="about" className="container scroll-mt-24 py-24">
       <SectionHeading
         eyebrow="About"
-        title="A researcher between the bench and the algorithm"
+        title="A molecular geneticist, bench first"
         align="center"
       />
 

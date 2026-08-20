@@ -6,18 +6,21 @@ import { ProjectCard } from "./ProjectCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
-type Filter = ProjectDomain | "All";
+type Filter = ProjectDomain | "All" | "Bench-led";
 
-const filters: Filter[] = ["All", ...projectDomains];
+/* "Bench-led" sits second so a visitor can isolate hands-on work in one click —
+   the filter the research field most needs to make visible. */
+const filters: Filter[] = ["All", "Bench-led", ...projectDomains];
 
 export function ProjectsExplorer() {
   const [filter, setFilter] = useState<Filter>("All");
 
   const filtered = useMemo(
-    () =>
-      filter === "All"
-        ? projects
-        : projects.filter((p) => p.domain === filter),
+    () => {
+      if (filter === "All") return projects;
+      if (filter === "Bench-led") return projects.filter((p) => p.bench);
+      return projects.filter((p) => p.domain === filter);
+    },
     [filter],
   );
 

@@ -19,26 +19,26 @@ export type ExperienceEntry = {
 
 /** Short hero/intro copy. */
 export const intro = {
-  headline:
-    "Reading disease in the genome, and answering it with computation.",
-  lede: "I am Md. Hridoy Ahmed, a molecular genetics and computational biology researcher working where genomic variant interpretation, wet-lab molecular biology, and computer-aided drug and vaccine discovery meet. My work asks how genetic variation shapes complex disease, and how computational methods can shorten the road to new therapeutics.",
+  headline: "Reading disease in the genome, starting at the bench.",
+  lede: "I am Md. Hridoy Ahmed, a molecular geneticist working on the genetic basis of complex disease. I generate my own data — DNA extraction, PCR, Sanger sequencing, targeted panels and exomes on patient cohorts — and interpret it computationally. My question is which inherited variants carry disease risk, and what those variants actually do.",
 };
 
 /** Long-form biography paragraphs (About section / About page). */
 export const biography: string[] = [
-  "I completed both my B.Sc. and M.Sc. in Genetic Engineering and Biotechnology at the University of Chittagong, finishing among the top ranks of my cohort. Those years gave me a firm grounding in molecular biology, functional genomics, and bioinformatics, and they shaped a lasting interest in translational genomics.",
-  "My research moves across several connected areas. I have profiled matrix metalloproteinase gene variants in periodontitis and diabetes, pursued antiviral drug discovery against the Chikungunya virus RdRp, and designed immunoinformatics-based vaccine candidates for the Mpox virus. To date I have published three first-author articles, two of them in Q1 journals and a Wiley review on molecular pharming, each carefully validated rather than rushed.",
-  "Alongside my own first-author work I collaborate on clinical and microbial genomics studies at the University of Chittagong. Three manuscripts are in preparation: the first ADPKD variant spectrum reported from a Bangladeshi cohort, a combined Sanger and whole-exome study of polycystic ovary syndrome, and a genomic-epidemiology survey of ESBL-producing Escherichia coli across three regions of the country.",
+  "I am a molecular geneticist working on the genetic basis of complex disease. My research begins at the bench: extracting DNA from patient samples, optimising PCR, running gels, and calling variants from Sanger chromatograms — then carrying those calls through targeted panel and whole-exome sequencing to an annotated, interpretable result. The computational half of my training exists to serve that question, not to replace it.",
+  "I completed both my B.Sc. and M.Sc. in Genetic Engineering and Biotechnology at the University of Chittagong, finishing among the top ranks of my cohort. My M.Sc. thesis profiled MMP-1, MMP-3 and MMP-9 variants in apical periodontitis influenced by diabetes — a study I ran end to end, from sample handling through to variant interpretation. That work set the pattern for everything since.",
+  "At the Functional Genomics & Proteomics Laboratory I now work across three bench-led cohort studies with manuscripts in preparation: the first ADPKD variant spectrum reported from Bangladesh, across a nine-gene cystic kidney disease panel in 37 patients; a combined Sanger and whole-exome study of polycystic ovary syndrome in 300 patients and 300 matched controls; and a genomic-epidemiology survey of 38 ESBL-producing Escherichia coli isolates across three regions of the country.",
+  "My published record reflects how I built the interpretive half of that toolkit. I have three first-author articles — two in Q1 journals — covering structure-based antiviral design against the Chikungunya RdRp, immunoinformatics-driven vaccine design for the Mpox virus, and a Wiley review on molecular pharming. A fourth paper, on which I am corresponding author, maps the regulatory landscape around breast cancer risk variants: the same annotation step I apply to the clinical cohorts above.",
   "Beyond my own projects, I founded BioPC, a research and training community that has supported more than three thousand learners across several countries. Through it I have mentored students, led collaborative research, and run hands-on bioinformatics workshops and national olympiads.",
 ];
 
 export const mission = {
   mission:
-    "To connect laboratory genetics with computational modelling so that the genetic basis of complex disease can be understood and acted upon, and to make rigorous research training reach students who would otherwise go without it.",
+    "To establish the genetic basis of complex disease in populations that genomics has largely overlooked — generating the data at the bench, interpreting it rigorously, and making the training that requires reach students who would otherwise go without it.",
   philosophy:
     "Good science is patient and honest. I prefer results that survive validation across methods over findings that merely look striking. I also believe knowledge grows when it is shared, which is why teaching and open mentorship sit at the centre of my work.",
   goals:
-    "I am pursuing doctoral study in molecular medicine, computational biology, or precision genomics, with the aim of building an independent research line on disease-associated variation and structure-based therapeutic design.",
+    "I am pursuing doctoral study in human molecular genetics, working on disease-associated variation in patient cohorts. My aim is an independent, laboratory-based research line on the functional consequences of inherited variants in complex disease.",
 };
 
 export const education: EducationEntry[] = [
