@@ -68,6 +68,8 @@ export function Hero() {
             <strong className="font-normal">
               <TypedText
                 text="Md. Hridoy Ahmed"
+                speed={175}
+                startDelay={700}
                 className="text-gradient font-display text-2xl font-bold tracking-tight sm:text-[1.7rem]"
               />
             </strong>

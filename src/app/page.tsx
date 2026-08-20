@@ -6,6 +6,7 @@ import { PublicationHighlights } from "@/components/home/PublicationHighlights";
 import { Techniques } from "@/components/home/Techniques";
 import { TimelineSection } from "@/components/home/TimelineSection";
 import { Teaching } from "@/components/home/Teaching";
+import { GalleryGlimpse } from "@/components/home/GalleryGlimpse";
 import { Contact } from "@/components/home/Contact";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 
@@ -22,7 +23,7 @@ import { SectionDivider } from "@/components/ui/SectionDivider";
  *   Current projects → /projects, and surfaced through BenchWork above
  *   Awards preview   → /awards
  *   Featured writing → /blog
- *   Gallery          → /gallery
+ *   Gallery          → a ten-photograph research glimpse near the foot
  *   Testimonials     → withheld pending real, permissioned quotes
  */
 export default function HomePage() {
@@ -44,6 +45,8 @@ export default function HomePage() {
       <SectionDivider />
       <Teaching />
       <SectionDivider flip />
+      <GalleryGlimpse />
+      <SectionDivider />
       <Contact />
     </>
   );

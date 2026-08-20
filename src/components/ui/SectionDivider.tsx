@@ -6,9 +6,12 @@ import { cn } from "@/lib/utils";
  * Three crossing curves with a scatter of nodes, drawn in the brand palette at
  * low opacity so it separates without competing with the content either side.
  *
- * Sizing: the band keeps a fixed responsive height and the artwork is drawn
- * with `slice`, so the curves hold their proportions and the dots stay circular
- * at every width instead of flattening. `non-scaling-stroke` keeps the lines a
+ * Sizing: the viewBox is cropped tight around the artwork (the curves and nodes
+ * occupy roughly y 41-85), so the band is nearly all curve rather than mostly
+ * empty air. It is drawn with `slice`, so the curves hold their proportions and
+ * the dots stay circular at every width instead of flattening, and the band
+ * height is tuned so the crop falls on the width at desktop - the artwork fills
+ * edge to edge with no dead margin. `non-scaling-stroke` keeps the lines a
  * consistent hairline rather than thinning out as the artwork scales down.
  *
  * Spacing: the negative margins cancel the band's own height, so the divider
@@ -31,13 +34,13 @@ export function SectionDivider({
       aria-hidden
       className={cn(
         "pointer-events-none relative z-10 w-full overflow-hidden",
-        "h-12 sm:h-16 lg:h-20",
-        "-my-6 sm:-my-8 lg:-my-10",
+        "h-10 lg:h-12",
+        "-my-5 lg:-my-6",
         className,
       )}
     >
       <svg
-        viewBox="0 0 1440 120"
+        viewBox="0 32 1440 64"
         preserveAspectRatio="xMidYMid slice"
         className={cn("block h-full w-full", flip && "-scale-x-100")}
         fill="none"
@@ -46,7 +49,7 @@ export function SectionDivider({
         <path
           d="M0 60 C160 60 240 80 400 82 C560 84 640 64 820 66 C1000 68 1100 84 1260 80 C1350 78 1400 70 1440 68"
           className="stroke-muted-foreground/25"
-          strokeWidth="1"
+          strokeWidth="1.1"
           vectorEffect="non-scaling-stroke"
           strokeLinecap="round"
         />
@@ -54,7 +57,7 @@ export function SectionDivider({
         <path
           d="M0 68 C120 68 200 44 320 44 C440 44 520 74 660 72 C800 70 880 46 1020 48 C1160 50 1240 68 1440 64"
           className="stroke-blue/45"
-          strokeWidth="1.35"
+          strokeWidth="1.5"
           vectorEffect="non-scaling-stroke"
           strokeLinecap="round"
         />
@@ -62,7 +65,7 @@ export function SectionDivider({
         <path
           d="M0 76 C140 76 220 74 340 70 C460 66 540 46 700 44 C860 42 940 66 1080 68 C1220 70 1300 62 1440 58"
           className="stroke-emerald/45"
-          strokeWidth="1.35"
+          strokeWidth="1.5"
           vectorEffect="non-scaling-stroke"
           strokeLinecap="round"
         />

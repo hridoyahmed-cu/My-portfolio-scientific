@@ -36,14 +36,34 @@ export const galleryCategories: GalleryCategory[] = [
 
 export const galleryItems: GalleryItem[] = [
  
-  { src: "/gallery/g003.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (3)" },
-  { src: "/gallery/g092.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (92)" },
-  { src: "/gallery/g025.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (25)" },
+  {
+    src: "/gallery/g003.webp",
+    alt: "Outside the Department of Genetic Engineering and Biotechnology, University of Chittagong, with the bound M.Sc. thesis.",
+    category: "Campus & Personal",
+  },
+  {
+    src: "/gallery/g092.webp",
+    alt: "Presenting a bioinformatics workflow at a BCSIR and BRiCM scientific workshop, Dhaka.",
+    category: "Conferences & Talks",
+  },
+  {
+    src: "/gallery/g025.webp",
+    alt: "Reading a real-time PCR amplification plot at the QuantStudio, Functional Genomics & Proteomics Laboratory, University of Chittagong.",
+    category: "Lab & Bench",
+  },
   { src: "/gallery/g005.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (5)" },
-  { src: "/gallery/g129.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (129)" },
+  {
+    src: "/gallery/g129.webp",
+    alt: "Teaching a free bioinformatics workshop to a full lecture hall.",
+    category: "Teaching & BioPC",
+  },
   { src: "/gallery/g107.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (107)" },
   { src: "/gallery/g009.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (9)" },
-  { src: "/gallery/g027.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (27)" },
+  {
+    src: "/gallery/g027.webp",
+    alt: "Operating the Applied Biosystems SeqStudio genetic analyser - the instrument behind the Sanger reads in this site's chromatogram figure.",
+    category: "Lab & Bench",
+  },
   { src: "/gallery/g144.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (144)" },
   { src: "/gallery/g010.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (10)" },
   { src: "/gallery/g145.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (145)" },
@@ -69,17 +89,37 @@ export const galleryItems: GalleryItem[] = [
   { src: "/gallery/g023.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (23)" },
   { src: "/gallery/g012.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (12)" },
   { src: "/gallery/g024.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (24)" },
-  { src: "/gallery/g026.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (26)" },
+  {
+    src: "/gallery/g026.webp",
+    alt: "Starting an instrument run in the sequencing room.",
+    category: "Lab & Bench",
+  },
   { src: "/gallery/g007.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (7)" },
   { src: "/gallery/g008.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (8)" },
   { src: "/gallery/g028.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (28)" },
   { src: "/gallery/g002.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (2)" },
-  { src: "/gallery/g029.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (29)" },
+  {
+    src: "/gallery/g029.webp",
+    alt: "Loading samples for centrifugation during a DNA extraction run.",
+    category: "Lab & Bench",
+  },
   { src: "/gallery/g006.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (6)" },
-  { src: "/gallery/g030.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (30)" },
-  { src: "/gallery/g031.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (31)" },
+  {
+    src: "/gallery/g030.webp",
+    alt: "Sample inspection at the FGPL bench, with the pipette set and reagent shelf behind.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g031.webp",
+    alt: "Setting up PCR reactions at the bench, with tube racks and reagents laid out.",
+    category: "Lab & Bench",
+  },
   { src: "/gallery/g032.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (32)" },
-  { src: "/gallery/g033.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (33)" },
+  {
+    src: "/gallery/g033.webp",
+    alt: "The Functional Genomics & Proteomics Laboratory group, University of Chittagong.",
+    category: "Lab & Bench",
+  },
   { src: "/gallery/g036.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (36)" },
   { src: "/gallery/g037.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (37)" },
   { src: "/gallery/g038.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (38)" },
@@ -234,3 +274,26 @@ export const orderedGalleryItems: GalleryItem[] = [...galleryItems].sort(
 export const labGalleryItems: GalleryItem[] = galleryItems.filter(
   (i) => i.category === "Lab & Bench",
 );
+
+/**
+ * Research-focused selection for the homepage glimpse.
+ *
+ * Ten photographs chosen for what they show rather than how they look: bench
+ * work first, then the scientific talk, the training, and the department. The
+ * order runs instrument -> bench -> group -> podium -> lecture hall -> faculty.
+ */
+export const researchGlimpse: GalleryItem[] = [
+  "/gallery/g025.webp",
+  "/gallery/g027.webp",
+  "/gallery/g031.webp",
+  "/gallery/g029.webp",
+  "/gallery/g030.webp",
+  "/gallery/g026.webp",
+  "/gallery/g033.webp",
+  "/gallery/g092.webp",
+  "/gallery/g129.webp",
+  "/gallery/g003.webp",
+].flatMap((src) => {
+  const item = galleryItems.find((g) => g.src === src);
+  return item ? [item] : [];
+});
