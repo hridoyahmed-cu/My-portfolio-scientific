@@ -15,14 +15,14 @@ export const majorHonors: Award[] = [
     accent: "gold",
   },
   {
-    title: "Best Research Paper Presenter — Darwin International Conference",
+    title: "Best Research Paper Presenter - Darwin International Conference",
     detail:
       "4th Edition. Recognised for clarity, scientific rigour, and innovative methodology for the Mpox multi-epitope vaccine study.",
     icon: "Award",
     accent: "blue",
   },
   {
-    title: "Most Brilliant Student Award — Kishoreganj",
+    title: "Most Brilliant Student Award - Kishoreganj",
     detail:
       "Science category. District-level recognition for academic performance and scientific excellence.",
     year: "2016",
@@ -37,7 +37,7 @@ export const majorHonors: Award[] = [
     accent: "emerald",
   },
   {
-    title: "Best Poster Presenter — Senior Category",
+    title: "Best Poster Presenter - Senior Category",
     detail:
       "Department of Genetic Engineering & Biotechnology, University of Chittagong. Recognised for scientific visualisation and presentation.",
     icon: "Award",

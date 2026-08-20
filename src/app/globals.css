@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ============================================================
-   DESIGN SYSTEM — Oxford academic + Nature/Cell scientific
+   DESIGN SYSTEM - Oxford academic + Nature/Cell scientific
    ============================================================ */
 @layer base {
   :root {
@@ -34,7 +34,7 @@
     --indigo: 235 52% 50%;
     --purple: 268 46% 52%;
 
-    /* Reusable colourful gradient — picks up theme tokens, so it adapts
+    /* Reusable colourful gradient - picks up theme tokens, so it adapts
        automatically between light and dark. Used by every hover utility.
        Tuned to the academic cyan → teal → indigo → purple accent range. */
     --rainbow: linear-gradient(
@@ -153,7 +153,7 @@
   }
 
   /* ============================================================
-     ELEGANT SCIENTIFIC COMPUTING — interaction system
+     ELEGANT SCIENTIFIC COMPUTING - interaction system
      Hover micro-interactions use GPU-accelerated transform / opacity
      only (no layout properties) → 60fps and zero CLS. Colour comes
      from the cyan / teal / indigo / purple tokens, so every effect
@@ -161,7 +161,7 @@
      block above neutralises all of this for users who ask for it.
      ============================================================ */
 
-  /* GENERIC CARDS — soft lift + animated accent border ring.
+  /* GENERIC CARDS - soft lift + animated accent border ring.
      Used across the site (education, research, metrics, etc.). */
   .surface-hover {
     @apply relative transition-all duration-300 ease-out;
@@ -185,7 +185,7 @@
     animation: rainbow-pan 3s linear infinite;
   }
 
-  /* 1 · NAV LINKS — gradient underline grows from the centre out
+  /* 1 · NAV LINKS - gradient underline grows from the centre out
      (cyan → indigo) with a soft text brighten. Active page stays lit. */
   .nav-link {
     @apply relative transition-colors duration-300;
@@ -206,7 +206,7 @@
     box-shadow: 0 0 10px hsl(var(--cyan) / 0.5);
   }
 
-  /* 2 & 8 · BUTTONS — premium gradient shift (teal → blue → indigo),
+  /* 2 & 8 · BUTTONS - premium gradient shift (teal → blue → indigo),
      gentle lift, deeper shadow, brighter text. Pair with bg-navy. */
   .btn-shift {
     @apply transition-all duration-300 ease-out;
@@ -226,7 +226,7 @@
     @apply translate-y-0;
   }
 
-  /* 3 · PROJECT CARDS — "DNA gradient" hover: lift 6px, animated
+  /* 3 · PROJECT CARDS - "DNA gradient" hover: lift 6px, animated
      cyan → blue → purple border ring, subtle brighten. The faint
      data-stream layer is rendered inside the card (.data-stream). */
   .card-dna {
@@ -272,7 +272,7 @@
     animation: data-stream-scroll 22s linear infinite;
   }
 
-  /* 4 · PUBLICATION CARDS — sequencing "scan" sweep + title brighten
+  /* 4 · PUBLICATION CARDS - sequencing "scan" sweep + title brighten
      + lift, like a genome scanner indexing the record. */
   .card-scan {
     @apply relative overflow-hidden transition-all duration-300 ease-out;
@@ -302,7 +302,7 @@
     color: hsl(var(--cyan));
   }
 
-  /* 5 · RESOURCE CARDS — floating glassmorphism lift with accent
+  /* 5 · RESOURCE CARDS - floating glassmorphism lift with accent
      border glow (the visit arrow animates in the component). */
   .card-glass {
     @apply relative overflow-hidden transition-all duration-500 ease-out;
@@ -330,7 +330,7 @@
     @apply opacity-100;
   }
 
-  /* 7 · CONTACT CARDS — academic glow: lift 4px, cyan border glow,
+  /* 7 · CONTACT CARDS - academic glow: lift 4px, cyan border glow,
      subtle brighten (icon scales via group-hover in the component). */
   .contact-card {
     @apply transition-all duration-300 ease-out;
@@ -343,7 +343,7 @@
       0 14px 36px hsl(var(--cyan) / 0.14);
   }
 
-  /* 9 · ABOUT KEYWORDS — research tag: gradient underline, soft glow,
+  /* 9 · ABOUT KEYWORDS - research tag: gradient underline, soft glow,
      slight lift, accent border. */
   .research-tag {
     @apply relative transition-all duration-300 ease-out;
@@ -362,7 +362,7 @@
     @apply scale-x-100;
   }
 
-  /* 10 · TIMELINE NODES — pulse + glow ring when the row is hovered.
+  /* 10 · TIMELINE NODES - pulse + glow ring when the row is hovered.
      The inner dot scales via group-hover in the component (the node
      itself is translated on md, so we don't transform it here). */
   .timeline-node {
@@ -377,7 +377,7 @@
     animation: node-pulse 1.6s ease-out infinite;
   }
 
-  /* 11 · SOCIAL ICONS — lift, accent gradient fill, micro-rotation, glow. */
+  /* 11 · SOCIAL ICONS - lift, accent gradient fill, micro-rotation, glow. */
   .social-pop {
     @apply transition-all duration-300 ease-out;
   }
@@ -537,7 +537,7 @@
   }
 }
 
-/* Print styles — used when saving the CV page as a PDF */
+/* Print styles - used when saving the CV page as a PDF */
 @media print {
   header,
   footer,

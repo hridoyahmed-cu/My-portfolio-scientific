@@ -2,7 +2,7 @@
  * Primary laboratory data from the MMP variant study.
  *
  * These are the site's wet-lab evidence: an agarose gel, a Sanger
- * electropherogram, and a per-base quality profile — all generated at the
+ * electropherogram, and a per-base quality profile - all generated at the
  * Functional Genomics & Proteomics Laboratory, University of Chittagong, for
  * the M.Sc. thesis on MMP variants in apical periodontitis influenced by
  * diabetes.
@@ -27,7 +27,7 @@ export type LabFigure = {
   alt: string;
   /** What the figure shows, in the register a reviewer expects. */
   caption: string;
-  /** Method line — how the data was produced. */
+  /** Method line - how the data was produced. */
   method: string;
   /** Short factual read-outs pulled from the data itself. */
   readouts: { label: string; value: string }[];
@@ -43,7 +43,7 @@ export const labFigures: LabFigure[] = [
     src: "/lab/mmp3-pcr-gel.jpg",
     thumb: "/lab/mmp3-pcr-gel.jpg",
     alt:
-      "Agarose gel electrophoresis showing a 100 bp ladder followed by fifteen lanes — three controls (C1–C3) and twelve patients (P1–P12) — each with a single clean band at 986 bp, between the 500 bp and 1000 bp ladder markers.",
+      "Agarose gel electrophoresis showing a 100 bp ladder followed by fifteen lanes - three controls (C1–C3) and twelve patients (P1–P12) - each with a single clean band at 986 bp, between the 500 bp and 1000 bp ladder markers.",
     caption:
       "A single, clean 986 bp product in every lane, with no primer dimer and no secondary bands. Controls (C1–C3) and patients (P1–P12) amplify at equal intensity, confirming the reaction was specific and consistent across the plate before any sample went forward to sequencing.",
     method:
@@ -64,7 +64,7 @@ export const labFigures: LabFigure[] = [
     alt:
       "Sanger chromatogram across 35 bases of an MMP3 forward read. Single sharp peaks flank a highlighted position where the cytosine and thymine traces reach almost equal height, giving an IUPAC Y heterozygous call.",
     caption:
-      "Thirty-five bases from the MMP3 forward read of sample P36. The highlighted position carries two overlapping peaks of near-equal height — 45% C against 44% T — which the base caller reports as IUPAC Y. Flanking bases call at Q58 and Q46, so the ambiguity is genuine heterozygosity rather than poor signal. The same position resolves as a heterozygote in all five high-quality reads on the plate.",
+      "Thirty-five bases from the MMP3 forward read of sample P36. The highlighted position carries two overlapping peaks of near-equal height - 45% C against 44% T - which the base caller reports as IUPAC Y. Flanking bases call at Q58 and Q46, so the ambiguity is genuine heterozygosity rather than poor signal. The same position resolves as a heterozygote in all five high-quality reads on the plate.",
     method:
       "Rendered directly from the raw .ab1 trace: four dye channels, peak locations, and per-base quality read from the ABIF record.",
     readouts: [

@@ -11,7 +11,7 @@ export type Project = {
   domain: ProjectDomain;
   status: ProjectStatus;
   /**
-   * True when I generated the data with my own hands at the bench — extraction,
+   * True when I generated the data with my own hands at the bench - extraction,
    * PCR, gels, sequencing. These sort first and carry a "Bench" badge, because
    * wet-lab work is the core of this research programme rather than a sideline.
    */
@@ -43,7 +43,7 @@ export type ProjectDomain =
 
 export const projectSummary = {
   statement:
-    "One question runs through this work: which inherited variants drive complex disease, and what do they actually do. I answer it at the bench first — extraction, PCR, Sanger sequencing, targeted panels and exomes on patient cohorts — then interpret the calls computationally. The structural and immunoinformatics work below is the method I bring to that interpretation, and the record of how I learned it.",
+    "One question runs through this work: which inherited variants drive complex disease, and what do they actually do. I answer it at the bench first - extraction, PCR, Sanger sequencing, targeted panels and exomes on patient cohorts - then interpret the calls computationally. The structural and immunoinformatics work below is the method I bring to that interpretation, and the record of how I learned it.",
   stats: [
     { value: "3", label: "Bench-led cohort studies" },
     { value: "700+", label: "Samples and isolates processed" },
@@ -300,7 +300,7 @@ const projectList: Project[] = [
   /* ---------------- 6. Early Research & Training ---------------- */
   {
     id: "nib-sequencing",
-    title: "Sanger Sequencing & NGS Training — NIB",
+    title: "Sanger Sequencing & NGS Training - NIB",
     domain: "Early Research & Training",
     status: "Completed",
     bench: true,
@@ -376,7 +376,7 @@ export const projects: Project[] = [...projectList].sort(
     statusRank[a.status] - statusRank[b.status],
 );
 
-/** Bench-generated work only — used by the homepage "at the bench" section. */
+/** Bench-generated work only - used by the homepage "at the bench" section. */
 export const benchProjects: Project[] = projects.filter((p) => p.bench);
 
 /** Live bench cohort studies: the current research programme, in one list. */

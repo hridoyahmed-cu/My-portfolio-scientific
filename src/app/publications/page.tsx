@@ -24,7 +24,7 @@ export default function PublicationsPage() {
         description="Published work and manuscripts in preparation. Authorship position is stated on every entry; work not yet published is labelled as such."
       />
 
-      {/* Research record — kept apart from outreach figures, which live on /teaching. */}
+      {/* Research record - kept apart from outreach figures, which live on /teaching. */}
       <section className="border-b border-border bg-card/30 py-10">
         <div className="container grid grid-cols-2 gap-6 sm:grid-cols-4">
           {researchMetrics.map((m) => (
@@ -48,7 +48,7 @@ export default function PublicationsPage() {
         </div>
       </section>
 
-      {/* Manuscripts in preparation — where the bench work is documented. */}
+      {/* Manuscripts in preparation - where the bench work is documented. */}
       <section
         id="in-preparation"
         className="scroll-mt-24 border-y border-border bg-card/30 py-16"
@@ -64,7 +64,7 @@ export default function PublicationsPage() {
           <p className="mt-2 max-w-3xl text-muted-foreground">
             Three collaborative cohort studies where the DNA was extracted,
             amplified, and sequenced in our laboratory. None of these are
-            published yet — status is stated on each entry.
+            published yet - status is stated on each entry.
           </p>
 
           <div className="mt-10 space-y-5">

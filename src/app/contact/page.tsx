@@ -28,7 +28,7 @@ export default function ContactPage() {
             <h2 className="heading-display text-2xl">Send a message</h2>
             <p className="mt-2 text-sm text-muted-foreground">
               Fill in the form and your message is delivered straight to my inbox
-              — no email app required. You can also reach me on any of the
+              - no email app required. You can also reach me on any of the
               platforms listed here.
             </p>
             <div className="mt-6">
@@ -51,7 +51,7 @@ export default function ContactPage() {
                 Connect with me
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Profiles, preprints, and code — reach out on whichever platform
+                Profiles, preprints, and code - reach out on whichever platform
                 suits you best.
               </p>
               <ContactCards className="mt-5" />

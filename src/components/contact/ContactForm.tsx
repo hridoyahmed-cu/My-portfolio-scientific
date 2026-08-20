@@ -9,7 +9,7 @@ import { sendContactMessage } from "@/lib/contact";
 /**
  * Contact form UI. Fields are generated from the `inputs` config and the
  * delivery is handled by `sendContactMessage` (src/lib/contact.ts), which
- * posts to Web3Forms so messages arrive directly in the inbox — no email
+ * posts to Web3Forms so messages arrive directly in the inbox - no email
  * client and no backend needed.
  */
 type Status = "idle" | "sending" | "sent" | "error";
@@ -151,7 +151,7 @@ export function ContactForm() {
             </motion.span>
             <span>
               <strong className="font-semibold text-emerald">Message sent.</strong>{" "}
-              Thank you — I&apos;ll get back to you soon.
+              Thank you - I&apos;ll get back to you soon.
             </span>
           </motion.div>
         )}

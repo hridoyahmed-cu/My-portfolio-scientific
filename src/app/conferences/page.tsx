@@ -21,7 +21,7 @@ export const metadata: Metadata = {
  *
  * Scientific talks and posters previously shared a page with business pitches
  * and a health-awareness poster, which made the conference record read as a
- * mixed bag. Everything is still here — the scientific work is simply no
+ * mixed bag. Everything is still here - the scientific work is simply no
  * longer interleaved with it.
  */
 const trackMeta: Record<
@@ -62,7 +62,7 @@ export default function ConferencesPage() {
       <PageHeader
         eyebrow="Conferences"
         title="Presentations & Competitions"
-        description="Scientific presentations first, then innovation competitions and public engagement — each listed under its own heading."
+        description="Scientific presentations first, then innovation competitions and public engagement - each listed under its own heading."
       />
 
       <section className="container space-y-20 py-16">

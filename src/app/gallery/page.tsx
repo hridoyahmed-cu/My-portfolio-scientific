@@ -16,7 +16,7 @@ export default function GalleryPage() {
       <PageHeader
         eyebrow="Gallery"
         title="Moments in Research & Community"
-        description={`A visual record of Hridoy's life — ${galleryItems.length} photographs from conferences, award ceremonies, BioPC training programmes, the laboratory, recreations, and campus. Select any image to view it full screen, and use the arrow keys to browse.`}
+        description={`A visual record of Hridoy's life - ${galleryItems.length} photographs from conferences, award ceremonies, BioPC training programmes, the laboratory, recreations, and campus. Select any image to view it full screen, and use the arrow keys to browse.`}
       />
       <section className="container py-16">
         <GalleryGrid />

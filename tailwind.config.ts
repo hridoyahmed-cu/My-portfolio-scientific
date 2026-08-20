@@ -54,6 +54,10 @@ const config: Config = {
         lift: "0 20px 54px -12px rgba(8, 20, 40, 0.26)",
       },
       keyframes: {
+        caret: {
+          "0%, 45%": { opacity: "1" },
+          "55%, 100%": { opacity: "0" },
+        },
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
@@ -79,6 +83,7 @@ const config: Config = {
         },
       },
       animation: {
+        caret: "caret 1s steps(1, end) infinite",
         "fade-up": "fade-up 0.7s ease-out both",
         float: "float 6s ease-in-out infinite",
         "float-slow": "float-slow 7s ease-in-out infinite",

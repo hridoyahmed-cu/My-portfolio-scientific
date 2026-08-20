@@ -2,7 +2,7 @@
 
 Source data: Md. Hridoy Ahmed's own MMP3 forward reads from the apical
 periodontitis / diabetes cohort (SeqStudio, FGPL, University of Chittagong).
-Nothing here is synthetic — every point is read from the .ab1 files.
+Nothing here is synthetic - every point is read from the .ab1 files.
 
 Colours are mid-tone so the figures stay legible on both light and dark
 backgrounds; the conventional black for G is replaced by amber for that reason.
@@ -40,7 +40,7 @@ def reads():
 
 
 # --------------------------------------------------------------------------- #
-# Figure 1 — chromatogram
+# Figure 1 - chromatogram
 # --------------------------------------------------------------------------- #
 def chromatogram(path, sample, centre, flank=17):
     d = abif.read(path)
@@ -147,7 +147,7 @@ def chromatogram(path, sample, centre, flank=17):
 
 
 # --------------------------------------------------------------------------- #
-# Figure 2 — per-position quality across every read (FastQC-style)
+# Figure 2 - per-position quality across every read (FastQC-style)
 # --------------------------------------------------------------------------- #
 def qc_plot(items, upto=900):
     data = []
@@ -245,7 +245,7 @@ def qc_plot(items, upto=900):
     # axis labels
     out.append(
         f'<text x="{ml}" y="24" font-size="12.5" font-weight="600" fill="{AXIS}">'
-        f'Mean Phred quality by base position — {len(data)} MMP3 reads</text>'
+        f'Mean Phred quality by base position - {len(data)} MMP3 reads</text>'
     )
     out.append(
         f'<text x="{W - mr}" y="24" text-anchor="end" font-size="11.5" fill="{FAINT}">'
@@ -291,7 +291,7 @@ if __name__ == "__main__":
 # Card-sized variants
 #
 # The full figures are 1180px wide. Dropped into a ~330px card they scale to
-# roughly 95px tall, which makes the base letters about 3px — unreadable. These
+# roughly 95px tall, which makes the base letters about 3px - unreadable. These
 # compact renderings carry fewer bases and proportionally larger type so the
 # thumbnail still reads as a chromatogram / quality curve at card size.
 # --------------------------------------------------------------------------- #

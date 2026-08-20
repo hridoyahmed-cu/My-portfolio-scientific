@@ -18,10 +18,10 @@ export const researchField = {
   full: "Human molecular genetics of complex disease",
   /** The one-line positioning statement. Used in the hero and OG description. */
   statement:
-    "Human molecular genetics of complex disease — variant discovery at the bench, interpretation at the terminal.",
+    "Human molecular genetics of complex disease - variant discovery at the bench, interpretation at the terminal.",
   /** How the work is actually done. Wet lab named first, deliberately. */
   method:
-    "Molecular biology first: DNA extraction, PCR and qPCR, Sanger sequencing, targeted panels and whole-exome sequencing — interpreted with computational genomics.",
+    "Molecular biology first: DNA extraction, PCR and qPCR, Sanger sequencing, targeted panels and whole-exome sequencing - interpreted with computational genomics.",
   /** Where the computational work sits in the story: a method, not a second identity. */
   methodNote:
     "Computational biology is how the variants get interpreted, not a separate research line.",

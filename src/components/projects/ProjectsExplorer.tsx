@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 type Filter = ProjectDomain | "All" | "Bench-led";
 
-/* "Bench-led" sits second so a visitor can isolate hands-on work in one click —
+/* "Bench-led" sits second so a visitor can isolate hands-on work in one click -
    the filter the research field most needs to make visible. */
 const filters: Filter[] = ["All", "Bench-led", ...projectDomains];
 

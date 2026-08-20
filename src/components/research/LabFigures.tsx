@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
  * The wet-lab evidence block.
  *
  * A bench claim is only as good as the data behind it, so these are presented
- * as proper figures — numbered, captioned, with the method stated and the
- * quantitative read-outs called out — rather than as decorative images.
+ * as proper figures - numbered, captioned, with the method stated and the
+ * quantitative read-outs called out - rather than as decorative images.
  */
 function Figure({ figure, index }: { figure: LabFigure; index: number }) {
   return (

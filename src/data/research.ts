@@ -2,7 +2,7 @@
  * The research programme, organised around ONE field.
  *
  * This file used to list nine co-equal "research interests", which read as nine
- * competing identities. It now carries three research themes — all bench-led —
+ * competing identities. It now carries three research themes - all bench-led -
  * plus a separate list of methods. The distinction matters: a theme is a
  * question I pursue; a method is a technique I apply to it. Docking,
  * immunoinformatics and structural modelling are methods and prior work, not
@@ -39,13 +39,13 @@ export type TechniqueBlock = {
   kind: "bench" | "sequencing" | "computational";
   icon: string;
   accent: "blue" | "cyan" | "emerald" | "gold";
-  /** Short context line — where these techniques have actually been used. */
+  /** Short context line - where these techniques have actually been used. */
   context: string;
   items: string[];
 };
 
 /* ------------------------------------------------------------------ *
- * Research themes — three, all bench-led
+ * Research themes - three, all bench-led
  * ------------------------------------------------------------------ */
 
 export const researchThemes: ResearchTheme[] = [
@@ -55,7 +55,7 @@ export const researchThemes: ResearchTheme[] = [
     icon: "Dna",
     bench: true,
     description:
-      "Finding the variants that carry risk in diabetes, kidney disease, PCOS, and periodontitis — genotyped in my own hands.",
+      "Finding the variants that carry risk in diabetes, kidney disease, PCOS, and periodontitis - genotyped in my own hands.",
     question:
       "Which inherited variants shape risk in common, multifactorial disease, and which of them actually change protein function?",
     benchWork:
@@ -71,7 +71,7 @@ export const researchThemes: ResearchTheme[] = [
     description:
       "Taking a patient sample from extraction through sequencing to an annotated, clinically interpretable variant call.",
     question:
-      "How do we move reliably from a clinical sample to a variant call that a clinician could act on — and how do we catch the artefacts on the way?",
+      "How do we move reliably from a clinical sample to a variant call that a clinician could act on - and how do we catch the artefacts on the way?",
     benchWork:
       "Sample preparation, targeted panel and exome library workflows, Sanger confirmation of called variants.",
     projectIds: ["adpkd-panel-bangladesh", "wes-pipeline", "breast-cancer-gwas"],
@@ -83,7 +83,7 @@ export const researchThemes: ResearchTheme[] = [
     icon: "ShieldCheck",
     bench: true,
     description:
-      "Tracking resistance through bacterial isolates — whether it travels by clone, by plasmid, or by region.",
+      "Tracking resistance through bacterial isolates - whether it travels by clone, by plasmid, or by region.",
     question:
       "Is resistance in Bangladeshi clinical isolates structured by geography, or by the clones and plasmids that carry it?",
     benchWork:
@@ -94,11 +94,11 @@ export const researchThemes: ResearchTheme[] = [
 ];
 
 /* ------------------------------------------------------------------ *
- * Methods — what I bring to the themes above.
+ * Methods - what I bring to the themes above.
  *
  * These were previously listed as standalone "research interests", which made
  * the field look scattered. They are real, documented capabilities with
- * published work behind them — but they are how the questions get answered,
+ * published work behind them - but they are how the questions get answered,
  * not separate questions.
  * ------------------------------------------------------------------ */
 
@@ -121,14 +121,14 @@ export const methodCapabilities: MethodCapability[] = [
     label: "Computer-Aided Drug Discovery",
     icon: "Pill",
     description:
-      "Virtual screening, docking, ADMET and DFT — the method behind the Chikungunya RdRp work.",
+      "Virtual screening, docking, ADMET and DFT - the method behind the Chikungunya RdRp work.",
     accent: "gold",
   },
   {
     label: "Immunoinformatics & Vaccine Design",
     icon: "Syringe",
     description:
-      "Epitope prediction and multi-epitope construct design — the method behind the Mpox vaccine study.",
+      "Epitope prediction and multi-epitope construct design - the method behind the Mpox vaccine study.",
     accent: "emerald",
   },
   {
@@ -148,7 +148,7 @@ export const methodCapabilities: MethodCapability[] = [
 ];
 
 /* ------------------------------------------------------------------ *
- * Technique inventory — replaces the old percentage dials.
+ * Technique inventory - replaces the old percentage dials.
  *
  * Self-assigned proficiency scores ("Scientific Writing: 90%") read as
  * unserious on an academic site, and the old scores ranked computational work
@@ -158,7 +158,7 @@ export const methodCapabilities: MethodCapability[] = [
 
 export const techniqueInventory: TechniqueBlock[] = [
   {
-    label: "Molecular Biology — Bench",
+    label: "Molecular Biology - Bench",
     kind: "bench",
     icon: "FlaskConical",
     accent: "emerald",
@@ -166,7 +166,7 @@ export const techniqueInventory: TechniqueBlock[] = [
       "Daily bench work at the Functional Genomics & Proteomics Laboratory, University of Chittagong.",
     items: [
       "Genomic DNA extraction, quantification, and quality assessment",
-      "PCR, qPCR, and RT-PCR — primer design through optimisation",
+      "PCR, qPCR, and RT-PCR - primer design through optimisation",
       "Agarose gel electrophoresis and PAGE",
       "Protein isolation, SDS-PAGE, and ELISA",
       "Centrifugation, sample fractionation, and karyotyping",
@@ -174,7 +174,7 @@ export const techniqueInventory: TechniqueBlock[] = [
     ],
   },
   {
-    label: "Sequencing — Bench to Chromatogram",
+    label: "Sequencing - Bench to Chromatogram",
     kind: "bench",
     icon: "Dna",
     accent: "blue",
@@ -197,7 +197,7 @@ export const techniqueInventory: TechniqueBlock[] = [
       "Alternative Medicine & Natural Product Research Lab, and thesis assay work.",
     items: [
       "Phytochemical screening",
-      "Anti-inflammatory assays — protein denaturation, membrane stabilisation",
+      "Anti-inflammatory assays - protein denaturation, membrane stabilisation",
       "Antioxidant and antimicrobial assays",
       "Determination of blood components",
       "Animal-model toxicity and bioactivity testing",
@@ -256,8 +256,8 @@ export const techniqueInventory: TechniqueBlock[] = [
     accent: "cyan",
     context: "Used for analysis, figures, and pipeline automation.",
     items: [
-      "R — ggplot2, Bioconductor",
-      "Python — Biopython, Pandas, NumPy",
+      "R - ggplot2, Bioconductor",
+      "Python - Biopython, Pandas, NumPy",
       "Linux / Ubuntu command line and bash scripting",
       "SPSS, GraphPad Prism, OriginPro",
       "LaTeX, Git",
@@ -265,14 +265,14 @@ export const techniqueInventory: TechniqueBlock[] = [
   },
 ];
 
-/** Bench blocks first — this ordering is the point of the section. */
+/** Bench blocks first - this ordering is the point of the section. */
 export const benchTechniques = techniqueInventory.filter((t) => t.kind === "bench");
 
 /* ------------------------------------------------------------------ *
  * Back-compatible aliases
  *
  * `researchInterests` is kept so any page still importing it keeps building.
- * It now maps the three themes plus the method list, themes first — so even
+ * It now maps the three themes plus the method list, themes first - so even
  * legacy call sites render in the corrected priority order.
  * ------------------------------------------------------------------ */
 

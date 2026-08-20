@@ -1,4 +1,4 @@
-"""Minimal ABIF (.ab1) reader — pure stdlib, big-endian.
+"""Minimal ABIF (.ab1) reader - pure stdlib, big-endian.
 
 Applied Biosystems ABIF spec: 4-byte magic "ABIF", 2-byte version, then a
 28-byte root directory entry whose dataoffset points at the directory array.

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Teaching & Mentorship",
   alternates: { canonical: "/teaching/" },
   description:
-    "BioPC — a national bioinformatics training community founded by Md. Hridoy Ahmed, with 3,000+ learners across 25 programmes.",
+    "BioPC - a national bioinformatics training community founded by Md. Hridoy Ahmed, with 3,000+ learners across 25 programmes.",
 };
 
 export default function TeachingPage() {
@@ -22,7 +22,7 @@ export default function TeachingPage() {
         description={biopc.summary}
       />
 
-      {/* Outreach record — kept here rather than mixed into the research
+      {/* Outreach record - kept here rather than mixed into the research
           figures on /publications, where the community numbers dwarfed them. */}
       <section className="border-b border-border bg-card/30 py-10">
         <div className="container grid grid-cols-3 gap-6">

@@ -6,10 +6,10 @@ import { education, researchExperience } from "@/data/profile";
 import { metrics } from "@/data/metrics";
 import { SectionCta } from "@/components/ui/SectionCta";
 
-/** Concise, scannable positioning — full story lives on the /about page. */
+/** Concise, scannable positioning - full story lives on the /about page. */
 const shortBio: string[] = [
-  "I am a molecular geneticist trained in Genetic Engineering & Biotechnology at the University of Chittagong, working on the genetic basis of complex disease. My M.Sc. thesis profiled MMP-1, MMP-3 and MMP-9 variants in apical periodontitis influenced by diabetes — a study I ran end to end, from DNA extraction and PCR through Sanger sequencing to variant interpretation.",
-  "At the Functional Genomics & Proteomics Laboratory I now work across three bench-led cohort studies: the first ADPKD variant spectrum reported from Bangladesh, a combined Sanger and exome study of PCOS in 600 women, and genomic surveillance of ESBL-producing E. coli. My published record — two Q1 first-author papers in structural and immunoinformatics work — is where I built the computational half of that toolkit.",
+  "I am a molecular geneticist trained in Genetic Engineering & Biotechnology at the University of Chittagong, working on the genetic basis of complex disease. My M.Sc. thesis profiled MMP-1, MMP-3 and MMP-9 variants in apical periodontitis influenced by diabetes - a study I ran end to end, from DNA extraction and PCR through Sanger sequencing to variant interpretation.",
+  "At the Functional Genomics & Proteomics Laboratory I now work across three bench-led cohort studies: the first ADPKD variant spectrum reported from Bangladesh, a combined Sanger and exome study of PCOS in 600 women, and genomic surveillance of ESBL-producing E. coli. My published record - two Q1 first-author papers in structural and immunoinformatics work - is where I built the computational half of that toolkit.",
 ];
 
 /** Field terms only. Method terms live in the research section, not here. */
@@ -65,7 +65,7 @@ export function About() {
           </div>
 
 
-          {/* Quick stats — count up on scroll, staggered into view */}
+          {/* Quick stats - count up on scroll, staggered into view */}
           <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-border pt-8">
             {quickStats.map((s, i) => (
               <Reveal as="div" key={s.label} delay={0.15 + i * 0.08}>
@@ -95,7 +95,7 @@ export function About() {
                       {edu.period}
                     </p>
                     <p className="mt-0.5 font-semibold text-foreground">
-                      {edu.degree} — {edu.field}
+                      {edu.degree} - {edu.field}
                     </p>
                     <p className="text-sm text-muted-foreground">
                       {edu.institution}

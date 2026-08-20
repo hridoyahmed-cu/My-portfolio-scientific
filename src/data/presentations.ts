@@ -25,7 +25,7 @@ export const presentations: Presentation[] = [
     kind: "Oral",
     title:
       "An immuno-informatics approach for annotation of hypothetical proteins and multi-epitope vaccine design against the Mpox virus",
-    venue: "Darwin International Conference — 4th Edition, India",
+    venue: "Darwin International Conference - 4th Edition, India",
     note: "Invited presentation on multi-layered epitope prediction and vaccine construct development.",
   },
   {
@@ -35,7 +35,7 @@ export const presentations: Presentation[] = [
     title:
       "A structure-based drug design approach for the identification of antiviral compounds targeting the Chikungunya virus RdRp protein",
     venue:
-      "International Conference on Natural Science & Technology — Asian University for Women",
+      "International Conference on Natural Science & Technology - Asian University for Women",
     note: "Computational screening, docking, and molecular dynamics of antiviral candidates.",
   },
   {
@@ -53,7 +53,7 @@ export const presentations: Presentation[] = [
     track: "Innovation",
     kind: "Business & Innovation",
     title: "Biomass Energy: Turning Organic Matter into Power",
-    venue: "Hult Prize — University of Chittagong",
+    venue: "Hult Prize - University of Chittagong",
     note: "A sustainable energy model using biomass conversion for low-resource communities.",
   },
   {
@@ -61,7 +61,7 @@ export const presentations: Presentation[] = [
     track: "Innovation",
     kind: "Business & Innovation",
     title: "Discreet and Private: Sanitary Napkins Delivered to Your Home",
-    venue: "Startup Chattogram — Business Idea Contest",
+    venue: "Startup Chattogram - Business Idea Contest",
     note: "Improving women's hygiene access through confidential doorstep delivery.",
   },
   // Posters
@@ -87,7 +87,7 @@ export const presentations: Presentation[] = [
     title:
       "Immuno-informatics approach for hypothetical protein annotation and multi-epitope vaccine design against Streptococcus pyogenes",
     venue:
-      "DNA Day — Dept. of Genetic Engineering & Biotechnology, University of Chittagong",
+      "DNA Day - Dept. of Genetic Engineering & Biotechnology, University of Chittagong",
   },
   {
     id: "poster-saussurea",
@@ -96,7 +96,7 @@ export const presentations: Presentation[] = [
     title:
       "Computational investigation of Saussurea costus bioactive molecules as potential MPXV inhibitors: reverse docking, molecular dynamics, and ADMET analysis",
     venue:
-      "Jamal Nazrul Islam International Conference — CURHS, University of Chittagong",
+      "Jamal Nazrul Islam International Conference - CURHS, University of Chittagong",
   },
 ];
 
@@ -106,12 +106,12 @@ export const presentationKinds: PresentationKind[] = [
   "Poster",
 ];
 
-/** Scientific presentations only — the conference record proper. */
+/** Scientific presentations only - the conference record proper. */
 export const scientificPresentations = presentations.filter(
   (p) => p.track === "Scientific",
 );
 
-/** Innovation competitions — belong with leadership on the CV, not with papers. */
+/** Innovation competitions - belong with leadership on the CV, not with papers. */
 export const innovationPresentations = presentations.filter(
   (p) => p.track === "Innovation",
 );

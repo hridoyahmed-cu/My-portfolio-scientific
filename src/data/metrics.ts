@@ -6,7 +6,7 @@ export type Metric = { label: string; value: number; suffix?: string; icon: stri
  * They were previously rendered as one six-across row, which put "3,000+
  * learners mentored" beside "4 peer-reviewed publications" and let the larger
  * community number swamp the research figures. Training reach is a real
- * achievement — it just is not a research metric, and mixing the two dilutes
+ * achievement - it just is not a research metric, and mixing the two dilutes
  * both.
  */
 export const researchMetrics: Metric[] = [

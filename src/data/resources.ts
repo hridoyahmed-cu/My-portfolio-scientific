@@ -11,7 +11,7 @@ export type ResourceCategory = {
   icon: string;
   /**
    * "research" categories are field tools and stay on the research spine.
-   * "students" categories are the mentorship material — genuinely useful, but
+   * "students" categories are the mentorship material - genuinely useful, but
    * off-field, so they sit below the research tools rather than beside them.
    */
   tier: ResourceTier;
@@ -31,7 +31,7 @@ export const resourceCategories: ResourceCategory[] = [
       { name: "Primer-BLAST", url: "https://www.ncbi.nlm.nih.gov/tools/primer-blast", description: "Designs PCR primers while checking specificity, combining Primer3 with NCBI BLAST." },
       { name: "Primer3", url: "https://primer3.ut.ee", description: "Highly trusted primer design software for PCR, qPCR, and sequencing projects." },
       { name: "Benchling", url: "https://www.benchling.com", description: "Cloud-based molecular biology and lab platform for sequence analysis, cloning, and collaboration." },
-      { name: "SnapGene Viewer", url: "https://www.snapgene.com/snapgene-viewer", description: "Visualises plasmids, cloning workflows, and DNA constructs — popular with researchers." },
+      { name: "SnapGene Viewer", url: "https://www.snapgene.com/snapgene-viewer", description: "Visualises plasmids, cloning workflows, and DNA constructs - popular with researchers." },
       { name: "PyMOL", url: "https://pymol.org", description: "Professional molecular visualisation for publication-quality protein structure figures." },
       { name: "ChimeraX", url: "https://www.cgl.ucsf.edu/chimerax", description: "Advanced visualisation for structural analysis and interactive molecular rendering." },
     ],
@@ -53,7 +53,7 @@ export const resourceCategories: ResourceCategory[] = [
     icon: "GraduationCap",
     links: [
       { name: "Coursera", url: "https://www.coursera.org", description: "University-level courses from top institutions worldwide; many can be audited free." },
-      { name: "edX", url: "https://www.edx.org", description: "Online courses from leading universities — excellent for STEM and professional development." },
+      { name: "edX", url: "https://www.edx.org", description: "Online courses from leading universities - excellent for STEM and professional development." },
       { name: "MIT OpenCourseWare", url: "https://ocw.mit.edu", description: "Free access to MIT course materials and lectures, ideal for self-paced learning." },
       { name: "DeepLearning.AI", url: "https://www.deeplearning.ai", description: "Industry-leading AI and machine learning education created by field experts." },
     ],
@@ -64,7 +64,7 @@ export const resourceCategories: ResourceCategory[] = [
     icon: "Award",
     links: [
       { name: "FindAPhD", url: "https://www.findaphd.com", description: "Largest database of PhD opportunities worldwide, including funded positions and scholarships." },
-      { name: "EURAXESS", url: "https://euraxess.ec.europa.eu", description: "European research careers and funding portal — great for international PhD opportunities." },
+      { name: "EURAXESS", url: "https://euraxess.ec.europa.eu", description: "European research careers and funding portal - great for international PhD opportunities." },
       { name: "DAAD", url: "https://www.daad.de/en", description: "Major scholarship platform for Germany with funding for international students." },
       { name: "Overleaf CV Templates", url: "https://www.overleaf.com/gallery/tagged/cv", description: "Professional LaTeX CV and academic resume templates widely used in academia." },
       { name: "The Professor Is In", url: "https://theprofessorisin.com", description: "Expert guidance on academic careers, SOPs, and interview preparation." },
@@ -90,10 +90,10 @@ export const resourceCategories: ResourceCategory[] = [
     icon: "Compass",
     links: [
       { name: "NASA Eyes", url: "https://eyes.nasa.gov", description: "Interactive visualisation of the solar system and space missions in real time." },
-      { name: "Human Cell Atlas", url: "https://www.humancellatlas.org", description: "Global effort to map every human cell type — a landmark in modern biology." },
+      { name: "Human Cell Atlas", url: "https://www.humancellatlas.org", description: "Global effort to map every human cell type - a landmark in modern biology." },
       { name: "Allen Brain Atlas", url: "https://portal.brain-map.org", description: "Comprehensive atlas of human and mouse brain explored through interactive datasets." },
       { name: "Our World in Data", url: "https://ourworldindata.org", description: "Data-driven insights into global health, science, economics, and society." },
-      { name: "Foldit", url: "https://fold.it", description: "Protein-folding game contributing to real science — anyone can join biological discovery." },
+      { name: "Foldit", url: "https://fold.it", description: "Protein-folding game contributing to real science - anyone can join biological discovery." },
       { name: "Zooniverse", url: "https://www.zooniverse.org", description: "World's largest citizen-science platform contributing to genuine research projects." },
     ],
   },
@@ -133,7 +133,7 @@ export const resourceCategories: ResourceCategory[] = [
     icon: "Syringe",
     links: [
       { name: "IEDB", url: "https://www.iedb.org", description: "Comprehensive immune epitope database and analysis resource, central to immunoinformatics." },
-      { name: "NetMHCpan", url: "https://services.healthtech.dtu.dk", description: "Predicts peptide binding to MHC molecules — critical for T-cell epitope identification." },
+      { name: "NetMHCpan", url: "https://services.healthtech.dtu.dk", description: "Predicts peptide binding to MHC molecules - critical for T-cell epitope identification." },
       { name: "ABCpred", url: "https://webs.iiitd.edu.in/raghava/abcpred", description: "Machine-learning B-cell epitope prediction server useful for vaccine candidate selection." },
       { name: "VaxiJen", url: "http://www.ddg-pharmfac.net/vaxijen", description: "Alignment-independent antigenicity prediction widely used in reverse vaccinology." },
       { name: "AllerTOP", url: "https://www.ddg-pharmfac.net/AllerTOP", description: "Predicts allergenic potential of proteins and peptides to improve vaccine safety." },
@@ -186,7 +186,7 @@ export const resourceTierMeta: Record<
     id: "research-tools",
     title: "Research toolbox",
     description:
-      "The tools I actually use — bench planning, sequence analysis, structural work, and high-throughput data.",
+      "The tools I actually use - bench planning, sequence analysis, structural work, and high-throughput data.",
   },
   students: {
     id: "for-students",
@@ -200,7 +200,7 @@ export const resourceTierMeta: Record<
  * Derived list that powers the filter bar at the top of the Resources page.
  * It is generated from `orderedResourceCategories` above (with an "All" option
  * added first), so reordering or editing the categories automatically updates
- * the filters — there is nothing else to keep in sync.
+ * the filters - there is nothing else to keep in sync.
  */
 export const resourceFilters: { title: string; icon: string; tier?: ResourceTier }[] = [
   { title: RESOURCE_FILTER_ALL, icon: "BookMarked" },

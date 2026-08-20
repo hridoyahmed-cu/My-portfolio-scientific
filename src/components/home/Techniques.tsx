@@ -10,7 +10,7 @@ import { labFigures } from "@/data/labFigures";
 import { withBasePath } from "@/lib/utils";
 
 /**
- * Homepage technique band — primary data first, then the bench blocks.
+ * Homepage technique band - primary data first, then the bench blocks.
  *
  * The figure strip is the point of this section: a visitor sees a gel, a
  * chromatogram, and a quality profile before reading any list of skills. The
@@ -22,7 +22,7 @@ export function Techniques() {
       <SectionHeading
         eyebrow="At the Bench"
         title="The data, then the techniques"
-        description="Three figures from the MMP variant study — a PCR gel, a Sanger electropherogram, and the read-quality profile behind the variant calls."
+        description="Three figures from the MMP variant study - a PCR gel, a Sanger electropherogram, and the read-quality profile behind the variant calls."
         align="center"
       />
 

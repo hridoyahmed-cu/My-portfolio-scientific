@@ -20,7 +20,7 @@ export const timeline: TimelineEntry[] = [
   {
     period: "2026",
     sortYear: 2026,
-    title: "First-author review — Molecular Pharming (Wiley)",
+    title: "First-author review - Molecular Pharming (Wiley)",
     place: "Engineering in Life Sciences, Wiley",
     description:
       "A comprehensive review of plant-based biopharmaceutical production, accepted February 2026 as first and corresponding author.",
@@ -60,7 +60,7 @@ export const timeline: TimelineEntry[] = [
   {
     period: "2024",
     sortYear: 2024,
-    title: "First-author Q1 publication — CHIKV RdRp drug design",
+    title: "First-author Q1 publication - CHIKV RdRp drug design",
     place: "Chemical Physics Impact, Elsevier",
     description:
       "Structure-based identification of antiviral candidates targeting the Chikungunya virus RNA-dependent RNA polymerase.",
@@ -80,7 +80,7 @@ export const timeline: TimelineEntry[] = [
   {
     period: "2023",
     sortYear: 2023,
-    title: "First-author Q1 publication — Mpox vaccine design",
+    title: "First-author Q1 publication - Mpox vaccine design",
     place: "Journal of Biomolecular Structure and Dynamics, Taylor & Francis",
     description:
       "Immunoinformatics annotation of hypothetical proteins and a multi-epitope vaccine construct against the Mpox virus.",
@@ -90,7 +90,7 @@ export const timeline: TimelineEntry[] = [
   {
     period: "2023",
     sortYear: 2023,
-    title: "Research Internships — NIB & Natural Product Lab",
+    title: "Research Internships - NIB & Natural Product Lab",
     place: "National Institute of Biotechnology & Alternative Medicine Lab",
     description:
       "Sanger and NGS workflow training, plus nanophytocompound isolation with docking-guided screening.",
@@ -100,7 +100,7 @@ export const timeline: TimelineEntry[] = [
   {
     period: "2023",
     sortYear: 2023,
-    title: "Best Research Paper Presenter — Darwin International Conference",
+    title: "Best Research Paper Presenter - Darwin International Conference",
     place: "4th Edition",
     description:
       "Recognised for the clarity and rigour of the Mpox multi-epitope vaccine presentation.",

@@ -5,7 +5,16 @@ import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Download, Mail } from "lucide-react";
 import { SocialLinks } from "@/components/layout/SocialLinks";
+import { TypedHeadline, type HeadlineSegment } from "./TypedHeadline";
 import { withAssetVersion } from "@/lib/utils";
+
+/* Title Case throughout, with the two accent words carrying the gradient. */
+const headline: HeadlineSegment[] = [
+  { text: "Reading Disease In The " },
+  { text: "Genome", gradient: true },
+  { text: ", Starting At The " },
+  { text: "Bench", gradient: true },
+];
 
 // Three.js renders only on the client.
 const DNAHero = dynamic(() => import("@/components/three/DNAHero"), {
@@ -50,26 +59,24 @@ export function Hero() {
             Open to PhD positions & research collaborations
           </motion.span>
 
-          <motion.h1
-            variants={item}
-            className="heading-display mt-6 text-balance text-4xl leading-[1.05] sm:text-5xl lg:text-6xl"
-          >
-            Reading disease in the{" "}
-            <span className="text-gradient">genome</span>, starting at the{" "}
-            <span className="text-gradient">bench</span>
-          </motion.h1>
+          <motion.div variants={item}>
+            <TypedHeadline
+              segments={headline}
+              className="heading-display mt-6 text-justify text-4xl leading-[1.05] sm:text-5xl lg:text-6xl"
+            />
+          </motion.div>
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground"
+            className="mt-6 max-w-xl text-justify text-lg leading-relaxed text-muted-foreground"
           >
             I am{" "}
-            <strong className="font-semibold text-foreground">
+            <strong className="text-gradient font-display text-2xl font-bold tracking-tight sm:text-[1.7rem]">
               Md. Hridoy Ahmed
             </strong>
             , a molecular geneticist working on the genetic basis of complex
-            disease. I generate my own data — extraction, PCR, Sanger
-            sequencing, targeted panels and exomes on patient cohorts — and
+            disease. I generate my own data - extraction, PCR, Sanger
+            sequencing, targeted panels and exomes on patient cohorts - and
             interpret it computationally.
           </motion.p>
 
@@ -109,20 +116,20 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Portrait — branded headshot presentation */}
+        {/* Portrait - branded headshot presentation */}
         <motion.div
           initial={reduce ? false : { opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="group relative mx-auto w-full max-w-sm"
         >
-          {/* Soft accent glow — calm at rest, intensifies on hover */}
+          {/* Soft accent glow - calm at rest, intensifies on hover */}
           <div
             className="pointer-events-none absolute -inset-4 rounded-[2.2rem] bg-gradient-to-br from-cyan/30 via-indigo/25 to-purple/30 opacity-70 blur-2xl transition-opacity duration-500 animate-pulse group-hover:opacity-100"
             aria-hidden
           />
 
-          {/* Rotating scientific orbit halo — spins only on hover */}
+          {/* Rotating scientific orbit halo - spins only on hover */}
           {!reduce && (
             <div
               className="pointer-events-none absolute -inset-2 rounded-[2.2rem] opacity-0 blur-[3px] transition-opacity duration-500 animate-spin-slow [animation-play-state:paused] group-hover:opacity-100 group-hover:[animation-play-state:running]"
@@ -134,7 +141,7 @@ export function Hero() {
             />
           )}
 
-          {/* Orbiting molecular accent particles — orbit on hover */}
+          {/* Orbiting molecular accent particles - orbit on hover */}
           {!reduce && (
             <div
               className="pointer-events-none absolute -inset-3 animate-spin-slow [animation-play-state:paused] group-hover:[animation-play-state:running]"
@@ -150,7 +157,7 @@ export function Hero() {
           <div className="animate-float-slow">
             <div className="relative rounded-[1.9rem] bg-gradient-to-br from-cyan/60 via-indigo/50 to-purple/60 p-[2px] shadow-lift">
               <div className="relative overflow-hidden rounded-[1.8rem] border border-border bg-card">
-                {/* Headshot lives at /public/portrait.jpg — swap it in place and bump ASSET_VERSION. */}
+                {/* Headshot lives at /public/portrait.jpg - swap it in place and bump ASSET_VERSION. */}
                 <img
                   src={withAssetVersion("/portrait.jpg")}
                   alt="Portrait of Md. Hridoy Ahmed, molecular geneticist"

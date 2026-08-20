@@ -23,7 +23,7 @@ const kindLabel: Record<TechniqueBlock["kind"], string> = {
  *
  * Self-scored proficiency ("Scientific Writing: 90%") reads as unserious on an
  * academic site, and the previous scores ranked computational work above bench
- * work — the opposite of the actual research programme. This lists what has
+ * work - the opposite of the actual research programme. This lists what has
  * been done, where, with the bench blocks first and marked as hands-on.
  */
 export function TechniqueInventory({

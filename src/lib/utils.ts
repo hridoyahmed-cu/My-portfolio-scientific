@@ -29,7 +29,7 @@ export const ASSET_VERSION = "5";
 /**
  * Like withBasePath, but appends ?v=<ASSET_VERSION> so an in-place asset swap
  * refreshes immediately for everyone. Use for /avatar.png, /portrait.*, and
- * the CV PDF — NOT for gallery photos (those change by filename, so plain
+ * the CV PDF - NOT for gallery photos (those change by filename, so plain
  * withBasePath avoids re-downloading all of them whenever the version bumps).
  */
 export function withAssetVersion(path: string): string {

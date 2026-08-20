@@ -42,7 +42,7 @@ export const publications: Publication[] = [
     authorHighlight: "Md. Hridoy Ahmed",
     authorRole: "Corresponding author",
     connection:
-      "Regulatory annotation of risk variants — the same interpretive step applied to the ADPKD and PCOS cohorts, here on breast cancer loci.",
+      "Regulatory annotation of risk variants - the same interpretive step applied to the ADPKD and PCOS cohorts, here on breast cancer loci.",
     journal: "Computational and Systems Oncology",
     year: 2026,
     volume: "6",
@@ -98,7 +98,7 @@ export const publications: Publication[] = [
     authorHighlight: "Md. Hridoy Ahmed",
     authorRole: "First author",
     connection:
-      "Where the structural modelling and molecular dynamics methods were built — now applied to asking what disease variants do to protein structure.",
+      "Where the structural modelling and molecular dynamics methods were built - now applied to asking what disease variants do to protein structure.",
     journal: "Chemical Physics Impact",
     year: 2024,
     volume: "8",
@@ -128,7 +128,7 @@ export const publications: Publication[] = [
     authorHighlight: "Md. Hridoy Ahmed",
     authorRole: "First author",
     connection:
-      "Proteome-wide screening and epitope prediction — the computational annotation skills that variant interpretation draws on.",
+      "Proteome-wide screening and epitope prediction - the computational annotation skills that variant interpretation draws on.",
     journal: "Journal of Biomolecular Structure and Dynamics",
     year: 2023,
     volume: "42(10)",
@@ -174,7 +174,7 @@ export type Manuscript = {
   /** Explicit, unambiguous status. Never presented as published. */
   status: "In preparation" | "Under review" | "Submitted";
   domain: string;
-  /** Sample or isolate count — the evidence that this is bench-generated data. */
+  /** Sample or isolate count - the evidence that this is bench-generated data. */
   cohort: string;
   /** True when I generated the underlying data at the bench. */
   bench: boolean;
@@ -220,7 +220,7 @@ export const manuscriptsInPreparation: Manuscript[] = [
       "Pathway enrichment analysis",
     ],
     finding:
-      "All five polymorphisms associated with PCOS, and rare damaging variants converged on the same reproductive and metabolic pathways — common and rare variation implicating one mechanism.",
+      "All five polymorphisms associated with PCOS, and rare damaging variants converged on the same reproductive and metabolic pathways - common and rare variation implicating one mechanism.",
     projectId: "pcos-common-rare-variants",
   },
   {

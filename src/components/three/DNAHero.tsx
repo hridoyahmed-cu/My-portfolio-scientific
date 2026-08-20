@@ -23,7 +23,7 @@ export function DNAHero() {
     try {
       renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     } catch {
-      return; // WebGL unavailable — leave the gradient backdrop in place
+      return; // WebGL unavailable - leave the gradient backdrop in place
     }
 
     const scene = new THREE.Scene();

@@ -34,7 +34,7 @@ export default function ResearchPage() {
         description={researchField.method}
       />
 
-      {/* Themes — the three questions */}
+      {/* Themes - the three questions */}
       <section className="container py-16">
         <h2 className="heading-display text-2xl">Research themes</h2>
         <p className="mt-2 max-w-3xl text-muted-foreground">
@@ -148,13 +148,13 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      {/* Methods — supporting capability, not a parallel programme */}
+      {/* Methods - supporting capability, not a parallel programme */}
       <section className="border-y border-border bg-card/30 py-16">
         <div className="container">
           <h2 className="heading-display text-2xl">Methods</h2>
           <p className="mt-2 max-w-3xl text-muted-foreground">
             {researchField.methodNote} Each capability below carries published
-            work behind it — the Chikungunya and Mpox studies are where most of
+            work behind it - the Chikungunya and Mpox studies are where most of
             it was built.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

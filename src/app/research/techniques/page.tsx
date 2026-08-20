@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Laboratory Techniques",
   alternates: { canonical: "/research/techniques/" },
   description:
-    "Primary laboratory data — PCR gel, Sanger electropherogram, and read-quality profile — alongside the wet-lab techniques run first-hand: DNA extraction, PCR and qPCR, gel electrophoresis, and targeted panel and whole-exome library workflows.",
+    "Primary laboratory data - PCR gel, Sanger electropherogram, and read-quality profile - alongside the wet-lab techniques run first-hand: DNA extraction, PCR and qPCR, gel electrophoresis, and targeted panel and whole-exome library workflows.",
 };
 
 const benchBlocks = techniqueInventory.filter((t) => t.kind === "bench");
@@ -30,7 +30,7 @@ export default function TechniquesPage() {
         description="The hands-on half of the research programme, starting with the data itself: a gel, a chromatogram, and a quality profile from the MMP variant study. Techniques and computational tooling follow."
       />
 
-      {/* Primary data — the evidence comes first, before any list of skills. */}
+      {/* Primary data - the evidence comes first, before any list of skills. */}
       <section id="primary-data" className="container scroll-mt-24 py-16">
         <div className="flex flex-wrap items-center gap-3">
           <h2 className="heading-display text-2xl">Primary data</h2>
@@ -148,7 +148,7 @@ export default function TechniquesPage() {
         </div>
       </section>
 
-      {/* Laboratory photographs — populated by tagging gallery items "Lab & Bench" */}
+      {/* Laboratory photographs - populated by tagging gallery items "Lab & Bench" */}
       {labGalleryItems.length > 0 ? (
         <section className="container py-16">
           <h2 className="heading-display text-2xl">From the laboratory</h2>

@@ -18,7 +18,7 @@ export function ResourceCard({
       target="_blank"
       rel="noopener noreferrer"
       className="card-glass surface group flex h-full flex-col p-5"
-      aria-label={`${link.name} — opens in a new tab`}
+      aria-label={`${link.name} - opens in a new tab`}
     >
       <div className="flex items-center justify-between gap-3">
         <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan/10 text-cyan transition-colors duration-300 group-hover:bg-indigo/15 group-hover:text-indigo">

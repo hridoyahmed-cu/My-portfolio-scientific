@@ -22,7 +22,7 @@ export function Teaching() {
         <div>
           <SectionHeading
             eyebrow="Teaching & Mentorship"
-            title="BioPC — training the next cohort of computational biologists"
+            title="BioPC - training the next cohort of computational biologists"
             description={biopc.summary}
           />
 

@@ -10,7 +10,7 @@ import { manuscriptsInPreparation } from "@/data/publications";
  * Current bench-led cohort studies.
  *
  * This section exists because the published record is entirely computational
- * while the research programme is bench-led — a mismatch a reviewer notices
+ * while the research programme is bench-led - a mismatch a reviewer notices
  * immediately. The three studies below are where the hands-on work actually
  * lives, so they are stated early, with cohort sizes, and with their status
  * labelled unambiguously as in preparation.

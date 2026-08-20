@@ -94,7 +94,7 @@ export function ResearchProgramme() {
           ))}
         </div>
 
-        {/* Methods — supporting, deliberately quieter than the themes above. */}
+        {/* Methods - supporting, deliberately quieter than the themes above. */}
         <Reveal className="mt-16">
           <div className="mx-auto max-w-2xl text-center">
             <h3 className="heading-display text-xl">Methods I bring to them</h3>

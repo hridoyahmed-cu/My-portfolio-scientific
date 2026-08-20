@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "About & CV",
   alternates: { canonical: "/about/" },
   description:
-    "Academic biography and full curriculum vitae of Md. Hridoy Ahmed — profile, education, research experience, skills, awards, certifications, and professional activities.",
+    "Academic biography and full curriculum vitae of Md. Hridoy Ahmed - profile, education, research experience, skills, awards, certifications, and professional activities.",
 };
 
 const sectionNav = [
@@ -146,7 +146,7 @@ export default function AboutPage() {
                 <li key={edu.degree} className="border-l-[3px] border-cyan/60 pl-4">
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <p className="font-semibold text-foreground">
-                      {edu.degree} — {edu.field}
+                      {edu.degree} - {edu.field}
                     </p>
                     <span className="font-plex text-sm text-muted-foreground">{edu.period}</span>
                   </div>
@@ -253,7 +253,7 @@ export default function AboutPage() {
                   {talks.map((t) => (
                     <li key={t.id} className="text-sm text-foreground/85">
                       <span className="font-medium text-foreground">“{t.title}”</span>{" "}
-                      — {t.venue}
+                      - {t.venue}
                     </li>
                   ))}
                 </ul>
@@ -269,7 +269,7 @@ export default function AboutPage() {
                   {innovationPresentations.map((t) => (
                     <li key={t.id} className="text-sm text-foreground/85">
                       <span className="font-medium text-foreground">“{t.title}”</span>{" "}
-                      — {t.venue}
+                      - {t.venue}
                     </li>
                   ))}
                 </ul>

@@ -63,7 +63,7 @@ export function GalleryGrid() {
                 decoding="async"
                 className="w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
               />
-              {/* Showcase overlay — gradient wash + reveal on hover */}
+              {/* Showcase overlay - gradient wash + reveal on hover */}
               <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               <span className="pointer-events-none absolute inset-x-0 bottom-0 flex translate-y-1.5 items-center gap-1.5 p-3 text-xs font-semibold text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                 <Expand className="h-4 w-4" />

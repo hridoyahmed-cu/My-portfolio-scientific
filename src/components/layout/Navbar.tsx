@@ -44,7 +44,7 @@ export function Navbar() {
         <Link
           href="/"
           className="focus-ring group flex items-center gap-2.5 rounded-md"
-          aria-label={`${siteConfig.name} — home`}
+          aria-label={`${siteConfig.name} - home`}
         >
           <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-cyan/70 via-indigo/60 to-purple/70 p-[1.5px] shadow-soft transition-shadow duration-300 group-hover:shadow-[0_0_14px_2px_rgba(56,189,248,0.45)]">
             <span className="relative inline-flex h-full w-full overflow-hidden rounded-full border border-background bg-card">
@@ -55,7 +55,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop nav — six groups, each opening on hover and focus. */}
+        {/* Desktop nav - six groups, each opening on hover and focus. */}
         <ul className="hidden items-center gap-0.5 lg:flex">
           {navGroups.map((group) => {
             const active = isGroupActive(group.match);
@@ -119,7 +119,7 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu — groups as headings, children indented beneath. */}
+      {/* Mobile menu - groups as headings, children indented beneath. */}
       <div
         className={cn(
           "overflow-y-auto border-t border-border bg-background/95 backdrop-blur-md transition-[max-height] duration-300 lg:hidden",

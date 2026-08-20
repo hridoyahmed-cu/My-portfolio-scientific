@@ -2,7 +2,7 @@
  * Web3Forms submission helper, kept separate from the form UI component.
  *
  * Delivers a contact message straight to the inbox linked to the access key.
- * No backend required — works on fully static hosting. To change the
+ * No backend required - works on fully static hosting. To change the
  * destination inbox, create a new key at https://web3forms.com.
  */
 const WEB3FORMS_KEY = "47345cc3-d84a-4364-b1db-45982517a088";

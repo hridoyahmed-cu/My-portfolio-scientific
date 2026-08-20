@@ -79,7 +79,7 @@ export function GalleryHighlights() {
             onBlur={() => setPaused(false)}
             className="focus-ring group relative overflow-hidden rounded-3xl border border-border bg-card shadow-soft"
           >
-            {/* Slides — crossfade with swipe support */}
+            {/* Slides - crossfade with swipe support */}
             <div className="relative aspect-[16/10] w-full sm:aspect-[16/9]">
               <AnimatePresence initial={false} mode="popLayout">
                 <motion.div

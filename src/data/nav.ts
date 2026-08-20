@@ -2,7 +2,7 @@ export type NavItem = { label: string; href: string; anchor?: boolean };
 
 export type NavGroup = {
   label: string;
-  /** Landing route for the group — where the top-level label points. */
+  /** Landing route for the group - where the top-level label points. */
   href: string;
   /** Routes that count as "inside" this group for active-state highlighting. */
   match: string[];
@@ -18,7 +18,7 @@ export type NavGroup = {
  * content, ordered by distance from the research field: research first,
  * evidence second, credentials third, service fourth.
  *
- * Every original route still resolves — nothing was retired, only re-tiered.
+ * Every original route still resolves - nothing was retired, only re-tiered.
  */
 export const navGroups: NavGroup[] = [
   { label: "Home", href: "/", match: ["/"] },
@@ -70,7 +70,7 @@ export const navGroups: NavGroup[] = [
 ];
 
 /**
- * Flat route list — every page on the site, kept for the sitemap and footer.
+ * Flat route list - every page on the site, kept for the sitemap and footer.
  * Order here mirrors the grouping above.
  */
 export const navItems: NavItem[] = [
@@ -91,7 +91,7 @@ export const navItems: NavItem[] = [
 
 export const footerNav: NavItem[] = [{ label: "Media", href: "/media" }];
 
-/** Footer grouping — mirrors the header so the two never drift apart. */
+/** Footer grouping - mirrors the header so the two never drift apart. */
 export const footerGroups: { title: string; items: NavItem[] }[] = [
   {
     title: "Research",
