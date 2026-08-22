@@ -16,7 +16,7 @@ export function Counter({
   value,
   prefix = "",
   suffix = "",
-  duration = 1800,
+  duration = 3200,
   className,
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -34,8 +34,11 @@ export function Counter({
     const start = performance.now();
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
-      // easeOutExpo for a confident settle
-      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      // easeOutCubic. easeOutExpo used to reach ~87% of the value in the
+      // first third of the run, so the count read as fast however long the
+      // duration was; cubic decelerates gently enough for the digits to be
+      // followed the whole way up.
+      const eased = 1 - Math.pow(1 - progress, 3);
       setDisplay(Math.round(eased * value));
       if (progress < 1) raf = requestAnimationFrame(tick);
     };

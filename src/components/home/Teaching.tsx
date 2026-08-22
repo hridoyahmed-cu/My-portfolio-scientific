@@ -52,7 +52,7 @@ export function Teaching() {
               <Reveal
                 as="div"
                 key={stat.label}
-                delay={i * 0.07}
+                delay={i * 0.14}
                 className="surface flex flex-col justify-center p-6 text-center"
               >
                 <p className="font-display text-3xl font-bold text-gradient">

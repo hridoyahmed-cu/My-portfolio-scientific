@@ -2,44 +2,96 @@ export type GalleryCategory =
   | "Lab & Bench"
   | "Conferences & Talks"
   | "Teaching & BioPC"
-  | "Campus & Personal";
+  | "Academic Milestones"
+  | "Awards & Leadership";
 
 export type GalleryItem = {
   src: string;
+  /** Real caption. Shown under the photograph and used as its alt text. */
   alt: string;
-  /**
-   * Untagged items fall through to "Campus & Personal" and sort last.
-   *
-   * Tagging is manual on purpose - only you can tell which of these frames show
-   * bench work. Add `category: "Lab & Bench"` to the laboratory photographs
-   * first; those are the ones that carry evidence, and they will move to the
-   * front of the grid automatically. Replace the generated alt text with a real
-   * caption at the same time ("Agarose gel, MMP3 amplicons, thesis cohort"
-   * rather than "academic, research, and community moments (37)").
-   */
-  category?: GalleryCategory;
+  category: GalleryCategory;
 };
 
-/** Display order: bench work first, personal photographs last. */
+/** Display order: bench work first, then the podium, the classroom, the record. */
 export const galleryCategories: GalleryCategory[] = [
   "Lab & Bench",
   "Conferences & Talks",
   "Teaching & BioPC",
-  "Campus & Personal",
+  "Academic Milestones",
+  "Awards & Leadership",
 ];
 
-/* 178 photographs imported from the personal collection and optimised for
-   the web (HEIC converted to JPG, auto-rotated via EXIF, resized to a
-   1600px long edge, and compressed). The homepage "Gallery Highlights"
-   carousel shows the first 12 entries. Reorder this array to change which
-   photos appear, and which are featured. */
-
+/*
+ * Curated from a 176-photograph import.
+ *
+ * The import was a phone roll: beaches, waterfalls, bus stops, and eleven near
+ * identical frames of the same thesis handover. Those are gone. What is left is
+ * only work - the bench, the podium, the classroom, the degree, and the service
+ * - and every frame now carries a caption saying what it actually shows, since
+ * an uncaptioned photograph on a research site is decoration, not evidence.
+ *
+ * Adding one: put it in its category block, write a caption that names the
+ * place or the instrument, and keep the filename (`gNNN`) - the homepage
+ * glimpse below selects by filename.
+ */
 export const galleryItems: GalleryItem[] = [
- 
+  // ---------------------------------------------------------------- Lab & Bench
   {
-    src: "/gallery/g003.webp",
-    alt: "Outside the Department of Genetic Engineering and Biotechnology, University of Chittagong, with the bound M.Sc. thesis.",
-    category: "Campus & Personal",
+    src: "/gallery/g025.webp",
+    alt: "Reading a real-time PCR amplification plot at the QuantStudio, Functional Genomics & Proteomics Laboratory, University of Chittagong.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g027.webp",
+    alt: "Starting a run on the thermal cycler during a variant-screening batch.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g026.webp",
+    alt: "Loading a PCR plate into the thermal cycler at the Functional Genomics & Proteomics Laboratory.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g029.webp",
+    alt: "Preparing samples at the benchtop centrifuge with a colleague.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g031.webp",
+    alt: "Setting up a PCR reaction at the bench alongside the laboratory supervisor.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g030.webp",
+    alt: "A working afternoon in the molecular biology laboratory.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g033.webp",
+    alt: "The Functional Genomics & Proteomics Laboratory group, University of Chittagong.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g034.webp",
+    alt: "In the Sanger Sequencing Laboratory with the research team.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g055.webp",
+    alt: "Gowned for the molecular biology suite during the National Institute of Biotechnology internship.",
+    category: "Lab & Bench",
+  },
+  {
+    src: "/gallery/g080.webp",
+    alt: "In full PPE at the RT-PCR laboratory, Department of Microbiology, Shaheed Syed Nazrul Islam Medical College - COVID-19 testing service.",
+    category: "Lab & Bench",
+  },
+
+  // -------------------------------------------------------- Conferences & Talks
+  {
+    src: "/gallery/g085.webp",
+    alt: "Beside the conference poster on non-structural polyprotein 4 (nsP4) RdRp inhibitors for Chikungunya virus - the study later published as a first-author paper.",
+    category: "Conferences & Talks",
   },
   {
     src: "/gallery/g092.webp",
@@ -47,225 +99,307 @@ export const galleryItems: GalleryItem[] = [
     category: "Conferences & Talks",
   },
   {
-    src: "/gallery/g025.webp",
-    alt: "Reading a real-time PCR amplification plot at the QuantStudio, Functional Genomics & Proteomics Laboratory, University of Chittagong.",
-    category: "Lab & Bench",
+    src: "/gallery/g119.webp",
+    alt: "At the poster session with the genome-wide breast cancer polymorphism study and the SPP1 lung cancer biomarker analysis.",
+    category: "Conferences & Talks",
   },
-  { src: "/gallery/g005.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (5)" },
+  {
+    src: "/gallery/g068.webp",
+    alt: "Walking the judges through a poster on beta-cell regeneration through stem cell therapy.",
+    category: "Conferences & Talks",
+  },
+  {
+    src: "/gallery/g088.webp",
+    alt: "At the 1st RSG Bangladesh CompBio Symposium, Bangladesh Reference Institute for Chemical Measurements, March 2023.",
+    category: "Conferences & Talks",
+  },
+  {
+    src: "/gallery/g091.webp",
+    alt: "In the auditorium during the CompBio Symposium sessions.",
+    category: "Conferences & Talks",
+  },
+  {
+    src: "/gallery/g084.webp",
+    alt: "With the delegation at the 1st Jamal Nazrul Islam National Conference for Young Researchers, University of Chittagong.",
+    category: "Conferences & Talks",
+  },
+  {
+    src: "/gallery/g118.webp",
+    alt: "With fellow presenters in the conference poster hall.",
+    category: "Conferences & Talks",
+  },
+  {
+    src: "/gallery/g067.webp",
+    alt: "Presenting to a full classroom at BIO-STEE 2019.",
+    category: "Conferences & Talks",
+  },
+  {
+    src: "/gallery/g049.webp",
+    alt: "Presenting slides at a departmental seminar session.",
+    category: "Conferences & Talks",
+  },
+
+  // ---------------------------------------------------------- Teaching & BioPC
   {
     src: "/gallery/g129.webp",
     alt: "Teaching a free bioinformatics workshop to a full lecture hall.",
     category: "Teaching & BioPC",
   },
-  { src: "/gallery/g107.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (107)" },
-  { src: "/gallery/g009.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (9)" },
   {
-    src: "/gallery/g027.webp",
-    alt: "Operating the Applied Biosystems SeqStudio genetic analyser - the instrument behind the Sanger reads in this site's chromatogram figure.",
-    category: "Lab & Bench",
-  },
-  { src: "/gallery/g144.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (144)" },
-  { src: "/gallery/g010.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (10)" },
-  { src: "/gallery/g145.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (145)" },
-  { src: "/gallery/g148.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (148)" },
-  { src: "/gallery/g079.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (79)" },
-  { src: "/gallery/g034.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (34)" },
-  { src: "/gallery/g049.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (49)" },
-  { src: "/gallery/g011.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (11)" },
-  { src: "/gallery/g004.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (4)" },
-  { src: "/gallery/g013.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (13)" },
-  { src: "/gallery/g067.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (67)" },
-  { src: "/gallery/g068.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (68)" },
-  { src: "/gallery/g001.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (1)" },
-  { src: "/gallery/g014.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (14)" },
-  { src: "/gallery/g015.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (15)" },
-  { src: "/gallery/g016.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (16)" },
-  { src: "/gallery/g017.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (17)" },
-  { src: "/gallery/g018.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (18)" },
-  { src: "/gallery/g019.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (19)" },
-  { src: "/gallery/g020.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (20)" },
-  { src: "/gallery/g021.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (21)" },
-  { src: "/gallery/g022.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (22)" },
-  { src: "/gallery/g023.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (23)" },
-  { src: "/gallery/g012.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (12)" },
-  { src: "/gallery/g024.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (24)" },
-  {
-    src: "/gallery/g026.webp",
-    alt: "Starting an instrument run in the sequencing room.",
-    category: "Lab & Bench",
-  },
-  { src: "/gallery/g007.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (7)" },
-  { src: "/gallery/g008.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (8)" },
-  { src: "/gallery/g028.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (28)" },
-  { src: "/gallery/g002.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (2)" },
-  {
-    src: "/gallery/g029.webp",
-    alt: "Loading samples for centrifugation during a DNA extraction run.",
-    category: "Lab & Bench",
-  },
-  { src: "/gallery/g006.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (6)" },
-  {
-    src: "/gallery/g030.webp",
-    alt: "Sample inspection at the FGPL bench, with the pipette set and reagent shelf behind.",
-    category: "Lab & Bench",
+    src: "/gallery/g143.webp",
+    alt: "Lecturing at the BioPC free workshop on bioinformatics and computer-aided drug design.",
+    category: "Teaching & BioPC",
   },
   {
-    src: "/gallery/g031.webp",
-    alt: "Setting up PCR reactions at the bench, with tube racks and reagents laid out.",
-    category: "Lab & Bench",
+    src: "/gallery/g126.webp",
+    alt: "Walking participants through a database search on screen during a BioPC workshop.",
+    category: "Teaching & BioPC",
   },
-  { src: "/gallery/g032.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (32)" },
   {
-    src: "/gallery/g033.webp",
-    alt: "The Functional Genomics & Proteomics Laboratory group, University of Chittagong.",
-    category: "Lab & Bench",
+    src: "/gallery/g178.webp",
+    alt: "BioPC course poster: R Programming for Biologists, with Hridoy Ahmed as instructor.",
+    category: "Teaching & BioPC",
   },
-  { src: "/gallery/g036.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (36)" },
-  { src: "/gallery/g037.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (37)" },
-  { src: "/gallery/g038.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (38)" },
-  { src: "/gallery/g039.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (39)" },
-  { src: "/gallery/g040.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (40)" },
-  { src: "/gallery/g041.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (41)" },
-  { src: "/gallery/g042.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (42)" },
-  { src: "/gallery/g043.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (43)" },
-  { src: "/gallery/g044.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (44)" },
-  { src: "/gallery/g045.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (45)" },
-  { src: "/gallery/g046.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (46)" },
-  { src: "/gallery/g047.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (47)" },
-  { src: "/gallery/g048.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (48)" },
-  { src: "/gallery/g050.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (50)" },
-  { src: "/gallery/g051.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (51)" },
-  { src: "/gallery/g052.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (52)" },
-  { src: "/gallery/g053.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (53)" },
-  { src: "/gallery/g054.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (54)" },
-  { src: "/gallery/g055.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (55)" },
-  { src: "/gallery/g056.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (56)" },
-  { src: "/gallery/g057.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (57)" },
-  { src: "/gallery/g058.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (58)" },
-  { src: "/gallery/g059.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (59)" },
-  { src: "/gallery/g060.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (60)" },
-  { src: "/gallery/g061.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (61)" },
-  { src: "/gallery/g062.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (62)" },
-  { src: "/gallery/g063.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (63)" },
-  { src: "/gallery/g064.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (64)" },
-  { src: "/gallery/g065.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (65)" },
-  { src: "/gallery/g066.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (66)" },
-  { src: "/gallery/g069.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (69)" },
-  { src: "/gallery/g070.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (70)" },
-  { src: "/gallery/g071.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (71)" },
-  { src: "/gallery/g072.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (72)" },
-  { src: "/gallery/g073.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (73)" },
-  { src: "/gallery/g074.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (74)" },
-  { src: "/gallery/g075.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (75)" },
-  { src: "/gallery/g076.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (76)" },
-  { src: "/gallery/g077.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (77)" },
-  { src: "/gallery/g078.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (78)" },
-  { src: "/gallery/g080.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (80)" },
-  { src: "/gallery/g081.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (81)" },
-  { src: "/gallery/g082.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (82)" },
-  { src: "/gallery/g083.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (83)" },
-  { src: "/gallery/g084.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (84)" },
-  { src: "/gallery/g085.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (85)" },
-  { src: "/gallery/g086.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (86)" },
-  { src: "/gallery/g087.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (87)" },
-  { src: "/gallery/g088.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (88)" },
-  { src: "/gallery/g089.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (89)" },
-  { src: "/gallery/g090.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (90)" },
-  { src: "/gallery/g091.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (91)" },
-  { src: "/gallery/g093.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (93)" },
-  { src: "/gallery/g094.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (94)" },
-  { src: "/gallery/g095.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (95)" },
-  { src: "/gallery/g096.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (96)" },
-  { src: "/gallery/g097.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (97)" },
-  { src: "/gallery/g098.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (98)" },
-  { src: "/gallery/g099.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (99)" },
-  { src: "/gallery/g100.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (100)" },
-  { src: "/gallery/g101.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (101)" },
-  { src: "/gallery/g102.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (102)" },
-  { src: "/gallery/g103.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (103)" },
-  { src: "/gallery/g104.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (104)" },
-  { src: "/gallery/g105.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (105)" },
-  { src: "/gallery/g106.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (106)" },
-  { src: "/gallery/g108.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (108)" },
-  { src: "/gallery/g109.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (109)" },
-  { src: "/gallery/g110.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (110)" },
-  { src: "/gallery/g111.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (111)" },
-  { src: "/gallery/g112.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (112)" },
-  { src: "/gallery/g113.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (113)" },
-  { src: "/gallery/g114.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (114)" },
-  { src: "/gallery/g115.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (115)" },
-  { src: "/gallery/g116.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (116)" },
-  { src: "/gallery/g117.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (117)" },
-  { src: "/gallery/g118.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (118)" },
-  { src: "/gallery/g119.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (119)" },
-  { src: "/gallery/g120.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (120)" },
-  { src: "/gallery/g121.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (121)" },
-  { src: "/gallery/g122.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (122)" },
-  { src: "/gallery/g123.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (123)" },
-  { src: "/gallery/g124.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (124)" },
-  { src: "/gallery/g125.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (125)" },
-  { src: "/gallery/g126.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (126)" },
-  { src: "/gallery/g127.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (127)" },
-  { src: "/gallery/g128.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (128)" },
-  { src: "/gallery/g130.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (130)" },
-  { src: "/gallery/g131.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (131)" },
-  { src: "/gallery/g132.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (132)" },
-  { src: "/gallery/g133.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (133)" },
-  { src: "/gallery/g134.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (134)" },
-  { src: "/gallery/g135.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (135)" },
-  { src: "/gallery/g136.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (136)" },
-  { src: "/gallery/g137.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (137)" },
-  { src: "/gallery/g138.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (138)" },
-  { src: "/gallery/g139.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (139)" },
-  { src: "/gallery/g140.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (140)" },
-  { src: "/gallery/g141.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (141)" },
-  { src: "/gallery/g142.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (142)" },
-  { src: "/gallery/g143.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (143)" },
-  { src: "/gallery/g146.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (146)" },
-  { src: "/gallery/g147.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (147)" },
-  { src: "/gallery/g149.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (149)" },
-  { src: "/gallery/g150.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (150)" },
-  { src: "/gallery/g151.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (151)" },
-  { src: "/gallery/g152.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (152)" },
-  { src: "/gallery/g153.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (153)" },
-  { src: "/gallery/g154.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (154)" },
-  { src: "/gallery/g155.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (155)" },
-  { src: "/gallery/g156.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (156)" },
-  { src: "/gallery/g157.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (157)" },
-  { src: "/gallery/g158.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (158)" },
-  { src: "/gallery/g159.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (159)" },
-  { src: "/gallery/g160.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (160)" },
-  { src: "/gallery/g161.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (161)" },
-  { src: "/gallery/g162.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (162)" },
-  { src: "/gallery/g163.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (163)" },
-  { src: "/gallery/g164.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (164)" },
-  { src: "/gallery/g165.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (165)" },
-  { src: "/gallery/g166.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (166)" },
-  { src: "/gallery/g167.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (167)" },
-  { src: "/gallery/g168.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (168)" },
-  { src: "/gallery/g169.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (169)" },
-  { src: "/gallery/g170.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (170)" },
-  { src: "/gallery/g171.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (171)" },
-  { src: "/gallery/g172.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (172)" },
-  { src: "/gallery/g173.jpg", alt: "Md. Hridoy Ahmed - academic, research, and community moments (173)" },
-  { src: "/gallery/g174.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (174)" },
-  { src: "/gallery/g175.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (175)" },
-  { src: "/gallery/g176.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (176)" },
-  { src: "/gallery/g177.webp", alt: "Md. Hridoy Ahmed - academic, research, and community moments (177)" },
+  {
+    src: "/gallery/g179.webp",
+    alt: "BioPC Bioinformatics Research Internship 4.0 - instructors' panel.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g104.webp",
+    alt: "BioPC free workshop poster: Bioinformatics & Computer-Aided Drug Design, Department of Botany, University of Chittagong, June 2024.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g102.webp",
+    alt: "BioPC workshop poster: Basic Bioinformatics to Publications, October 2023.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g013.webp",
+    alt: "BioPC session poster: Research Tools & Methodology, taught as instructor.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g076.webp",
+    alt: "Running a hands-on laboratory class for undergraduate students.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g037.webp",
+    alt: "Demonstrating a technique to a group of trainees.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g122.webp",
+    alt: "Invigilating the hall during a nationwide BioPC olympiad round.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g074.webp",
+    alt: "Supervising candidates sitting the Biology & Bioinformatics Olympiad.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g093.webp",
+    alt: "Handing a prize to a winner of the 1st Biology & Bioinformatics Olympiad.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g096.webp",
+    alt: "At the 1st Biology & Bioinformatics Olympiad, organised for students nationwide.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g123.webp",
+    alt: "Participants of a BioPC free workshop after the closing session.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g128.webp",
+    alt: "Presenting a book to a workshop participant.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g134.webp",
+    alt: "With the chief guest at the opening of a BioPC workshop.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g144.webp",
+    alt: "BioPC announcement of the Mpox multi-epitope vaccine paper, published at impact factor 5.325.",
+    category: "Teaching & BioPC",
+  },
+  {
+    src: "/gallery/g099.webp",
+    alt: "Announced as Head of the Coordinators at BioPC.",
+    category: "Teaching & BioPC",
+  },
+
+  // ------------------------------------------------------- Academic Milestones
+  {
+    src: "/gallery/g003.webp",
+    alt: "Outside the Department of Genetic Engineering and Biotechnology, University of Chittagong, with the bound M.Sc. thesis.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g039.webp",
+    alt: "The bound M.Sc. theses on submission day.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g018.webp",
+    alt: "Submitting the M.Sc. thesis with the supervisor at the department.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g022.webp",
+    alt: "At the 5th Convocation of the University of Chittagong, Faculty of Biological Sciences, 2025.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g019.webp",
+    alt: "The cap toss at convocation.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g020.webp",
+    alt: "With faculty and classmates on convocation day at the department.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g011.webp",
+    alt: "In academic dress on the University of Chittagong campus.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g009.webp",
+    alt: "The graduating cohort of the Department of Genetic Engineering and Biotechnology.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g105.webp",
+    alt: "A departmental research meeting with faculty and students.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g174.webp",
+    alt: "Sitting on a departmental selection panel.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g166.webp",
+    alt: "In the rice research glasshouse with faculty during a field facility visit.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g114.webp",
+    alt: "The cohort on a research institute study tour.",
+    category: "Academic Milestones",
+  },
+  {
+    src: "/gallery/g112.webp",
+    alt: "Inside the glasshouse during a study visit to a plant research facility.",
+    category: "Academic Milestones",
+  },
+
+  // -------------------------------------------------------- Awards & Leadership
+  {
+    src: "/gallery/g107.webp",
+    alt: "Receiving a certificate of appreciation from senior faculty at the department.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g172.webp",
+    alt: "The BioPC team's plaque to its head coordinator, inscribed for the researcher who inspired their own research dreams.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g170.webp",
+    alt: "With the BioPC appreciation plaque, presented by the team.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g010.webp",
+    alt: "Receiving a token of appreciation on stage at a departmental programme.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g071.webp",
+    alt: "With the certificates from the Startup Chattogram Bootcamp on innovation, creativity and entrepreneurship.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g058.webp",
+    alt: "At Udbhaboker Khoje (In Search of Innovators) Season 2, a national innovation competition, 2019.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g072.webp",
+    alt: "Working through an idea board with the team at an entrepreneurship bootcamp.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g073.webp",
+    alt: "Pitching to the room during a bootcamp session.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g061.webp",
+    alt: "Speaking at a student programme on campus.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g077.webp",
+    alt: "Preparing hand sanitiser for distribution during the COVID-19 response.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g078.webp",
+    alt: "Putting up a public health awareness notice on campus.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g075.webp",
+    alt: "With the volunteer team at a campus science event.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g079.webp",
+    alt: "Presenting a crest to a guest at a community programme.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g103.webp",
+    alt: "Presenting a crest on behalf of the team.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g116.webp",
+    alt: "Presenting a crest to a faculty member at the department.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g147.webp",
+    alt: "The research team with faculty after a departmental recognition.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g082.webp",
+    alt: "With an environmental awareness poster - be a part of the solution, not a part of the pollution.",
+    category: "Awards & Leadership",
+  },
+  {
+    src: "/gallery/g121.jpg",
+    alt: "With the wreath at the Shaheed Minar on Language Martyrs' Day.",
+    category: "Awards & Leadership",
+  },
 ];
 
-const categoryRank = (item: GalleryItem) => {
-  const idx = galleryCategories.indexOf(item.category ?? "Campus & Personal");
-  return idx === -1 ? galleryCategories.length : idx;
-};
+const categoryRank = (item: GalleryItem) =>
+  galleryCategories.indexOf(item.category);
 
-/**
- * The gallery in display order - laboratory frames first.
- *
- * Until items are tagged this is a stable no-op over the existing order, so
- * nothing changes visually. Tag one photograph "Lab & Bench" and it moves to
- * the front on the next build.
- */
+/** The gallery in display order - laboratory frames first. */
 export const orderedGalleryItems: GalleryItem[] = [...galleryItems].sort(
   (a, b) => categoryRank(a) - categoryRank(b),
 );
@@ -278,21 +412,26 @@ export const labGalleryItems: GalleryItem[] = galleryItems.filter(
 /**
  * Research-focused selection for the homepage glimpse.
  *
- * Ten photographs chosen for what they show rather than how they look: bench
- * work first, then the scientific talk, the training, and the department. The
- * order runs instrument -> bench -> group -> podium -> lecture hall -> faculty.
+ * Fourteen frames chosen for what they show rather than how they look: the
+ * instruments lead, then the bench, the recognition, the podium and the lecture
+ * hall, and finally the four BioPC course posters that carry the training
+ * record. The first two run at double width.
  */
 export const researchGlimpse: GalleryItem[] = [
   "/gallery/g025.webp",
   "/gallery/g027.webp",
-  "/gallery/g031.webp",
+  "/gallery/g107.webp",
   "/gallery/g029.webp",
   "/gallery/g030.webp",
   "/gallery/g026.webp",
-  "/gallery/g033.webp",
+  "/gallery/g010.webp",
   "/gallery/g092.webp",
   "/gallery/g129.webp",
   "/gallery/g003.webp",
+  "/gallery/g178.webp",
+  "/gallery/g179.webp",
+  "/gallery/g102.webp",
+  "/gallery/g104.webp",
 ].flatMap((src) => {
   const item = galleryItems.find((g) => g.src === src);
   return item ? [item] : [];

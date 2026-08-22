@@ -6,7 +6,6 @@ import { Icon } from "@/components/ui/icon";
 import { education, researchExperience } from "@/data/profile";
 import { metrics } from "@/data/metrics";
 import { SectionCta } from "@/components/ui/SectionCta";
-import { BioPCButton } from "@/components/ui/BioPCButton";
 
 /** Key facts carry the design system's emphasis rather than raw browser bold. */
 function B({ children }: { children: ReactNode }) {
@@ -97,28 +96,24 @@ export function About() {
             ))}
           </div>
 
-          <Reveal className="mt-6">
-            <BioPCButton />
-          </Reveal>
-
           {/* Headline figures - same card treatment as the Education and
               Research-position panels opposite, so the two columns read as one
               grid rather than prose beside boxes. Numbers count up on scroll. */}
-          <div className="mt-8 grid grid-cols-2 gap-4">
+          <div className="mt-8 grid grid-cols-2 gap-3.5">
             {quickStats.map((s, i) => (
-              <Reveal as="div" key={s.label} delay={0.12 + i * 0.09} className="h-full">
-                <div className="surface surface-hover group h-full p-5">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan/15 to-indigo/15 ring-1 ring-cyan/20 transition-transform duration-300 group-hover:scale-110">
+              <Reveal as="div" key={s.label} delay={0.15 + i * 0.16} className="h-full">
+                <div className="surface surface-hover group h-full p-4">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-cyan/15 to-indigo/15 ring-1 ring-cyan/20 transition-transform duration-500 group-hover:scale-110">
                     <Icon
                       name={s.icon}
-                      className="h-4 w-4 text-cyan transition-colors duration-300 group-hover:text-indigo"
+                      className="h-3.5 w-3.5 text-cyan transition-colors duration-500 group-hover:text-indigo"
                       aria-hidden
                     />
                   </span>
-                  <p className="text-gradient mt-3 font-display text-3xl font-bold leading-none">
+                  <p className="text-gradient mt-2.5 font-display text-2xl font-bold leading-none">
                     <Counter value={s.value} suffix={s.suffix ?? ""} />
                   </p>
-                  <p className="mt-1.5 text-sm leading-snug text-muted-foreground">
+                  <p className="mt-1 text-[13px] leading-snug text-muted-foreground">
                     {s.label}
                   </p>
                 </div>

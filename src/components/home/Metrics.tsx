@@ -41,7 +41,7 @@ export function Metrics() {
 
         <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
           {metrics.map((metric, i) => (
-            <Reveal key={metric.label} delay={(i % 6) * 0.06} className="text-center">
+            <Reveal key={metric.label} delay={(i % 6) * 0.12} className="text-center">
               <Icon
                 name={metric.icon}
                 className="mx-auto h-6 w-6 text-cyan"
