@@ -8,38 +8,70 @@ import { metrics } from "@/data/metrics";
 import { biopc } from "@/data/teaching";
 import { SectionCta } from "@/components/ui/SectionCta";
 
+/** Key facts carry the design system's emphasis rather than raw browser bold. */
+function B({ children }: { children: ReactNode }) {
+  return <strong className="font-semibold text-foreground">{children}</strong>;
+}
+
 /**
  * Concise, scannable positioning - full story lives on the /about page.
  *
- * Achievements are named here rather than left to the awards and teaching
- * sections further down the page: most visitors read this block and nothing
- * else, so the record has to be legible without scrolling.
+ * Kept to one or two sentences per paragraph, with the record itself emphasised:
+ * most visitors read this block and nothing else, so the achievements have to
+ * land without scrolling. Paragraphs stay justified to match the hero lede and
+ * the rest of the page.
  */
 const shortBio: { id: string; body: ReactNode }[] = [
   {
     id: "training",
-    body: "I am a molecular geneticist trained in Genetic Engineering & Biotechnology at the University of Chittagong, where I finished 2nd in my M.Sc. cohort (CGPA 3.94/4.00) and 4th in my B.Sc. (3.89/4.00), and hold a National Science & Technology Fellowship from the Government of Bangladesh. My M.Sc. thesis profiled MMP-1, MMP-3 and MMP-9 variants in apical periodontitis influenced by diabetes - a study I ran end to end, from DNA extraction and PCR through Sanger sequencing to variant interpretation.",
+    body: (
+      <>
+        Molecular geneticist trained in Genetic Engineering &amp; Biotechnology
+        at the University of Chittagong - <B>2nd in my M.Sc. cohort</B>{" "}
+        (<B>CGPA 3.94/4.00</B>), <B>4th in my B.Sc.</B> (<B>3.89/4.00</B>), and
+        holder of a <B>National Science &amp; Technology Fellowship</B>.
+      </>
+    ),
   },
   {
     id: "research",
-    body: "At the Functional Genomics & Proteomics Laboratory I work across three bench-led cohort studies: the first ADPKD variant spectrum reported from Bangladesh, a combined Sanger and exome study of PCOS in 600 women, and genomic surveillance of ESBL-producing E. coli. Each one runs on both halves of the same toolkit - PCR and qPCR, Sanger sequencing, targeted panels and whole-exome sequencing at the bench; GATK-based variant calling, annotation, and structure-based modelling at the terminal.",
+    body: (
+      <>
+        At the Functional Genomics &amp; Proteomics Laboratory I run{" "}
+        <B>three bench-led cohort studies</B> - ADPKD, PCOS, and ESBL-producing
+        E. coli - from <B>DNA extraction, PCR and Sanger sequencing</B> through{" "}
+        <B>whole-exome sequencing</B> and <B>variant interpretation</B>.
+      </>
+    ),
   },
   {
     id: "publications",
-    body: "Four peer-reviewed papers have come out of that work - three as first author, two of them in Q1 journals, and one as corresponding author - alongside three manuscripts now in preparation. My Mpox multi-epitope vaccine study was named Best Research Paper Presenter at the 4th Darwin International Conference.",
+    body: (
+      <>
+        <B>4 peer-reviewed papers</B> - 3 first-author, <B>2 in Q1 journals</B>,
+        1 as corresponding author - with <B>3 manuscripts in preparation</B>. My
+        Mpox vaccine study won <B>Best Research Paper Presenter</B> at the{" "}
+        <B>4th Darwin International Conference</B>.
+      </>
+    ),
   },
   {
     id: "biopc",
     body: (
       <>
-        I also founded{" "}
-        <a href={biopc.url} target="_blank" rel="noopener noreferrer">
+        Founder and chief instructor of{" "}
+        {/* Bolded on the anchor itself: <B> would override the prose link colour. */}
+        <a
+          href={biopc.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold"
+        >
           BioPC
         </a>
-        , one of the largest bioinformatics training communities in Bangladesh,
-        where I serve as chief instructor: 3,000+ learners across 25 programmes,
-        two nationwide olympiads, roughly five workshops, and six research
-        projects run with trainees.
+        , one of the largest bioinformatics training communities in Bangladesh -{" "}
+        <B>3,000+ learners</B>, <B>25 training programmes</B>, and{" "}
+        <B>2 national olympiads</B>.
       </>
     ),
   },
