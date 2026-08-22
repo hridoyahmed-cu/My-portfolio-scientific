@@ -1,6 +1,7 @@
 export const biopc = {
   title: "BioPC - Bioinformatics Lab of Research and Training",
   role: "Founder, Research Coordinator & Chief Instructor",
+  url: "https://biopc.org",
   summary:
     "BioPC is one of the largest bioinformatics communities in Bangladesh. I founded it to give students rigorous, hands-on research training that is often hard to find, and to open a path into computational biology for learners who would otherwise go without it.",
   stats: [

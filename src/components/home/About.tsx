@@ -1,15 +1,48 @@
+import type { ReactNode } from "react";
 import { Dna, FlaskConical, Microscope, Network, ShieldCheck, TestTube } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Counter } from "@/components/ui/Counter";
 import { education, researchExperience } from "@/data/profile";
 import { metrics } from "@/data/metrics";
+import { biopc } from "@/data/teaching";
 import { SectionCta } from "@/components/ui/SectionCta";
 
-/** Concise, scannable positioning - full story lives on the /about page. */
-const shortBio: string[] = [
-  "I am a molecular geneticist trained in Genetic Engineering & Biotechnology at the University of Chittagong, working on the genetic basis of complex disease. My M.Sc. thesis profiled MMP-1, MMP-3 and MMP-9 variants in apical periodontitis influenced by diabetes - a study I ran end to end, from DNA extraction and PCR through Sanger sequencing to variant interpretation.",
-  "At the Functional Genomics & Proteomics Laboratory I now work across three bench-led cohort studies: the first ADPKD variant spectrum reported from Bangladesh, a combined Sanger and exome study of PCOS in 600 women, and genomic surveillance of ESBL-producing E. coli. My published record - two Q1 first-author papers in structural and immunoinformatics work - is where I built the computational half of that toolkit.",
+/**
+ * Concise, scannable positioning - full story lives on the /about page.
+ *
+ * Achievements are named here rather than left to the awards and teaching
+ * sections further down the page: most visitors read this block and nothing
+ * else, so the record has to be legible without scrolling.
+ */
+const shortBio: { id: string; body: ReactNode }[] = [
+  {
+    id: "training",
+    body: "I am a molecular geneticist trained in Genetic Engineering & Biotechnology at the University of Chittagong, where I finished 2nd in my M.Sc. cohort (CGPA 3.94/4.00) and 4th in my B.Sc. (3.89/4.00), and hold a National Science & Technology Fellowship from the Government of Bangladesh. My M.Sc. thesis profiled MMP-1, MMP-3 and MMP-9 variants in apical periodontitis influenced by diabetes - a study I ran end to end, from DNA extraction and PCR through Sanger sequencing to variant interpretation.",
+  },
+  {
+    id: "research",
+    body: "At the Functional Genomics & Proteomics Laboratory I work across three bench-led cohort studies: the first ADPKD variant spectrum reported from Bangladesh, a combined Sanger and exome study of PCOS in 600 women, and genomic surveillance of ESBL-producing E. coli. Each one runs on both halves of the same toolkit - PCR and qPCR, Sanger sequencing, targeted panels and whole-exome sequencing at the bench; GATK-based variant calling, annotation, and structure-based modelling at the terminal.",
+  },
+  {
+    id: "publications",
+    body: "Four peer-reviewed papers have come out of that work - three as first author, two of them in Q1 journals, and one as corresponding author - alongside three manuscripts now in preparation. My Mpox multi-epitope vaccine study was named Best Research Paper Presenter at the 4th Darwin International Conference.",
+  },
+  {
+    id: "biopc",
+    body: (
+      <>
+        I also founded{" "}
+        <a href={biopc.url} target="_blank" rel="noopener noreferrer">
+          BioPC
+        </a>
+        , one of the largest bioinformatics training communities in Bangladesh,
+        where I serve as chief instructor: 3,000+ learners across 25 programmes,
+        two nationwide olympiads, roughly five workshops, and six research
+        projects run with trainees.
+      </>
+    ),
+  },
 ];
 
 /** Field terms only. Method terms live in the research section, not here. */
@@ -46,8 +79,8 @@ export function About() {
         <div>
           <div className="prose-academic space-y-4">
             {shortBio.map((p) => (
-              <Reveal as="div" key={p.slice(0, 24)}>
-                <p className="text-justify">{p}</p>
+              <Reveal as="div" key={p.id}>
+                <p className="text-justify">{p.body}</p>
               </Reveal>
             ))}
           </div>

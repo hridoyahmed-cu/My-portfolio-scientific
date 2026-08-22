@@ -1,18 +1,27 @@
 {
-  "version": "0.0.1",
+  "version": "0.0.1", 
   "configurations": [
     {
-      "name": "portfolio",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 3000,
-      "autoPort": true
-    },
+      "runtimeArgs": [
+        "run", 
+        "dev"
+      ], 
+      "autoPort": true, 
+      "port": 3000, 
+      "name": "portfolio", 
+      "runtimeExecutable": "npm"
+    }, 
     {
-      "name": "biopc-services",
-      "runtimeExecutable": "C:/Users/WALTON/AppData/Local/Temp/claude/D--DESKTOP-ALL-My-portfolio-scientific/62468d29-8293-4b63-86ca-ad7a93ed0341/scratchpad/run-biopc.cmd",
-      "runtimeArgs": [],
-      "port": 3200
+      "runtimeArgs": [], 
+      "port": 3200, 
+      "name": "biopc-services", 
+      "runtimeExecutable": "C:/Users/WALTON/AppData/Local/Temp/claude/D--DESKTOP-ALL-My-portfolio-scientific/62468d29-8293-4b63-86ca-ad7a93ed0341/scratchpad/run-biopc.cmd"
+    }, 
+    {
+      "runtimeArgs": [], 
+      "port": 3210, 
+      "name": "biopc-home", 
+      "runtimeExecutable": "C:/Users/WALTON/AppData/Local/Temp/claude/C--Users-WALTON-OneDrive-Desktop-OneDrive---University-of-Chittagong-DESKTOP-ALL-My-portfolio-scientific/052b62bd-d5e4-43c5-aa0c-f70e04397c8a/scratchpad/run-biopc-home.cmd"
     }
   ]
 }
