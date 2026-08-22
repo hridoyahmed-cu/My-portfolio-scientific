@@ -4,6 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Counter } from "@/components/ui/Counter";
 import { biopc, teachingAreas } from "@/data/teaching";
 import { SectionCta } from "@/components/ui/SectionCta";
+import { BioPCButton } from "@/components/ui/BioPCButton";
 
 /** Split a display value like "3,000+" or "~5" into prefix / number / suffix. */
 function parseStat(value: string) {
@@ -39,6 +40,9 @@ export function Teaching() {
             ))}
           </ul>
 
+          <Reveal className="mt-8" delay={0.1}>
+            <BioPCButton />
+          </Reveal>
         </div>
 
         <div className="grid grid-cols-2 gap-4">

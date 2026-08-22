@@ -14,6 +14,7 @@ import { skillGroups, certifications } from "@/data/skills";
 import { majorHonors } from "@/data/awards";
 import { presentations, innovationPresentations } from "@/data/presentations";
 import { biopc } from "@/data/teaching";
+import { BioPCButton } from "@/components/ui/BioPCButton";
 import { siteConfig } from "@/lib/site";
 import { withAssetVersion } from "@/lib/utils";
 
@@ -244,6 +245,7 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
+                <BioPCButton size="sm" className="mt-4" />
               </div>
               <div>
                 <p className="font-plex text-xs font-semibold uppercase tracking-[0.16em] text-cyan">

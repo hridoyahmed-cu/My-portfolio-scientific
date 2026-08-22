@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SocialLinks } from "@/components/layout/SocialLinks";
 import { presentations } from "@/data/presentations";
 import { biopc } from "@/data/teaching";
+import { BioPCButton } from "@/components/ui/BioPCButton";
 
 export const metadata: Metadata = {
   title: "Media & Outreach",
@@ -77,6 +78,7 @@ export default function MediaPage() {
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
               {biopc.summary}
             </p>
+            <BioPCButton size="sm" className="mt-4" />
             <p className="mt-4 text-sm text-muted-foreground">
               For interviews, speaking invitations, or media enquiries, the best
               place to start is a direct message on any of these platforms.

@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
-import { Dna, FlaskConical, Microscope, Network, ShieldCheck, TestTube } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Counter } from "@/components/ui/Counter";
+import { Icon } from "@/components/ui/icon";
 import { education, researchExperience } from "@/data/profile";
 import { metrics } from "@/data/metrics";
-import { biopc } from "@/data/teaching";
 import { SectionCta } from "@/components/ui/SectionCta";
+import { BioPCButton } from "@/components/ui/BioPCButton";
 
 /** Key facts carry the design system's emphasis rather than raw browser bold. */
 function B({ children }: { children: ReactNode }) {
@@ -59,32 +59,12 @@ const shortBio: { id: string; body: ReactNode }[] = [
     id: "biopc",
     body: (
       <>
-        Founder and chief instructor of{" "}
-        {/* Bolded on the anchor itself: <B> would override the prose link colour. */}
-        <a
-          href={biopc.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold"
-        >
-          BioPC
-        </a>
-        , one of the largest bioinformatics training communities in Bangladesh -{" "}
+        Founder and chief instructor of <B>BioPC</B>, one of the largest bioinformatics training communities in Bangladesh -{" "}
         <B>3,000+ learners</B>, <B>25 training programmes</B>, and{" "}
         <B>2 national olympiads</B>.
       </>
     ),
   },
-];
-
-/** Field terms only. Method terms live in the research section, not here. */
-const keywords = [
-  { label: "Human Disease Genetics", icon: Dna },
-  { label: "Variant Interpretation", icon: Microscope },
-  { label: "Molecular Biology", icon: FlaskConical },
-  { label: "Sanger & Exome Sequencing", icon: TestTube },
-  { label: "Genomic Epidemiology", icon: ShieldCheck },
-  { label: "NGS Pipelines", icon: Network },
 ];
 
 /** Four headline figures, pulled from the Metrics section's single source of truth. */
@@ -117,27 +97,31 @@ export function About() {
             ))}
           </div>
 
-          {/* Animated keyword badges */}
-          <div className="mt-7 flex flex-wrap gap-2.5">
-            {keywords.map((kw, i) => (
-              <Reveal as="span" key={kw.label} delay={i * 0.06}>
-                <span className="research-tag group inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-sm font-medium text-foreground/85">
-                  <kw.icon className="h-3.5 w-3.5 text-cyan transition-colors group-hover:text-indigo" aria-hidden />
-                  {kw.label}
-                </span>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal className="mt-6">
+            <BioPCButton />
+          </Reveal>
 
-
-          {/* Quick stats - count up on scroll, staggered into view */}
-          <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-border pt-8">
+          {/* Headline figures - same card treatment as the Education and
+              Research-position panels opposite, so the two columns read as one
+              grid rather than prose beside boxes. Numbers count up on scroll. */}
+          <div className="mt-8 grid grid-cols-2 gap-4">
             {quickStats.map((s, i) => (
-              <Reveal as="div" key={s.label} delay={0.15 + i * 0.08}>
-                <p className="font-display text-3xl font-bold text-foreground">
-                  <Counter value={s.value} suffix={s.suffix ?? ""} />
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
+              <Reveal as="div" key={s.label} delay={0.12 + i * 0.09} className="h-full">
+                <div className="surface surface-hover group h-full p-5">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan/15 to-indigo/15 ring-1 ring-cyan/20 transition-transform duration-300 group-hover:scale-110">
+                    <Icon
+                      name={s.icon}
+                      className="h-4 w-4 text-cyan transition-colors duration-300 group-hover:text-indigo"
+                      aria-hidden
+                    />
+                  </span>
+                  <p className="text-gradient mt-3 font-display text-3xl font-bold leading-none">
+                    <Counter value={s.value} suffix={s.suffix ?? ""} />
+                  </p>
+                  <p className="mt-1.5 text-sm leading-snug text-muted-foreground">
+                    {s.label}
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>

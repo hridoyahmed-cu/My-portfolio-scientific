@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { biopc, programmes, teachingAreas } from "@/data/teaching";
+import { BioPCButton } from "@/components/ui/BioPCButton";
 import { outreachMetrics } from "@/data/metrics";
 import { Icon } from "@/components/ui/icon";
 import { SectionDivider } from "@/components/ui/SectionDivider";
@@ -66,6 +67,7 @@ export default function TeachingPage() {
           <div>
             <h2 className="heading-display text-2xl">Role & impact</h2>
             <p className="mt-2 text-sm font-medium text-cyan">{biopc.role}</p>
+            <BioPCButton className="mt-5" />
             <ul className="mt-5 space-y-3">
               {biopc.highlights.map((h, i) => (
                 <Reveal as="li" key={h} delay={i * 0.05} className="flex items-start gap-3">
